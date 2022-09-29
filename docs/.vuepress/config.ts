@@ -49,5 +49,6 @@ export = defineConfig((ctx) => ({
                 nav: nav_en,
             },
         },
-    }
+    },
+    plugins:[['vuepress-plugin-code-copy', true]]
 }));
