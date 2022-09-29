@@ -3,8 +3,9 @@
 import {nav_en} from "./nav_en";
 import {nav_zh} from "./nav_zh";
 import {defineConfig} from "vuepress/config";
-
+// @ts-ignore
 export = defineConfig((ctx) => ({
+    base:"/lancet-docs/",
     title: "Lancet-docs",
     description: "Lancet 文档",
     configureWebpack: {
