@@ -3,6 +3,7 @@
 import {nav_en} from "./nav_en";
 import {nav_zh} from "./nav_zh";
 import {defineConfig} from "vuepress/config";
+
 export = defineConfig((ctx) => ({
     title: "Lancet-docs",
     description: "Lancet 文档",
@@ -41,7 +42,5 @@ export = defineConfig((ctx) => ({
                 nav: nav_en,
             },
         },
-    },
-    plugins: [
-    ]
+    }
 }));
