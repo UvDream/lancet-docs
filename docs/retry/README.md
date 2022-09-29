@@ -25,16 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [Context](#Context)
-- [Retry](#Retry)
-- [RetryFunc](#RetryFunc)
-- [RetryDuration](#RetryDuration)
-- [RetryTimes](#RetryTimes)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Document 文档
 
 ### Context

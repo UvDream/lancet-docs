@@ -27,24 +27,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [BubbleSort](#BubbleSort)
-- [InsertionSort](#InsertionSort)
-- [SelectionSort](#SelectionSort)
-- [ShellSort](#ShellSort)
-- [QuickSort](#QuickSort)
-- [HeapSort](#HeapSort)
-- [MergeSort](#MergeSort)
-- [CountSort](#CountSort)
-- [BinarySearch](#BinarySearch)
-- [BinaryIterativeSearch](#BinaryIterativeSearch)
-
-- [LinearSearch](#LinearSearch)
-- [LRUCache](#LRUCache)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### BubbleSort

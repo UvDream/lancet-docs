@@ -25,56 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [AppendIfAbsent](#AppendIfAbsent)
-- [Contain](#Contain)
-- [ContainSubSlice](#ContainSubSlice)
-- [Chunk](#Chunk)
-- [Compact](#Compact)
-- [Concat](#Concat)
-- [Count](#Count)
-- [Difference](#Difference)
-- [DifferenceBy](#DifferenceBy)
-- [DifferenceWith](#DifferenceWith)
-- [DeleteAt](#DeleteAt)
-- [Drop](#Drop)
-- [Equal](#Equal)
-- [EqualWith](#EqualWith)
-- [Every](#Every)
-- [Filter](#Filter)
-- [Find](#Find)
-- [FindLast](#FindLast)
-- [Flatten](#Flatten)
-- [FlattenDeep](#FlattenDeep)
-- [ForEach](#ForEach)
-
-- [GroupBy](#GroupBy)
-- [GroupWith](#GroupWith)
-- [IntSlice](#IntSlice)
-- [InterfaceSlice](#InterfaceSlice)
-- [Intersection](#Intersection)
-- [InsertAt](#InsertAt)
-- [IndexOf](#IndexOf)
-- [LastIndexOf](#LastIndexOf)
-- [Map](#Map)
-- [Reverse](#Reverse)
-- [Reduce](#Reduce)
-- [Shuffle](#Shuffle)
-- [SortByField](#SortByField)
-- [Some](#Some)
-- [StringSlice](#StringSlice)
-- [SymmetricDifference](#SymmetricDifference)
-- [ToSlice](#ToSlice)
-- [ToSlicePointer](#ToSlicePointer)
-- [Unique](#Unique)
-- [UniqueBy](#UniqueBy)
-- [Union](#Union)
-- [UpdateAt](#UpdateAt)
-- [Without](#Without)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### AppendIfAbsent

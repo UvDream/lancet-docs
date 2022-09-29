@@ -25,20 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [Bool](#Bool)
-- [And](#And)
-- [Or](#Or)
-- [Xor](#Generate)
-- [Nor](#Nor)
-- [Nand](#Nand)
-- [TernaryOperator](#TernaryOperator)
-
-<div STYLE="page-break-after: always;"></div>
-
-## 目录
-
 ### Bool
 
 <p>返回传入参数的bool值.<br/>

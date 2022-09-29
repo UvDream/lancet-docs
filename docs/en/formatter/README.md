@@ -25,12 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [Comma](#Comma)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### Comma

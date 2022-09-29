@@ -28,44 +28,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [AesEcbEncrypt](#AesEcbEncrypt)
-- [AesEcbDecrypt](#AesEcbDecrypt)
-- [AesCbcEncrypt](#AesCbcEncrypt)
-- [AesCbcDecrypt](#AesCbcDecrypt)
-- [AesCtrCrypt](#AesCtrCrypt)
-- [AesCfbEncrypt](#AesCfbEncrypt)
-- [AesCfbDecrypt](#AesCfbDecrypt)
-- [AesOfbEncrypt](#AesOfbEncrypt)
-- [AesOfbDecrypt](#AesOfbDecrypt)
-- [Base64StdEncode](#Base64StdEncode)
-- [Base64StdDecode](#Base64StdDecode)
-- [DesEcbEncrypt](#DesEcbEncrypt)
-- [DesEcbDecrypt](#DesEcbDecrypt)
-- [DesCbcEncrypt](#DesCbcEncrypt)
-- [DesCbcDecrypt](#DesCbcDecrypt)
-- [DesCtrCrypt](#DesCtrCrypt)
-- [DesCfbEncrypt](#DesCfbEncrypt)
-- [DesCfbDecrypt](#DesCfbDecrypt)
-- [DesOfbEncrypt](#DesOfbEncrypt)
-- [DesOfbDecrypt](#DesOfbDecrypt)
-- [HmacMd5](#HmacMd5)
-- [HmacSha1](#HmacSha1)
-- [HmacSha256](#HmacSha256)
-- [HmacSha512](#HmacSha512)
-
-- [Md5String](#Md5String)
-- [Md5File](#Md5File)
-- [Sha1](#Sha1)
-- [Sha256](#Sha256)
-- [Sha512](#Sha512)
-- [GenerateRsaKey](#GenerateRsaKey)
-- [RsaEncrypt](#RsaEncrypt)
-- [RsaDecrypt](#RsaDecrypt)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### AesEcbEncrypt

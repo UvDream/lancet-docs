@@ -25,24 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [Average](#Average)
-- [Exponent](#Exponent)
-- [Fibonacci](#Fibonacci)
-- [Factorial](#Factorial)
-- [Max](#Max)
-- [MaxBy](#MaxBy)
-- [Min](#Min)
-- [MinBy](#MaxBy)
-
-- [Percent](#Percent)
-- [RoundToFloat](#RoundToFloat)
-- [RoundToString](#RoundToString)
-- [TruncRound](#TruncRound)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### Average

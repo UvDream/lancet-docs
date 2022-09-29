@@ -25,23 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-### Channel
-
-- [NewChannel](#NewChannel)
-- [Bridge](#Bridge)
-- [FanIn](#FanIn)
-- [Generate](#Generate)
-- [Or](#Or)
-- [OrDone](#OrDone)
-- [Repeat](#Repeat)
-- [RepeatFn](#RepeatFn)
-- [Take](#Take)
-- [Tee](#Tee)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## 文档
 
 ### Channel

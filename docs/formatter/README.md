@@ -25,12 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [Comma](#Comma)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## 文档
 
 ### Comma

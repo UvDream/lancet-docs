@@ -25,21 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [IsWindows](#IsWindows)
-- [IsLinux](#IsLinux)
-- [IsMac](#IsMac)
-- [GetOsEnv](#GetOsEnv)
-- [SetOsEnv](#SetOsEnv)
-- [RemoveOsEnv](#RemoveOsEnv)
-
-- [CompareOsEnv](#CompareOsEnv)
-- [ExecCommand](#ExecCommand)
-- [GetOsBits](#GetOsBits)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation 文档
 
 ### IsWindows

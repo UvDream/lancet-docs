@@ -26,18 +26,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [After](#After)
-- [Before](#Before)
-- [Curry](#Curry)
-- [Compose](#Compose)
-- [Debounced](#Debounced)
-- [Delay](#Delay)
-- [Watcher](#Watcher)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### After

@@ -25,39 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [ContainChinese](#ContainChinese)
-- [ContainLetter](#ContainLetter)
-- [ContainLower](#ContainLower)
-- [ContainUpper](#ContainUpper)
-- [IsAlpha](#IsAlpha)
-- [IsAllUpper](#IsAllUpper)
-- [IsAllLower](#IsAllLower)
-- [IsBase64](#IsBase64)
-- [IsChineseMobile](#IsChineseMobile)
-- [IsChineseIdNum](#IsChineseIdNum)
-- [IsChinesePhone](#IsChinesePhone)
-- [IsCreditCard](#IsCreditCard)
-- [IsDns](#IsDns)
-- [IsEmail](#IsEmail)
-
-- [IsEmptyString](#IsEmptyString)
-- [IsFloatStr](#IsFloatStr)
-- [IsNumberStr](#IsNumberStr)
-- [IsJSON](#IsJSON)
-- [IsRegexMatch](#IsRegexMatch)
-- [IsIntStr](#IsIntStr)
-- [IsIp](#IsIp)
-- [IsIpV4](#IsIpV4)
-- [IsIpV6](#IsIpV6)
-- [IsStrongPassword](#IsStrongPassword)
-- [IsUrl](#IsUrl)
-- [IsWeakPassword](#IsWeakPassword)
-- [IsZeroValue](#IsZeroValue)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### ContainChinese

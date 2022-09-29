@@ -25,27 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [ClearFile](#ClearFile)
-- [CreateFile](#CreateFile)
-- [CreateDir](#CreateDir)
-- [CopyFile](#CopyFile)
-- [FileMode](#FileMode)
-- [MiMeType](#MiMeType)
-- [IsExist](#IsExist)
-- [IsLink](#IsLink)
-- [IsDir](#IsDir)
-
-- [ListFileNames](#ListFileNames)
-- [RemoveFile](#RemoveFile)
-- [ReadFileToString](#ReadFileToString)
-- [ReadFileByLine](#ReadFileByLine)
-- [Zip](#Zip)
-- [UnZip](#UnZip)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## 文档
 
 ### ClearFile

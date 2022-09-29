@@ -25,40 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [NewList](#NewList)
-- [Contain](#Contain)
-- [Data](#Data)
-- [ValueOf](#ValueOf)
-- [IndexOf](#IndexOf)
-- [LastIndexOf](#LastIndexOf)
-- [IndexOfFunc](#IndexOfFunc)
-- [LastIndexOfFunc](#LastIndexOfFunc)
-- [Push](#Push)
-- [PopFirst](#PopFirst)
-- [PopLast](#PopLast)
-- [DeleteAt](#DeleteAt)
-- [InsertAt](#InsertAt)
-
-- [UpdateAt](#UpdateAt)
-- [Equal](#Equal)
-- [IsEmpty](#IsEmpty)
-- [Clear](#Clear)
-- [Clone](#Clone)
-- [Merge](#Merge)
-- [Size](#Size)
-- [Cap](#Cap)
-- [Swap](#Swap)
-- [Reverse](#Reverse)
-- [Unique](#Unique)
-- [Union](#Union)
-- [Intersection](#Intersection)
-- [SubList](#SubList)
-- [DeleteIf](#DeleteIf)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## 文档
 
 ### NewList

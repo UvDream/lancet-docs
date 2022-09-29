@@ -25,28 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [ColorHexToRGB](#ColorHexToRGB)
-- [ColorRGBToHex](#ColorRGBToHex)
-- [ToBool](#ToBool)
-- [ToBytes](#ToBytes)
-- [ToChar](#ToChar)
-- [ToChannel](#ToChannel)
-
-- [ToFloat](#ToFloat)
-- [ToInt](#ToInt)
-- [ToJson](#ToJson)
-- [ToMap](#ToMap)
-- [ToPointer](#ToPointer)
-- [ToString](#ToString)
-- [StructToMap](#StructToMap)
-- [MapToSlice](#MapToSlice)
-- [EncodeByte](#EncodeByte)
-- [DecodeByte](#DecodeByte)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### ColorHexToRGB

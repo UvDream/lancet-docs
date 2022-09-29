@@ -24,17 +24,6 @@ import (
 ```
 
 <div STYLE="page-break-after: always;"></div>
-
-## Index
-
-- [Context](#Context)
-- [Retry](#Retry)
-- [RetryFunc](#RetryFunc)
-- [RetryDuration](#RetryDuration)
-- [RetryTimes](#RetryTimes)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### Context

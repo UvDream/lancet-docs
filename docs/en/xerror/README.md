@@ -25,12 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [Unwrap](#Unwrap)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### Unwrap

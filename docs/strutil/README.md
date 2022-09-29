@@ -25,29 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [After](#After)
-- [AfterLast](#AfterLast)
-- [Before](#Before)
-- [BeforeLast](#BeforeLast)
-- [CamelCase](#CamelCase)
-- [Capitalize](#Capitalize)
-- [IsString](#IsString)
-- [KebabCase](#KebabCase)
-- [LowerFirst](#LowerFirst)
-- [UpperFirst](#UpperFirst)
-- [PadEnd](#PadEnd)
-- [PadStart](#PadStart)
-- [Reverse](#Reverse)
-- [SnakeCase](#SnakeCase)
-- [SplitEx](#SplitEx)
-- [Wrap](#Wrap)
-
-- [Unwrap](#Unwrap)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation 文档
 
 ### After

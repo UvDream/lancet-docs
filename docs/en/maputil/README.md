@@ -25,19 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [ForEach](#ForEach)
-- [Filter](#Filter)
-- [Intersect](#Intersect)
-- [Keys](#Keys)
-- [Merge](#Merge)
-- [Minus](#Minus)
-- [Values](#Values)
-- [IsDisjoint](#IsDisjoint)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### ForEach

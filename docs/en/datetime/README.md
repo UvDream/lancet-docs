@@ -26,42 +26,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [AddDay](#AddDay)
-- [AddHour](#AddHour)
-- [AddMinute](#AddMinute)
-- [BeginOfMinute](#BeginOfMinute)
-- [BeginOfHour](#BeginOfHour)
-- [BeginOfDay](#BeginOfDay)
-- [BeginOfWeek](#BeginOfWeek)
-- [BeginOfMonth](#BeginOfMonth)
-- [BeginOfYear](#BeginOfYear)
-- [EndOfMinute](#EndOfMinute)
-- [EndOfHour](#EndOfHour)
-- [EndOfDay](#EndOfDay)
-- [EndOfWeek](#EndOfWeek)
-- [EndOfMonth](#EndOfMonth)
-- [EndOfYear](#EndOfYear)
-- [GetNowDate](#GetNowDate)
-- [GetNowTime](#GetNowTime)
-- [GetNowDateTime](#GetNowDateTime)
-- [GetZeroHourTimestamp](#GetZeroHourTimestamp)
-- [GetNightTimestamp](#GetNightTimestamp)
-- [FormatTimeToStr](#FormatTimeToStr)
-- [FormatStrToTime](#FormatStrToTime)
-
-- [NewUnixNow](#NewUnixNow)
-- [NewUnix](#NewUnix)
-- [NewFormat](#NewFormat)
-- [NewISO8601](#NewISO8601)
-- [ToUnix](#ToUnix)
-- [ToFormat](#ToFormat)
-- [ToFormatForTpl](#ToFormatForTpl)
-- [ToIso8601](#ToIso8601)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ## Note:

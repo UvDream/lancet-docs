@@ -25,19 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录:
-
-- [ForEach](#ForEach)
-- [Filter](#Filter)
-- [Intersect](#Intersect)
-- [Keys](#Keys)
-- [Merge](#Merge)
-- [Minus](#Minus)
-- [Values](#Values)
-- [IsDisjoint](#IsDisjoint)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## API 文档:
 
 ### ForEach

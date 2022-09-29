@@ -25,15 +25,6 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## Index
-
-- [RandBytes](#RandBytes)
-- [RandInt](#RandInt)
-- [RandString](#RandString)
-- [UUIdV4](#UUIdV4)
-
-<div STYLE="page-break-after: always;"></div>
-
 ## Documentation
 
 ### RandBytes
