@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Xerror
-xerror错误处理逻辑封装
+
+xerror 错误处理逻辑封装
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -14,6 +16,7 @@ xerror错误处理逻辑封装
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/xerror"
@@ -23,15 +26,15 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [Unwrap](#Unwrap)
 
 <div STYLE="page-break-after: always;"></div>
 
 ## 文档
 
+### Unwrap
 
-
-### <span id="Unwrap">Unwrap</span>
 <p>如果err为nil则展开，则它返回一个有效值。 如果err不是nil则Unwrap使用err发生恐慌。</p>
 
 <b>函数签名:</b>
@@ -39,6 +42,7 @@ import (
 ```go
 func Unwrap[T any](val T, err error) T
 ```
+
 <b>例子:</b>
 
 ```go

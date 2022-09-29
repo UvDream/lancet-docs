@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Random
-random随机数生成器包，可以生成随机[]bytes, int, string。
+
+random 随机数生成器包，可以生成随机[]bytes, int, string。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ random随机数生成器包，可以生成随机[]bytes, int, string。
 
 - [https://github.com/duke-git/lancet/blob/main/random/random.go](https://github.com/duke-git/lancet/blob/main/random/random.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/random"
@@ -24,18 +26,18 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [RandBytes](#RandBytes)
 - [RandInt](#RandInt)
 - [RandString](#RandString)
 - [UUIdV4](#UUIdV4)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 文档
 
+### RandBytes
 
-### <span id="RandBytes">RandBytes</span>
 <p>生成随机字节切片</p>
 
 <b>函数签名:</b>
@@ -43,6 +45,7 @@ import (
 ```go
 func RandBytes(length int) []byte
 ```
+
 <b>例子:</b>
 
 ```go
@@ -59,8 +62,8 @@ func main() {
 }
 ```
 
+### RandInt
 
-### <span id="RandInt">RandInt</span>
 <p>生成随机int, 范围[min, max)</p>
 
 <b>函数签名:</b>
@@ -68,6 +71,7 @@ func main() {
 ```go
 func RandInt(min, max int) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -84,9 +88,8 @@ func main() {
 }
 ```
 
+### RandInt
 
-
-### <span id="RandString">RandInt</span>
 <p>生成随机给定长度的随机字符串</p>
 
 <b>函数签名:</b>
@@ -94,6 +97,7 @@ func main() {
 ```go
 func RandString(length int) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -110,9 +114,8 @@ func main() {
 }
 ```
 
+### UUIdV4
 
-
-### <span id="UUIdV4">UUIdV4</span>
 <p>生成UUID v4字符串</p>
 
 <b>函数签名:</b>
@@ -120,6 +123,7 @@ func main() {
 ```go
 func UUIdV4() (string, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -138,4 +142,3 @@ func main() {
 	fmt.Println(uuid)
 }
 ```
-

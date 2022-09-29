@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Netutil
-netutil网络包支持获取ip地址，发送http请求。
+
+netutil 网络包支持获取 ip 地址，发送 http 请求。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -18,6 +20,7 @@ netutil网络包支持获取ip地址，发送http请求。
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/netutil"
@@ -27,6 +30,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [ConvertMapToQueryString](#ConvertMapToQueryString)
 - [EncodeUrl](#EncodeUrl)
 - [GetInternalIp](#GetInternalIp)
@@ -55,8 +59,8 @@ import (
 
 ## 文档
 
+### ConvertMapToQueryString
 
-### <span id="ConvertMapToQueryString">ConvertMapToQueryString</span>
 <p>将map转换成http查询字符串.</p>
 
 <b>函数签名:</b>
@@ -64,6 +68,7 @@ import (
 ```go
 func ConvertMapToQueryString(param map[string]any) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -86,9 +91,8 @@ func main() {
 }
 ```
 
+### EncodeUrl
 
-
-### <span id="EncodeUrl">EncodeUrl</span>
 <p>编码url query string的值</p>
 
 <b>函数签名:</b>
@@ -96,6 +100,7 @@ func main() {
 ```go
 func EncodeUrl(urlStr string) (string, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -116,10 +121,8 @@ func main() {
 }
 ```
 
+### GetInternalIp
 
-
-
-### <span id="GetInternalIp">GetInternalIp</span>
 <p>获取内部ip</p>
 
 <b>函数签名:</b>
@@ -127,6 +130,7 @@ func main() {
 ```go
 func GetInternalIp() string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -146,8 +150,8 @@ func main() {
 }
 ```
 
+### GetIps
 
-### <span id="GetIps">GetIps</span>
 <p>获取ipv4地址列表</p>
 
 <b>函数签名:</b>
@@ -155,6 +159,7 @@ func main() {
 ```go
 func GetIps() []string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -172,9 +177,8 @@ func main() {
 }
 ```
 
+### GetMacAddrs
 
-
-### <span id="GetMacAddrs">GetMacAddrs</span>
 <p>获取mac地址列</p>
 
 <b>函数签名:</b>
@@ -182,6 +186,7 @@ func main() {
 ```go
 func GetMacAddrs() []string {
 ```
+
 <b>例子:</b>
 
 ```go
@@ -199,9 +204,8 @@ func main() {
 }
 ```
 
+### GetPublicIpInfo
 
-
-### <span id="GetPublicIpInfo">GetPublicIpInfo</span>
 <p>获取公网ip信息</p>
 
 <b>函数签名:</b>
@@ -223,6 +227,7 @@ type PublicIpInfo struct {
 	Ip          string  `json:"query"`
 }
 ```
+
 <b>例子:</b>
 
 ```go
@@ -243,9 +248,8 @@ func main() {
 }
 ```
 
+### GetRequestPublicIp
 
-
-### <span id="GetRequestPublicIp">GetRequestPublicIp</span>
 <p>获取http请求ip</p>
 
 <b>函数签名:</b>
@@ -253,6 +257,7 @@ func main() {
 ```go
 func GetRequestPublicIp(req *http.Request) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -286,10 +291,8 @@ func main() {
 }
 ```
 
+### IsPublicIP
 
-
-
-### <span id="IsPublicIP">IsPublicIP</span>
 <p>判断ip是否是公共ip</p>
 
 <b>函数签名:</b>
@@ -297,6 +300,7 @@ func main() {
 ```go
 func IsPublicIP(IP net.IP) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -317,9 +321,8 @@ func main() {
 }
 ```
 
+### IsInternalIP
 
-
-### <span id="IsInternalIP">IsInternalIP</span>
 <p>判断ip是否是局域网ip.</p>
 
 <b>函数签名:</b>
@@ -327,6 +330,7 @@ func main() {
 ```go
 func IsInternalIP(IP net.IP) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -347,8 +351,8 @@ func main() {
 }
 ```
 
+### HttpRequest
 
-### <span id="HttpRequest">HttpRequest</span>
 <p>HttpRequest用于抽象HTTP请求实体的结构</p>
 
 <b>函数签名:</b>
@@ -363,6 +367,7 @@ type HttpRequest struct {
 	Body        []byte
 }
 ```
+
 <b>例子:</b>
 
 ```go
@@ -391,8 +396,8 @@ func main() {
 }
 ```
 
+### HttpClient
 
-### <span id="HttpClient">HttpClient</span>
 <p>HttpClient是用于发送HTTP请求的结构体。它可以用一些配置参数或无配置实例化.</p>
 
 <b>函数签名:</b>
@@ -419,6 +424,7 @@ func NewHttpClient() *HttpClient
 func NewHttpClientWithConfig(config *HttpClientConfig) *HttpClient
 
 ```
+
 <b>例子:</b>
 
 ```go
@@ -440,9 +446,8 @@ func main() {
 }
 ```
 
+### SendRequest
 
-
-### <span id="SendRequest">SendRequest</span>
 <p>HttpClient发送http请求</p>
 
 <b>函数签名:</b>
@@ -450,6 +455,7 @@ func main() {
 ```go
 func (client *HttpClient) SendRequest(request *HttpRequest) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -488,9 +494,8 @@ func main() {
 }
 ```
 
+### DecodeResponse
 
-
-### <span id="DecodeResponse">DecodeResponse</span>
 <p>解析http响应体到目标结构体</p>
 
 <b>函数签名:</b>
@@ -498,6 +503,7 @@ func main() {
 ```go
 func (client *HttpClient) DecodeResponse(resp *http.Response, target any) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -536,8 +542,8 @@ func main() {
 }
 ```
 
+### StructToUrlValues
 
-### <span id="StructToUrlValues">StructToUrlValues</span>
 <p>将结构体转为url values, 仅转化结构体导出字段并且包含`json` tag.</p>
 
 <b>函数签名:</b>
@@ -545,6 +551,7 @@ func main() {
 ```go
 func StructToUrlValues(targetStruct any) url.Values
 ```
+
 <b>例子:</b>
 
 ```go
@@ -571,9 +578,8 @@ func main() {
 }
 ```
 
+### HttpGet (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpGet">HttpGet (Deprecated: use SendRequest for replacement)</span>
 <p>发送http get请求</p>
 
 <b>函数签名:</b>
@@ -585,6 +591,7 @@ func main() {
 // params[3] http client，类型必须是http.Client
 func HttpGet(url string, params ...any) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -613,9 +620,8 @@ func main() {
 }
 ```
 
+### HttpPost (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPost">HttpPost (Deprecated: use SendRequest for replacement)</span>
 <p>发送http post请求</p>
 
 <b>函数签名:</b>
@@ -627,6 +633,7 @@ func main() {
 // params[3] http client，类型必须是http.Client
 func HttpPost(url string, params ...any) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -662,9 +669,8 @@ func main() {
 }
 ```
 
+### HttpPut (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPut">HttpPut (Deprecated: use SendRequest for replacement)</span>
 <p>发送http put请求</p>
 
 <b>函数签名:</b>
@@ -676,6 +682,7 @@ func main() {
 // params[3] http client，类型必须是http.Client
 func HttpPut(url string, params ...any) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -712,9 +719,8 @@ func main() {
 }
 ```
 
+### HttpDelete (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpDelete">HttpDelete (Deprecated: use SendRequest for replacement)</span>
 <p>发送http delete请求</p>
 
 <b>函数签名:</b>
@@ -726,6 +732,7 @@ func main() {
 // params[3] http client，类型必须是http.Client
 func HttpDelete(url string, params ...any) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -751,9 +758,8 @@ func main() {
 }
 ```
 
+### HttpPatch (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPatch">HttpPatch (Deprecated: use SendRequest for replacement)</span>
 <p>发送http patch请求</p>
 
 <b>函数签名:</b>
@@ -765,6 +771,7 @@ func main() {
 // params[3] http client，类型必须是http.Client
 func HttpPatch(url string, params ...any) (*http.Response, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -801,9 +808,8 @@ func main() {
 }
 ```
 
+### ParseHttpResponse
 
-
-### <span id="ParseHttpResponse">ParseHttpResponse</span>
 <p>将http请求响应解码成特定struct值</p>
 
 <b>函数签名:</b>
@@ -811,6 +817,7 @@ func main() {
 ```go
 func ParseHttpResponse(resp *http.Response, obj any) error
 ```
+
 <b>例子:</b>
 
 ```go

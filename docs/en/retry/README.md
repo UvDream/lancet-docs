@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Retry
+
 Package retry is for executing a function repeatedly until it was successful or canceled by the context.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package retry is for executing a function repeatedly until it was successful or 
 
 - [https://github.com/duke-git/lancet/blob/main/retry/retry.go](https://github.com/duke-git/lancet/blob/main/retry/retry.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/retry"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [Context](#Context)
 - [Retry](#Retry)
 - [RetryFunc](#RetryFunc)
@@ -34,8 +37,8 @@ import (
 
 ## Documentation
 
+### Context
 
-### <span id="Context">Context</span>
 <p>Set retry context config, can cancel the retry with context.</p>
 
 <b>Signature:</b>
@@ -43,6 +46,7 @@ import (
 ```go
 func Context(ctx context.Context)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -76,10 +80,8 @@ func main() {
 }
 ```
 
+### RetryFunc
 
-
-
-### <span id="RetryFunc">RetryFunc</span>
 <p>Function that retry executes.</p>
 
 <b>Signature:</b>
@@ -87,6 +89,7 @@ func main() {
 ```go
 type RetryFunc func() error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -119,9 +122,8 @@ func main() {
 }
 ```
 
+### RetryTimes
 
-
-### <span id="RetryTimes">RetryTimes</span>
 <p>Set times of retry. Default times is 5.</p>
 
 <b>Signature:</b>
@@ -129,6 +131,7 @@ func main() {
 ```go
 func RetryTimes(n uint)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -159,9 +162,8 @@ func main() {
 }
 ```
 
+### RetryDuration
 
-
-### <span id="RetryDuration">RetryDuration</span>
 <p>Set duration of retries. Default duration is 3 second.</p>
 
 <b>Signature:</b>
@@ -169,6 +171,7 @@ func main() {
 ```go
 func RetryDuration(d time.Duration)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -200,8 +203,8 @@ func main() {
 }
 ```
 
+### Retry
 
-### <span id="Retry">Retry</span>
 <p>Executes the retryFunc repeatedly until it was successful or canceled by the context.</p>
 
 <b>Signature:</b>
@@ -209,6 +212,7 @@ func main() {
 ```go
 func Retry(retryFunc RetryFunc, opts ...Option) error
 ```
+
 <b>Example:</b>
 
 ```go

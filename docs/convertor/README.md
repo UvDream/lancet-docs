@@ -4,7 +4,8 @@ sidebar: auto
 ---
 
 # Convertor
-convertor转换器包支持一些常见的数据类型转换
+
+convertor 转换器包支持一些常见的数据类型转换
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -48,9 +49,8 @@ import (
 
 ## 文档
 
+### ColorHexToRGB
 
-
-### <span id="ColorHexToRGB">ColorHexToRGB</span>
 <p>颜色值十六进制转rgb</p>
 
 <b>函数签名:</b>
@@ -58,6 +58,7 @@ import (
 ```go
 func ColorHexToRGB(colorHex string) (red, green, blue int)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -75,9 +76,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ColorRGBToHex">ColorRGBToHex</span>
+### ColorRGBToHex
 
 <p>颜色值rgb转十六进制</p>
 
@@ -86,6 +85,7 @@ func main() {
 ```go
 func ColorRGBToHex(red, green, blue int) string
 ```
+
 <b>列子:</b>
 
 ```go
@@ -106,9 +106,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToBool">ToBool</span>
+### ToBool
 
 <p>字符串转布尔类型，使用strconv.ParseBool</p>
 
@@ -117,6 +115,7 @@ func main() {
 ```go
 func ToBool(s string) (bool, error)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -142,9 +141,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToBytes">ToBytes</span>
+### ToBytes
 
 <p>interface转字节切片.</p>
 
@@ -153,6 +150,7 @@ func main() {
 ```go
 func ToBytes(data any) ([]byte, error)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -172,9 +170,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToChar">ToChar</span>
+### ToChar
 
 <p>字符串转字符切片</p>
 
@@ -183,6 +179,7 @@ func main() {
 ```go
 func ToChar(s string) []string
 ```
+
 <b>列子:</b>
 
 ```go
@@ -205,9 +202,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToChannel">ToChannel</span>
+### ToChannel
 
 <p>将切片转为只读channel</p>
 
@@ -216,6 +211,7 @@ func main() {
 ```go
 func ToChannel[T any](array []T) <-chan T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -243,9 +239,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToFloat">ToFloat</span>
+### ToFloat
 
 <p>将interface转成float64类型，如果参数无法转换，会返回0和error</p>
 
@@ -254,6 +248,7 @@ func main() {
 ```go
 func ToFloat(value any) (float64, error)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -276,9 +271,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToInt">ToInt</span>
+### ToInt
 
 <p>将interface转成int64类型，如果参数无法转换，会返回0和error</p>
 
@@ -287,6 +280,7 @@ func main() {
 ```go
 func ToInt(value any) (int64, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -309,9 +303,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToJson">ToJson</span>
+### ToJson
 
 <p>将interface转成json字符串，如果参数无法转换，会返回""和error</p>
 
@@ -320,6 +312,7 @@ func main() {
 ```go
 func ToJson(value any) (string, error)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -337,9 +330,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToMap">ToMap</span>
+### ToMap
 
 <p>将切片转为map</p>
 
@@ -348,6 +339,7 @@ func main() {
 ```go
 func ToMap[T any, K comparable, V any](array []T, iteratee func(T) (K, V)) map[K]V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -375,9 +367,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToPointer">ToPointer</span>
+### ToPointer
 
 <p>返回传入值的指针</p>
 
@@ -386,6 +376,7 @@ func main() {
 ```go
 func ToPointer[T any](value T) *T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -402,9 +393,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToString">ToString</span>
+### ToString
 
 <p>将interface转成字符串</p>
 
@@ -413,6 +402,7 @@ func main() {
 ```go
 func ToString(value any) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -430,9 +420,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="StructToMap">StructToMap</span>
+### StructToMap
 
 <p>将struct转成map，只会转换struct中可导出的字段。struct中导出字段需要设置json tag标记</p>
 
@@ -441,6 +429,7 @@ func main() {
 ```go
 func StructToMap(value any) (map[string]any, error)
 ```
+
 <b>列子:</b>
 
 ```go
@@ -466,9 +455,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="MapToSlice">MapToSlice</span>
+### MapToSlice
 
 <p>map中key和value执行函数iteratee后，转为切片</p>
 
@@ -477,6 +464,7 @@ func main() {
 ```go
 func MapToSlice[T any, K comparable, V any](aMap map[K]V, iteratee func(K, V) T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -497,9 +485,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="EncodeByte">EncodeByte</span>
+### EncodeByte
 
 <p>将data编码成字节切片</p>
 
@@ -508,6 +494,7 @@ func main() {
 ```go
 func EncodeByte(data any) ([]byte, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -524,9 +511,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DecodeByte">DecodeByte</span>
+### DecodeByte
 
 <p>解码字节切片到目标对象，目标对象需要传入一个指针实例子</p>
 
@@ -535,6 +520,7 @@ func main() {
 ```go
 func DecodeByte(data []byte, target any) error
 ```
+
 <b>例子:</b>
 
 ```go

@@ -4,7 +4,8 @@ sidebar: auto
 ---
 
 # Condition
-condition包含一些用于条件判断的函数。这个包的实现参考了carlmjohnson的truthy包的实现，更多有用的信息可以在[truthy](https://github.com/carlmjohnson/truthy)中找到，感谢carlmjohnson。
+
+condition 包含一些用于条件判断的函数。这个包的实现参考了 carlmjohnson 的 truthy 包的实现，更多有用的信息可以在[truthy](https://github.com/carlmjohnson/truthy)中找到，感谢 carlmjohnson。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -15,6 +16,7 @@ condition包含一些用于条件判断的函数。这个包的实现参考了ca
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/condition"
@@ -37,7 +39,8 @@ import (
 
 ## 目录
 
-### <span id="Bool">Bool</span>
+### Bool
+
 <p>返回传入参数的bool值.<br/>
 如果出入类型参数含有Bool方法, 会调用该方法并返回<br/>
 如果传入类型参数有IsZero方法, 返回IsZero方法返回值的取反<br/>
@@ -49,6 +52,7 @@ slices和map的length大于0时，返回true，否则返回false<br/>
 ```go
 func Bool[T any](value T) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -93,9 +97,8 @@ func main() {
 }
 ```
 
+### And
 
-
-### <span id="And">And</span>
 <p>逻辑且操作，当切仅当a和b都为true时返回true</p>
 
 <b>函数签名:</b>
@@ -103,6 +106,7 @@ func main() {
 ```go
 func And[T, U any](a T, b U) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -121,9 +125,8 @@ func main() {
 }
 ```
 
+### Or
 
-
-### <span id="Or">Or</span>
 <p>逻辑或操作，当切仅当a和b都为false时返回false</p>
 
 <b>函数签名:</b>
@@ -131,6 +134,7 @@ func main() {
 ```go
 func Or[T, U any](a T, b U) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -149,9 +153,8 @@ func main() {
 }
 ```
 
+### Xor
 
-
-### <span id="Xor">Xor</span>
 <p>逻辑异或操作，a和b相同返回false，a和b不相同返回true</p>
 
 <b>函数签名:</b>
@@ -159,6 +162,7 @@ func main() {
 ```go
 func Xor[T, U any](a T, b U) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -177,9 +181,8 @@ func main() {
 }
 ```
 
+### Nor
 
-
-### <span id="Nor">Nor</span>
 <p>异或的取反操作</p>
 
 <b>函数签名:</b>
@@ -187,6 +190,7 @@ func main() {
 ```go
 func Nor[T, U any](a T, b U) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -205,9 +209,8 @@ func main() {
 }
 ```
 
+### Nand
 
-
-### <span id="Nand">Nand</span>
 <p>如果a和b都为真，返回false，否则返回true</p>
 
 <b>函数签名:</b>
@@ -215,6 +218,7 @@ func main() {
 ```go
 func Nand[T, U any](a T, b U) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -233,9 +237,8 @@ func main() {
 }
 ```
 
+### TernaryOperator
 
-
-### <span id="TernaryOperator">TernaryOperator</span>
 <p>三元运算符</p>
 
 <b>函数签名:</b>
@@ -243,6 +246,7 @@ func main() {
 ```go
 func TernaryOperator[T, U any](isTrue T, ifValue U, elseValue U) U
 ```
+
 <b>例子:</b>
 
 ```go
@@ -260,8 +264,3 @@ func main() {
 	fmt.Println(condition.TernaryOperator(true, trueValue, falseValue)) // "1"
 }
 ```
-
-
-
-
-

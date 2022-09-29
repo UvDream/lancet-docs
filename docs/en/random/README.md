@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Random
+
 Package random implements some basic functions to generate random int and string.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package random implements some basic functions to generate random int and string
 
 - [https://github.com/duke-git/lancet/blob/main/random/random.go](https://github.com/duke-git/lancet/blob/main/random/random.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/random"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [RandBytes](#RandBytes)
 - [RandInt](#RandInt)
 - [RandString](#RandString)
@@ -33,8 +36,8 @@ import (
 
 ## Documentation
 
+### RandBytes
 
-### <span id="RandBytes">RandBytes</span>
 <p>Generate random byte slice.</p>
 
 <b>Signature:</b>
@@ -42,6 +45,7 @@ import (
 ```go
 func RandBytes(length int) []byte
 ```
+
 <b>Example:</b>
 
 ```go
@@ -58,8 +62,8 @@ func main() {
 }
 ```
 
+### RandInt
 
-### <span id="RandInt">RandInt</span>
 <p>Generate random int between min and max, may contain min, not max.</p>
 
 <b>Signature:</b>
@@ -67,6 +71,7 @@ func main() {
 ```go
 func RandInt(min, max int) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -83,9 +88,8 @@ func main() {
 }
 ```
 
+### RandInt
 
-
-### <span id="RandString">RandInt</span>
 <p>Generate random given length string.</p>
 
 <b>Signature:</b>
@@ -93,6 +97,7 @@ func main() {
 ```go
 func RandString(length int) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -109,10 +114,8 @@ func main() {
 }
 ```
 
+### UUIdV4
 
-
-
-### <span id="UUIdV4">UUIdV4</span>
 <p>Generate a random UUID of version 4 according to RFC 4122.</p>
 
 <b>Signature:</b>
@@ -120,6 +123,7 @@ func main() {
 ```go
 func UUIdV4() (string, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -138,4 +142,3 @@ func main() {
 	fmt.Println(uuid)
 }
 ```
-

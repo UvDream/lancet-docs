@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Strutil
+
 Package strutil contains some functions to manipulate string.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package strutil contains some functions to manipulate string.
 
 - [https://github.com/duke-git/lancet/blob/main/strutil/string.go](https://github.com/duke-git/lancet/blob/main/strutil/string.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/strutil"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [After](#After)
 - [AfterLast](#AfterLast)
 - [Before](#Before)
@@ -43,13 +46,12 @@ import (
 
 - [Unwrap](#Unwrap)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
+### After
 
-### <span id="After">After</span>
 <p>Creates substring in source string after position when char first appear.</p>
 
 <b>Signature:</b>
@@ -57,6 +59,7 @@ import (
 ```go
 func After(s, char string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -77,9 +80,8 @@ func main() {
 }
 ```
 
+### AfterLast
 
-
-### <span id="AfterLast">AfterLast</span>
 <p>Creates substring in source string after position when char last appear.</p>
 
 <b>Signature:</b>
@@ -87,6 +89,7 @@ func main() {
 ```go
 func AfterLast(s, char string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -107,10 +110,8 @@ func main() {
 }
 ```
 
+### Before
 
-
-
-### <span id="Before">Before</span>
 <p>Creates substring in source string before position when char first appear.</p>
 
 <b>Signature:</b>
@@ -118,6 +119,7 @@ func main() {
 ```go
 func Before(s, char string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -138,10 +140,8 @@ func main() {
 }
 ```
 
+### BeforeLast
 
-
-
-### <span id="BeforeLast">BeforeLast</span>
 <p>Creates substring in source string before position when char first appear.</p>
 
 <b>Signature:</b>
@@ -149,6 +149,7 @@ func main() {
 ```go
 func BeforeLast(s, char string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -169,10 +170,8 @@ func main() {
 }
 ```
 
+### CamelCase
 
-
-
-### <span id="CamelCase">CamelCase</span>
 <p>Covert string to camelCase string.</p>
 
 <b>Signature:</b>
@@ -180,6 +179,7 @@ func main() {
 ```go
 func CamelCase(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -203,10 +203,8 @@ func main() {
 }
 ```
 
+### Capitalize
 
-
-
-### <span id="Capitalize">Capitalize</span>
 <p>Convert the first character of a string to upper case.</p>
 
 <b>Signature:</b>
@@ -214,6 +212,7 @@ func main() {
 ```go
 func Capitalize(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -234,9 +233,8 @@ func main() {
 }
 ```
 
+### IsString
 
-
-### <span id="IsString">IsString</span>
 <p>Check if the value's data type is string.</p>
 
 <b>Signature:</b>
@@ -244,6 +242,7 @@ func main() {
 ```go
 func IsString(v any) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -262,9 +261,8 @@ func main() {
 }
 ```
 
+### KebabCase
 
-
-### <span id="KebabCase">KebabCase</span>
 <p>Covert string to kebab-case.</p>
 
 <b>Signature:</b>
@@ -272,6 +270,7 @@ func main() {
 ```go
 func KebabCase(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -295,10 +294,8 @@ func main() {
 }
 ```
 
+### LowerFirst
 
-
-
-### <span id="LowerFirst">LowerFirst</span>
 <p>Convert the first character of string to lower case.</p>
 
 <b>Signature:</b>
@@ -306,6 +303,7 @@ func main() {
 ```go
 func LowerFirst(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -329,10 +327,8 @@ func main() {
 }
 ```
 
+### UpperFirst
 
-
-
-### <span id="UpperFirst">UpperFirst</span>
 <p>Convert the first character of string to upper case.</p>
 
 <b>Signature:</b>
@@ -340,6 +336,7 @@ func main() {
 ```go
 func UpperFirst(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -363,10 +360,8 @@ func main() {
 }
 ```
 
+### PadEnd
 
-
-
-### <span id="PadEnd">PadEnd</span>
 <p>Pads string on the right side if it's shorter than size.</p>
 
 <b>Signature:</b>
@@ -374,6 +369,7 @@ func main() {
 ```go
 func PadEnd(source string, size int, padStr string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -397,10 +393,8 @@ func main() {
 }
 ```
 
+### PadStart
 
-
-
-### <span id="PadStart">PadStart</span>
 <p>Pads string on the left side if it's shorter than size.</p>
 
 <b>Signature:</b>
@@ -408,6 +402,7 @@ func main() {
 ```go
 func PadStart(source string, size int, padStr string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -431,10 +426,8 @@ func main() {
 }
 ```
 
+### Reverse
 
-
-
-### <span id="Reverse">Reverse</span>
 <p>Return string whose char order is reversed to the given string.</p>
 
 <b>Signature:</b>
@@ -442,6 +435,7 @@ func main() {
 ```go
 func Reverse(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -459,9 +453,8 @@ func main() {
 }
 ```
 
+### SnakeCase
 
-
-### <span id="SnakeCase">SnakeCase</span>
 <p>Covert string to snake_case.</p>
 
 <b>Signature:</b>
@@ -469,6 +462,7 @@ func main() {
 ```go
 func SnakeCase(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -495,10 +489,8 @@ func main() {
 }
 ```
 
+### SplitEx
 
-
-
-### <span id="SplitEx">SplitEx</span>
 <p>Split a given string whether the result contains empty string.</p>
 
 <b>Signature:</b>
@@ -506,6 +498,7 @@ func main() {
 ```go
 func SplitEx(s, sep string, removeEmptyString bool) []string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -532,10 +525,8 @@ func main() {
 }
 ```
 
+### Wrap
 
-
-
-### <span id="Wrap">Wrap</span>
 <p>Wrap a string with another string.</p>
 
 <b>Signature:</b>
@@ -543,6 +534,7 @@ func main() {
 ```go
 func Wrap(str string, wrapWith string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -569,10 +561,8 @@ func main() {
 }
 ```
 
+### Wrap
 
-
-
-### <span id="Wrap">Wrap</span>
 <p>Unwrap a given string from anther string. will change str value.</p>
 
 <b>Signature:</b>
@@ -580,6 +570,7 @@ func main() {
 ```go
 func Unwrap(str string, wrapToken string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -605,11 +596,3 @@ func main() {
 	fmt.Println(s5) //***
 }
 ```
-
-
-
-
-
-
-
-

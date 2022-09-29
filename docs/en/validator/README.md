@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Validator
+
 Package validator contains some functions for data validation.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package validator contains some functions for data validation.
 
 - [https://github.com/duke-git/lancet/blob/main/validator/validator.go](https://github.com/duke-git/lancet/blob/main/validator/validator.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/validator"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [ContainChinese](#ContainChinese)
 - [ContainLetter](#ContainLetter)
 - [ContainLower](#ContainLower)
@@ -53,13 +56,12 @@ import (
 - [IsWeakPassword](#IsWeakPassword)
 - [IsZeroValue](#IsZeroValue)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
+### ContainChinese
 
-### <span id="ContainChinese">ContainChinese</span>
 <p>Check if the string contain mandarin chinese.</p>
 
 <b>Signature:</b>
@@ -67,6 +69,7 @@ import (
 ```go
 func ContainChinese(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -87,9 +90,8 @@ func main() {
 }
 ```
 
+### ContainLetter
 
-
-### <span id="ContainLetter">ContainLetter</span>
 <p>Check if the string contain at least one letter.</p>
 
 <b>Signature:</b>
@@ -97,6 +99,7 @@ func main() {
 ```go
 func ContainLetter(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -117,10 +120,8 @@ func main() {
 }
 ```
 
+### ContainLower
 
-
-
-### <span id="ContainLower">ContainLower</span>
 <p>Check if the string contain at least one lower case letter a-z.</p>
 
 <b>Signature:</b>
@@ -128,6 +129,7 @@ func main() {
 ```go
 func ContainLower(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -148,10 +150,8 @@ func main() {
 }
 ```
 
+### ContainUpper
 
-
-
-### <span id="ContainUpper">ContainUpper</span>
 <p>Check if the string contain at least one upper case letter A-Z.</p>
 
 <b>Signature:</b>
@@ -159,6 +159,7 @@ func main() {
 ```go
 func ContainUpper(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -179,10 +180,8 @@ func main() {
 }
 ```
 
+### IsAlpha
 
-
-
-### <span id="IsAlpha">IsAlpha</span>
 <p>Check if the string contains only letters (a-zA-Z).</p>
 
 <b>Signature:</b>
@@ -190,6 +189,7 @@ func main() {
 ```go
 func IsAlpha(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -210,7 +210,8 @@ func main() {
 }
 ```
 
-### <span id="IsAllUpper">IsAllUpper</span>
+### IsAllUpper
+
 <p>Check if string is all upper case letters A-Z.</p>
 
 <b>Signature:</b>
@@ -218,6 +219,7 @@ func main() {
 ```go
 func IsAllUpper(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -235,10 +237,8 @@ func main() {
 }
 ```
 
+### IsAllLower
 
-
-
-### <span id="IsAllLower">IsAllLower</span>
 <p>Check if string is all lower case letters a-z.</p>
 
 <b>Signature:</b>
@@ -246,6 +246,7 @@ func main() {
 ```go
 func IsAllLower(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -263,10 +264,8 @@ func main() {
 }
 ```
 
+### IsBase64
 
-
-
-### <span id="IsBase64">IsBase64</span>
 <p>Check if the string is base64 string.</p>
 
 <b>Signature:</b>
@@ -274,6 +273,7 @@ func main() {
 ```go
 func IsBase64(base64 string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -291,10 +291,8 @@ func main() {
 }
 ```
 
+### IsChineseMobile
 
-
-
-### <span id="IsChineseMobile">IsChineseMobile</span>
 <p>Check if the string is valid chinese mobile number.</p>
 
 <b>Signature:</b>
@@ -302,6 +300,7 @@ func main() {
 ```go
 func IsChineseMobile(mobileNum string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -319,9 +318,8 @@ func main() {
 }
 ```
 
+### IsChineseIdNum
 
-
-### <span id="IsChineseIdNum">IsChineseIdNum</span>
 <p>Check if the string is chinese id number.</p>
 
 <b>Signature:</b>
@@ -329,6 +327,7 @@ func main() {
 ```go
 func IsChineseIdNum(id string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -346,10 +345,8 @@ func main() {
 }
 ```
 
+### IsChinesePhone
 
-
-
-### <span id="IsChinesePhone">IsChinesePhone</span>
 <p>Check if the string is chinese phone number.</p>
 
 <b>Signature:</b>
@@ -357,6 +354,7 @@ func main() {
 ```go
 func IsChinesePhone(phone string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -374,10 +372,8 @@ func main() {
 }
 ```
 
+### IsCreditCard
 
-
-
-### <span id="IsCreditCard">IsCreditCard</span>
 <p>Check if the string is credit card.</p>
 
 <b>Signature:</b>
@@ -385,6 +381,7 @@ func main() {
 ```go
 func IsCreditCard(creditCart string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -402,10 +399,8 @@ func main() {
 }
 ```
 
+### IsDns
 
-
-
-### <span id="IsDns">IsDns</span>
 <p>Check if the string is valid dns.</p>
 
 <b>Signature:</b>
@@ -413,6 +408,7 @@ func main() {
 ```go
 func IsDns(dns string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -433,10 +429,8 @@ func main() {
 }
 ```
 
+### IsEmail
 
-
-
-### <span id="IsEmail">IsEmail</span>
 <p>Check if the string is email address.</p>
 
 <b>Signature:</b>
@@ -444,6 +438,7 @@ func main() {
 ```go
 func IsEmail(email string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -461,11 +456,8 @@ func main() {
 }
 ```
 
+### IsEmptyString
 
-
-
-
-### <span id="IsEmptyString">IsEmptyString</span>
 <p>Check if the string is empty or not.</p>
 
 <b>Signature:</b>
@@ -473,6 +465,7 @@ func main() {
 ```go
 func IsEmptyString(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -490,10 +483,8 @@ func main() {
 }
 ```
 
+### IsFloatStr
 
-
-
-### <span id="IsFloatStr">IsFloatStr</span>
 <p>Check if the string can convert to a float.</p>
 
 <b>Signature:</b>
@@ -501,6 +492,7 @@ func main() {
 ```go
 func IsFloatStr(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -519,10 +511,8 @@ func main() {
 }
 ```
 
+### IsNumberStr
 
-
-
-### <span id="IsNumberStr">IsNumberStr</span>
 <p>Check if the string can convert to a number.</p>
 
 <b>Signature:</b>
@@ -530,6 +520,7 @@ func main() {
 ```go
 func IsNumberStr(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -548,10 +539,8 @@ func main() {
 }
 ```
 
+### IsJSON
 
-
-
-### <span id="IsJSON">IsJSON</span>
 <p>Check if the string is valid JSON.</p>
 
 <b>Signature:</b>
@@ -559,6 +548,7 @@ func main() {
 ```go
 func IsJSON(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -577,10 +567,8 @@ func main() {
 }
 ```
 
+### IsRegexMatch
 
-
-
-### <span id="IsRegexMatch">IsRegexMatch</span>
 <p>Check if the string match the regexp.</p>
 
 <b>Signature:</b>
@@ -588,6 +576,7 @@ func main() {
 ```go
 func IsRegexMatch(s, regex string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -603,10 +592,8 @@ func main() {
 }
 ```
 
+### IsIntStr
 
-
-
-### <span id="IsIntStr">IsIntStr</span>
 <p>Check if the string can convert to a integer.</p>
 
 <b>Signature:</b>
@@ -614,6 +601,7 @@ func main() {
 ```go
 func IsIntStr(s string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -630,10 +618,8 @@ func main() {
 }
 ```
 
+### IsIp
 
-
-
-### <span id="IsIp">IsIp</span>
 <p>Check if the string is a ip address.</p>
 
 <b>Signature:</b>
@@ -641,6 +627,7 @@ func main() {
 ```go
 func IsIp(ipstr string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -657,10 +644,8 @@ func main() {
 }
 ```
 
+### IsIpV4
 
-
-
-### <span id="IsIpV4">IsIpV4</span>
 <p>Check if the string is a ipv4 address.</p>
 
 <b>Signature:</b>
@@ -668,6 +653,7 @@ func main() {
 ```go
 func IsIpV4(ipstr string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -684,10 +670,8 @@ func main() {
 }
 ```
 
+### IsIpV6
 
-
-
-### <span id="IsIpV6">IsIpV6</span>
 <p>Check if the string is a ipv6 address.</p>
 
 <b>Signature:</b>
@@ -695,6 +679,7 @@ func main() {
 ```go
 func IsIpV6(ipstr string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -711,10 +696,8 @@ func main() {
 }
 ```
 
+### IsStrongPassword
 
-
-
-### <span id="IsStrongPassword">IsStrongPassword</span>
 <p>Check if the string is strong password (alpha(lower+upper) + number + special chars(!@#$%^&*()?><)).</p>
 
 <b>Signature:</b>
@@ -722,6 +705,7 @@ func main() {
 ```go
 func IsStrongPassword(password string, length int) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -739,17 +723,16 @@ func main() {
 }
 ```
 
+### IsUrl
 
-
-
-### <span id="IsUrl">IsUrl</span>
 <p>Check if the string is url.</p>
 
 <b>Signature:</b>
 
 ```go
-func IsUrl(str string) bool 
+func IsUrl(str string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -766,10 +749,8 @@ func main() {
 }
 ```
 
+### IsWeakPassword
 
-
-
-### <span id="IsWeakPassword">IsWeakPassword</span>
 <p>Checks if the string is weak password（only letter or only number or letter + number）
 .</p>
 
@@ -778,6 +759,7 @@ func main() {
 ```go
 func IsWeakPassword(password string, length int) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -794,10 +776,8 @@ func main() {
 }
 ```
 
+### IsZeroValue
 
-
-
-### <span id="IsZeroValue">IsZeroValue</span>
 <p>Checks if passed value is a zero value.</p>
 
 <b>Signature:</b>
@@ -805,6 +785,7 @@ func main() {
 ```go
 func IsZeroValue(value any) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -824,10 +805,3 @@ func main() {
 	fmt.Println(validator.IsZeroValue("nil")) //false
 }
 ```
-
-
-
-
-
-
-

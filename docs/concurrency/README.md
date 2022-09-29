@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Concurrency
-并发包包含一些支持并发编程的功能。例如：goroutine, channel, async等。
+
+并发包包含一些支持并发编程的功能。例如：goroutine, channel, async 等。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -14,6 +16,7 @@ sidebar: auto
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/concurrency"
@@ -23,7 +26,9 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 ### Channel
+
 - [NewChannel](#NewChannel)
 - [Bridge](#Bridge)
 - [FanIn](#FanIn)
@@ -39,9 +44,10 @@ import (
 
 ## 文档
 
-
 ### Channel
-### <span id="NewChannel">NewChannel</span>
+
+### NewChannel
+
 <p>返回一个 Channel 指针实例</p>
 
 <b>函数签名:</b>
@@ -50,6 +56,7 @@ import (
 type Channel struct {}
 func NewChannel() *Channel
 ```
+
 <b>例子:</b>
 
 ```go
@@ -65,9 +72,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Bridge">Bridge</span>
+### Bridge
 
 <p>将多个通道链接到一个通道，直到取消上下文。</p>
 
@@ -76,6 +81,7 @@ func main() {
 ```go
 func (c *Channel) Bridge(ctx context.Context, chanStream <-chan <-chan any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -113,10 +119,7 @@ func main() {
 }
 ```
 
-
-
-
-### <span id="FanIn">FanIn</span>
+### FanIn
 
 <p>将多个通道合并为一个通道，直到取消上下文</p>
 
@@ -125,6 +128,7 @@ func main() {
 ```go
 func (c *Channel) FanIn(ctx context.Context, channels ...<-chan any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -155,8 +159,7 @@ func main() {
 }
 ```
 
-
-### <span id="Repeat">Repeat</span>
+### Repeat
 
 <p>返回一个chan，将参数`values`重复放入chan，直到取消上下文。</p>
 
@@ -165,6 +168,7 @@ func main() {
 ```go
 func (c *Channel) Repeat(ctx context.Context, values ...any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -189,10 +193,7 @@ func main() {
 }
 ```
 
-
-
-
-### <span id="RepeatFn">RepeatFn</span>
+### RepeatFn
 
 <p>返回一个chan，重复执行函数fn，并将结果放入返回的chan，直到取消上下文。</p>
 
@@ -201,6 +202,7 @@ func main() {
 ```go
 func (c *Channel) RepeatFn(ctx context.Context, fn func() any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -229,9 +231,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Or">Or</span>
+### Or
 
 <p>将一个或多个通道读取到一个通道中，当任何读取通道关闭时将结束读取。</p>
 
@@ -240,6 +240,7 @@ func main() {
 ```go
 func (c *Channel) Or(channels ...<-chan any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -276,10 +277,7 @@ func main() {
 }
 ```
 
-
-
-
-### <span id="OrDone">OrDone</span>
+### OrDone
 
 <p>将一个通道读入另一个通道，直到取消上下文。</p>
 
@@ -288,6 +286,7 @@ func main() {
 ```go
 func (c *Channel) OrDone(ctx context.Context, channel <-chan any) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -312,10 +311,7 @@ func main() {
 }
 ```
 
-
-
-
-### <span id="Take">Take</span>
+### Take
 
 <p>返回一个chan，其值从另一个chan获取，直到取消上下文。</p>
 
@@ -324,6 +320,7 @@ func main() {
 ```go
 func (c *Channel) Take(ctx context.Context, valueStream <-chan any, number int) <-chan any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -356,9 +353,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Tee">Tee</span>
+### Tee
 
 <p>将一个通道分成两个通道，直到取消上下文。</p>
 
@@ -367,6 +362,7 @@ func main() {
 ```go
 func (c *Channel) Tee(ctx context.Context, in <-chan any) (<-chan any, <-chan any)
 ```
+
 <b>例子:</b>
 
 ```go

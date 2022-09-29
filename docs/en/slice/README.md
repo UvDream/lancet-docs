@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Slice
+
 Package slice implements some functions to manipulate slice.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package slice implements some functions to manipulate slice.
 
 - [https://github.com/duke-git/lancet/blob/main/slice/slice.go](https://github.com/duke-git/lancet/blob/main/slice/slice.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/slice"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [AppendIfAbsent](#AppendIfAbsent)
 - [Contain](#Contain)
 - [ContainSubSlice](#ContainSubSlice)
@@ -74,7 +77,8 @@ import (
 
 ## Documentation
 
-### <span id="AppendIfAbsent">AppendIfAbsent</span>
+### AppendIfAbsent
+
 <p>If slice doesn't contain the value, append it to the slice.</p>
 
 <b>Signature:</b>
@@ -82,6 +86,7 @@ import (
 ```go
 func AppendIfAbsent[T comparable](slice []T, value T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -100,8 +105,8 @@ func main() {
 }
 ```
 
+### Contain
 
-### <span id="Contain">Contain</span>
 <p>Check if the value is in the slice or not.</p>
 
 <b>Signature:</b>
@@ -109,6 +114,7 @@ func main() {
 ```go
 func Contain[T comparable](slice []T, value T) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -123,8 +129,8 @@ func main() {
 }
 ```
 
+### ContainSubSlice
 
-### <span id="ContainSubSlice">ContainSubSlice</span>
 <p>Check if the slice contain subslice or not.</p>
 
 <b>Signature:</b>
@@ -132,6 +138,7 @@ func main() {
 ```go
 func ContainSubSlice[T comparable](slice, subslice []T) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -146,10 +153,8 @@ func main() {
 }
 ```
 
+### Chunk
 
-
-
-### <span id="Chunk">Chunk</span>
 <p>Creates an slice of elements split into groups the length of `size`.</p>
 
 <b>Signature:</b>
@@ -157,6 +162,7 @@ func main() {
 ```go
 func Chunk[T any](slice []T, size int) [][]T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -172,9 +178,8 @@ func main() {
 }
 ```
 
+### Compact
 
-
-### <span id="Compact">Compact</span>
 <p>Creates an slice with all falsey values removed. The values false, nil, 0, and "" are falsey.</p>
 
 <b>Signature:</b>
@@ -182,6 +187,7 @@ func main() {
 ```go
 func Compact[T any](slice []T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -196,8 +202,8 @@ func main() {
 }
 ```
 
+### Concat
 
-### <span id="Concat">Concat</span>
 <p>Creates a new slice concatenating slice with any additional slices and/or values.</p>
 
 <b>Signature:</b>
@@ -205,6 +211,7 @@ func main() {
 ```go
 func Concat[T any](slice []T, values ...[]T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -222,9 +229,8 @@ func main() {
 }
 ```
 
+### Count
 
-
-### <span id="Count">Count</span>
 <p>Count iterates over elements of slice, returns a count of all matched elements.</p>
 
 <b>Signature:</b>
@@ -232,6 +238,7 @@ func main() {
 ```go
 func Count[T any](slice []T, predicate func(index int, t T) bool) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -251,10 +258,8 @@ func main() {
 }
 ```
 
+### Difference
 
-
-
-### <span id="Difference">Difference</span>
 <p>Creates an slice of whose element not included in the other given slice.</p>
 
 <b>Signature:</b>
@@ -262,6 +267,7 @@ func main() {
 ```go
 func Difference[T comparable](slice, comparedSlice []T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -279,10 +285,8 @@ func main() {
 }
 ```
 
+### DifferenceBy
 
-
-
-### <span id="DifferenceBy">DifferenceBy</span>
 <p>DifferenceBy accepts iteratee func which is invoked for each element of slice and values to generate the criterion by which they're compared.</p>
 
 <b>Signature:</b>
@@ -290,6 +294,7 @@ func main() {
 ```go
 func DifferenceBy[T comparable](slice []T, comparedSlice []T, iteratee func(index int, item T) T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -310,8 +315,8 @@ func main() {
 }
 ```
 
+### DifferenceWith
 
-### <span id="DifferenceWith">DifferenceWith</span>
 <p>DifferenceWith accepts comparator which is invoked to compare elements of slice to values. The order and references of result values are determined by the first slice.</p>
 
 <b>Signature:</b>
@@ -319,6 +324,7 @@ func main() {
 ```go
 func DifferenceWith[T any](slice []T, comparedSlice []T, comparator func(value, otherValue T) bool) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -339,7 +345,8 @@ func main() {
 }
 ```
 
-### <span id="DeleteAt">DeleteAt</span>
+### DeleteAt
+
 <p>Delete the element of slice from start index to end index - 1.</p>
 
 <b>Signature:</b>
@@ -347,6 +354,7 @@ func main() {
 ```go
 func DeleteAt[T any](slice []T, start int, end ...int)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -365,10 +373,8 @@ func main() {
 }
 ```
 
+### Drop
 
-
-
-### <span id="Drop">Drop</span>
 <p>Creates a slice with `n` elements dropped from the beginning when n > 0, or `n` elements dropped from the ending when n < 0.</p>
 
 <b>Signature:</b>
@@ -376,6 +382,7 @@ func main() {
 ```go
 func Drop[T any](slice []T, n int) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -396,9 +403,8 @@ func main() {
 }
 ```
 
+### Equal
 
-
-### <span id="Equal">Equal</span>
 <p>Check if two slices are equal: the same length and all elements' order and value are equal.</p>
 
 <b>Signature:</b>
@@ -406,6 +412,7 @@ func main() {
 ```go
 func Equal[T comparable](slice1, slice2 []T) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -427,9 +434,8 @@ func main() {
 }
 ```
 
+### EqualWith
 
-
-### <span id="EqualWith">EqualWith</span>
 <p>Check if two slices are equal with comparator func.</p>
 
 <b>Signature:</b>
@@ -437,6 +443,7 @@ func main() {
 ```go
 func EqualWith[T, U any](slice1 []T, slice2 []U, comparator func(T, U) bool) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -459,9 +466,8 @@ func main() {
 }
 ```
 
+### Every
 
-
-### <span id="Every">Every</span>
 <p>Return true if all of the values in the slice pass the predicate function.</p>
 
 <b>Signature:</b>
@@ -469,6 +475,7 @@ func main() {
 ```go
 func Every[T any](slice []T, predicate func(index int, item T) bool) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -488,10 +495,8 @@ func main() {
 }
 ```
 
+### Filter
 
-
-
-### <span id="Filter">Filter</span>
 <p>Return all elements which match the function.</p>
 
 <b>Signature:</b>
@@ -499,6 +504,7 @@ func main() {
 ```go
 func Filter[T any](slice []T, predicate func(index int, item T) bool) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -518,9 +524,8 @@ func main() {
 }
 ```
 
+### Find
 
-
-### <span id="Find">Find</span>
 <p>Iterates over elements of slice, returning the first one that passes a truth test on function.</p>
 
 <b>Signature:</b>
@@ -528,6 +533,7 @@ func main() {
 ```go
 func Find[T any](slice []T, predicate func(index int, item T) bool) (*T, bool)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -548,10 +554,8 @@ func main() {
 }
 ```
 
+### FindLast
 
-
-
-### <span id="FindLast">FindLast</span>
 <p>iterates over elements of slice from end to begin, returning the last one that passes a truth test on function.</p>
 
 <b>Signature:</b>
@@ -559,6 +563,7 @@ func main() {
 ```go
 func FindLast[T any](slice []T, predicate func(index int, item T) bool) (*T, bool)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -579,9 +584,8 @@ func main() {
 }
 ```
 
+### Flatten
 
-
-### <span id="Flatten">Flatten</span>
 <p>Flatten slice with one level.</p>
 
 <b>Signature:</b>
@@ -589,6 +593,7 @@ func main() {
 ```go
 func Flatten(slice any) any
 ```
+
 <b>Example:</b>
 
 ```go
@@ -604,9 +609,8 @@ func main() {
 }
 ```
 
+### FlattenDeep
 
-
-### <span id="FlattenDeep">FlattenDeep</span>
 <p>flattens slice recursive.</p>
 
 <b>Signature:</b>
@@ -614,6 +618,7 @@ func main() {
 ```go
 func FlattenDeep(slice any) any
 ```
+
 <b>Example:</b>
 
 ```go
@@ -629,11 +634,8 @@ func main() {
 }
 ```
 
+### ForEach
 
-
-
-
-### <span id="ForEach">ForEach</span>
 <p>Iterates over elements of slice and invokes function for each element.</p>
 
 <b>Signature:</b>
@@ -641,6 +643,7 @@ func main() {
 ```go
 func ForEach[T any](slice []T, iteratee func(index int, item T))
 ```
+
 <b>Example:</b>
 
 ```go
@@ -659,10 +662,8 @@ func main() {
 }
 ```
 
+### GroupBy
 
-
-
-### <span id="GroupBy">GroupBy</span>
 <p>Iterates over elements of the slice, each element will be group by criteria, returns two slices.</p>
 
 <b>Signature:</b>
@@ -670,6 +671,7 @@ func main() {
 ```go
 func GroupBy[T any](slice []T, groupFn func(index int, item T) bool) ([]T, []T)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -690,17 +692,16 @@ func main() {
 }
 ```
 
+### GroupWith
 
-
-
-### <span id="GroupWith">GroupWith</span>
 <p>Return a map composed of keys generated from the results of running each element of slice thru iteratee.</p>
 
 <b>Signature:</b>
 
 ```go
-func GroupWith[T any, U comparable](slice []T, iteratee func(T) U) map[U][]T 
+func GroupWith[T any, U comparable](slice []T, iteratee func(T) U) map[U][]T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -719,9 +720,8 @@ func main() {
 }
 ```
 
+### IntSlice
 
-
-### <span id="IntSlice">IntSlice</span>
 <p>Convert interface slice to int slice.</p>
 
 <b>Signature:</b>
@@ -729,6 +729,7 @@ func main() {
 ```go
 func IntSlice(slice any) []int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -744,10 +745,8 @@ func main() {
 }
 ```
 
+### InterfaceSlice
 
-
-
-### <span id="InterfaceSlice">InterfaceSlice</span>
 <p>Convert value to interface slice.</p>
 
 <b>Signature:</b>
@@ -755,6 +754,7 @@ func main() {
 ```go
 func InterfaceSlice(slice any) []any
 ```
+
 <b>Example:</b>
 
 ```go
@@ -770,10 +770,8 @@ func main() {
 }
 ```
 
+### Intersection
 
-
-
-### <span id="Intersection">Intersection</span>
 <p>Creates a slice of unique values that included by all slices.</p>
 
 <b>Signature:</b>
@@ -781,6 +779,7 @@ func main() {
 ```go
 func Intersection[T comparable](slices ...[]T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -798,10 +797,8 @@ func main() {
 }
 ```
 
+### InsertAt
 
-
-
-### <span id="InsertAt">InsertAt</span>
 <p>insert the element into slice at index.</p>
 
 <b>Signature:</b>
@@ -809,6 +806,7 @@ func main() {
 ```go
 func InsertAt[T any](slice []T, index int, value any) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -819,7 +817,7 @@ import (
 
 func main() {
 	s := []string{"a", "b", "c"}
-	
+
 	res1, _ := slice.InsertAt(s, 0, "1")
 	fmt.Println(res1) //[]string{"1", "a", "b", "c"}
 
@@ -828,10 +826,8 @@ func main() {
 }
 ```
 
+### IndexOf
 
-
-
-### <span id="IndexOf">IndexOf</span>
 <p>Returns the index at which the first occurrence of a value is found in a slice or return -1 if the value cannot be found.</p>
 
 <b>Signature:</b>
@@ -839,6 +835,7 @@ func main() {
 ```go
 func IndexOf[T comparable](slice []T, value T) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -857,9 +854,8 @@ func main() {
 }
 ```
 
+### LastIndexOf
 
-
-### <span id="LastIndexOf">LastIndexOf</span>
 <p>Returns the index at which the last occurrence of a value is found in a slice or return -1 if the value cannot be found.</p>
 
 <b>Signature:</b>
@@ -867,6 +863,7 @@ func main() {
 ```go
 func LastIndexOf[T comparable](slice []T, value T) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -885,10 +882,8 @@ func main() {
 }
 ```
 
+### Map
 
-
-
-### <span id="Map">Map</span>
 <p>Creates an slice of values by running each element in slice thru function.</p>
 
 <b>Signature:</b>
@@ -896,6 +891,7 @@ func main() {
 ```go
 func Map[T any, U any](slice []T, iteratee func(index int, item T) U) []U
 ```
+
 <b>Example:</b>
 
 ```go
@@ -914,10 +910,8 @@ func main() {
 }
 ```
 
+### Reverse
 
-
-
-### <span id="Reverse">Reverse</span>
 <p>Reverse the elements order in slice.</p>
 
 <b>Signature:</b>
@@ -925,6 +919,7 @@ func main() {
 ```go
 func Reverse[T any](slice []T)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -940,9 +935,8 @@ func main() {
 }
 ```
 
+### Reduce
 
-
-### <span id="Reduce">Reduce</span>
 <p>Reduce slice.</p>
 
 <b>Signature:</b>
@@ -950,6 +944,7 @@ func main() {
 ```go
 func Reduce[T any](slice []T, iteratee func(index int, item1, item2 T) T, initial T) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -968,10 +963,8 @@ func main() {
 }
 ```
 
+### Shuffle
 
-
-
-### <span id="Shuffle">Shuffle</span>
 <p>Creates an slice of shuffled values.</p>
 
 <b>Signature:</b>
@@ -979,6 +972,7 @@ func main() {
 ```go
 func Shuffle[T any](slice []T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -994,9 +988,8 @@ func main() {
 }
 ```
 
+### SortByField
 
-
-### <span id="SortByField">SortByField</span>
 <p>Sort struct slice by field. Slice element should be struct, field type should be int, uint, string, or bool. Default sort type is ascending (asc), if descending order, set sortType to desc</p>
 
 <b>Signature:</b>
@@ -1004,6 +997,7 @@ func main() {
 ```go
 func SortByField(slice any, field string, sortType ...string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1027,7 +1021,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(students) 
+	fmt.Println(students)
 	// []students{
 	// 	{"b", 15},
 	// 	{"a", 10},
@@ -1037,9 +1031,8 @@ func main() {
 }
 ```
 
+### Some
 
-
-### <span id="Some">Some</span>
 <p>Return true if any of the values in the list pass the predicate function.</p>
 
 <b>Signature:</b>
@@ -1047,6 +1040,7 @@ func main() {
 ```go
 func Some[T any](slice []T, predicate func(index int, item T) bool) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1066,9 +1060,8 @@ func main() {
 }
 ```
 
+### StringSlice
 
-
-### <span id="StringSlice">StringSlice</span>
 <p>Convert interface slice to string slice.</p>
 
 <b>Signature:</b>
@@ -1076,6 +1069,7 @@ func main() {
 ```go
 func StringSlice(slice any) []string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1091,10 +1085,8 @@ func main() {
 }
 ```
 
+### SymmetricDifference
 
-
-
-### <span id="SymmetricDifference">SymmetricDifference</span>
 <p>Create a slice whose element is in given slices, but not in both slices.</p>
 
 <b>Signature:</b>
@@ -1102,6 +1094,7 @@ func main() {
 ```go
 func SymmetricDifference[T comparable](slices ...[]T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1121,9 +1114,8 @@ func main() {
 }
 ```
 
+### ToSlice
 
-
-### <span id="ToSlice">ToSlice</span>
 <p>Returns a slices of a variable parameter transformation</p>
 
 <b>Signature:</b>
@@ -1131,6 +1123,7 @@ func main() {
 ```go
 func ToSlice[T any](value ...T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1145,9 +1138,8 @@ func main() {
 }
 ```
 
+### ToSlicePointer
 
-
-### <span id="ToSlicePointer">ToSlicePointer</span>
 <p>Returns a pointer to the slices of a variable parameter transformation</p>
 
 <b>Signature:</b>
@@ -1155,6 +1147,7 @@ func main() {
 ```go
 func ToSlicePointer[T any](value ...T) []*T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1171,8 +1164,8 @@ func main() {
 }
 ```
 
+### Unique
 
-### <span id="Unique">Unique</span>
 <p>Remove duplicate elements in slice.</p>
 
 <b>Signature:</b>
@@ -1180,6 +1173,7 @@ func main() {
 ```go
 func Unique[T comparable](slice []T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1194,9 +1188,8 @@ func main() {
 }
 ```
 
+### UniqueBy
 
-
-### <span id="UniqueBy">UniqueBy</span>
 <p>Call iteratee func with every item of slice, then remove duplicated.</p>
 
 <b>Signature:</b>
@@ -1204,6 +1197,7 @@ func main() {
 ```go
 func UniqueBy[T comparable](slice []T, iteratee func(item T) T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1220,9 +1214,8 @@ func main() {
 }
 ```
 
+### Union
 
-
-### <span id="Union">Union</span>
 <p>Creates a slice of unique values, in order, from all given slices. using == for equality comparisons.</p>
 
 <b>Signature:</b>
@@ -1230,6 +1223,7 @@ func main() {
 ```go
 func Union[T comparable](slices ...[]T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1247,9 +1241,8 @@ func main() {
 }
 ```
 
+### UpdateAt
 
-
-### <span id="UpdateAt">UpdateAt</span>
 <p>Update the slice element at index. if param index < 0 or index >= len(slice), will return error. </p>
 
 <b>Signature:</b>
@@ -1257,6 +1250,7 @@ func main() {
 ```go
 func UpdateAt[T any](slice []T, index int, value T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1267,16 +1261,14 @@ import (
 
 func main() {
 	s := []string{"a", "b", "c"}
-	
+
 	res1, _ := slice.UpdateAt(s, 0, "1")
 	fmt.Println(res1) //[]string{"1", "b", "c"}
 }
 ```
 
+### Without
 
-
-
-### <span id="Without">Without</span>
 <p>Creates a slice excluding all given values. </p>
 
 <b>Signature:</b>
@@ -1284,6 +1276,7 @@ func main() {
 ```go
 func Without[T comparable](slice []T, values ...T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -1297,13 +1290,3 @@ func main() {
 	fmt.Println(res) //[]int{3, 4, 5}
 }
 ```
-
-
-
-
-
-
-
-
-
-

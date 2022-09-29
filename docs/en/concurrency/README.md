@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Convertor
+
 Package convertor contains some functions for data type convertion.
 
 <div STYLE="page-break-after: always;"></div>
@@ -14,6 +16,7 @@ Package convertor contains some functions for data type convertion.
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/convertor"
@@ -23,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [ColorHexToRGB](#ColorHexToRGB)
 - [ColorRGBToHex](#ColorRGBToHex)
 - [ToBool](#ToBool)
@@ -45,9 +49,8 @@ import (
 
 ## Documentation
 
+### ColorHexToRGB
 
-
-### <span id="ColorHexToRGB">ColorHexToRGB</span>
 <p>Convert color hex to color rgb.</p>
 
 <b>Signature:</b>
@@ -55,6 +58,7 @@ import (
 ```go
 func ColorHexToRGB(colorHex string) (red, green, blue int)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -72,9 +76,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ColorRGBToHex">ColorRGBToHex</span>
+### ColorRGBToHex
 
 <p>Convert color rgb to color hex.</p>
 
@@ -83,6 +85,7 @@ func main() {
 ```go
 func ColorRGBToHex(red, green, blue int) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -103,9 +106,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToBool">ToBool</span>
+### ToBool
 
 <p>Convert string to a boolean value. Use strconv.ParseBool</p>
 
@@ -114,6 +115,7 @@ func main() {
 ```go
 func ToBool(s string) (bool, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -139,9 +141,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToBytes">ToBytes</span>
+### ToBytes
 
 <p>Convert interface to byte slice.</p>
 
@@ -150,6 +150,7 @@ func main() {
 ```go
 func ToBytes(data any) ([]byte, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -169,9 +170,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToChar">ToChar</span>
+### ToChar
 
 <p>Convert string to char slice.</p>
 
@@ -180,6 +179,7 @@ func main() {
 ```go
 func ToChar(s string) []string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -202,8 +202,7 @@ func main() {
 }
 ```
 
-
-### <span id="ToChannel">ToChannel</span>
+### ToChannel
 
 <p>Convert a collection of elements to a read-only channels.</p>
 
@@ -212,6 +211,7 @@ func main() {
 ```go
 func ToChannel[T any](array []T) <-chan T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -239,9 +239,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToFloat">ToFloat</span>
+### ToFloat
 
 <p>Convert interface to a float64 value. If param is a invalid floatable, will return 0 and error. </p>
 
@@ -250,6 +248,7 @@ func main() {
 ```go
 func ToFloat(value any) (float64, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -272,9 +271,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToInt">ToInt</span>
+### ToInt
 
 <p>Convert interface to a int64 value. If param is a invalid intable, will return 0 and error. </p>
 
@@ -283,6 +280,7 @@ func main() {
 ```go
 func ToInt(value any) (int64, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -305,9 +303,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToJson">ToJson</span>
+### ToJson
 
 <p>Convert interface to json string. If param can't be converted, will return "" and error. </p>
 
@@ -316,6 +312,7 @@ func main() {
 ```go
 func ToJson(value any) (string, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -333,9 +330,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToMap">ToMap</span>
+### ToMap
 
 <p>Convert a slice or an array of structs to a map based on iteratee function. </p>
 
@@ -344,6 +339,7 @@ func main() {
 ```go
 func ToMap[T any, K comparable, V any](array []T, iteratee func(T) (K, V)) map[K]V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -371,9 +367,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="ToPointer">ToPointer</span>
+### ToPointer
 
 <p>Returns a pointer to passed value. </p>
 
@@ -382,6 +376,7 @@ func main() {
 ```go
 func ToPointer[T any](value T) *T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -398,9 +393,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="StructToMap">StructToMap</span>
+### StructToMap
 
 <p>Convert struct to map, only convert exported field, struct field tag `json` should be set.</p>
 
@@ -409,6 +402,7 @@ func main() {
 ```go
 func StructToMap(value any) (map[string]any, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -434,9 +428,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="MapToSlice">MapToSlice</span>
+### MapToSlice
 
 <p>Convert a map to a slice based on iteratee function.</p>
 
@@ -445,6 +437,7 @@ func main() {
 ```go
 func MapToSlice[T any, K comparable, V any](aMap map[K]V, iteratee func(K, V) T) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -465,8 +458,7 @@ func main() {
 }
 ```
 
-
-### <span id="EncodeByte">EncodeByte</span>
+### EncodeByte
 
 <p>Encode data to byte slice.</p>
 
@@ -475,6 +467,7 @@ func main() {
 ```go
 func EncodeByte(data any) ([]byte, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -491,9 +484,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DecodeByte">DecodeByte</span>
+### DecodeByte
 
 <p>Decode byte data to target object. target should be a pointer instance.</p>
 
@@ -502,6 +493,7 @@ func main() {
 ```go
 func DecodeByte(data []byte, target any) error
 ```
+
 <b>Example:</b>
 
 ```go

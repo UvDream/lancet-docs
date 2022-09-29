@@ -4,6 +4,7 @@ sidebar: auto
 ---
 
 # Algorithm
+
 Package algorithm implements some basic algorithm. eg. sort, search.
 
 <div STYLE="page-break-after: always;"></div>
@@ -17,6 +18,7 @@ Package algorithm implements some basic algorithm. eg. sort, search.
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/algorithm"
@@ -26,6 +28,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [BubbleSort](#BubbleSort)
 - [InsertionSort](#InsertionSort)
 - [SelectionSort](#SelectionSort)
@@ -40,14 +43,12 @@ import (
 - [LinearSearch](#LinearSearch)
 - [LRUCache](#LRUCache)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
+### BubbleSort
 
-
-### <span id="BubbleSort">BubbleSort</span>
 <p>Sort slice with bubble sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -55,6 +56,7 @@ import (
 ```go
 func BubbleSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -89,10 +91,8 @@ func main() {
 }
 ```
 
+### InsertionSort
 
-
-
-### <span id="InsertionSort">InsertionSort</span>
 <p>Sort slice with insertion sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -100,6 +100,7 @@ func main() {
 ```go
 func InsertionSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -154,10 +155,8 @@ func main() {
 }
 ```
 
+### SelectionSort
 
-
-
-### <span id="SelectionSort">SelectionSort</span>
 <p>Sort slice with selection sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -165,6 +164,7 @@ func main() {
 ```go
 func SelectionSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -199,10 +199,8 @@ func main() {
 }
 ```
 
+### ShellSort
 
-
-
-### <span id="ShellSort">ShellSort</span>
 <p>Sort slice with shell sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -210,6 +208,7 @@ func main() {
 ```go
 func ShellSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -244,10 +243,8 @@ func main() {
 }
 ```
 
+### QuickSort
 
-
-
-### <span id="QuickSort">QuickSort</span>
 <p>Sort slice with quick sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -255,6 +252,7 @@ func main() {
 ```go
 func QuickSort[T any](slice []T comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -289,10 +287,8 @@ func main() {
 }
 ```
 
+### HeapSort
 
-
-
-### <span id="HeapSort">HeapSort</span>
 <p>Sort slice with heap sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -300,6 +296,7 @@ func main() {
 ```go
 func HeapSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -334,10 +331,8 @@ func main() {
 }
 ```
 
+### MergeSort
 
-
-
-### <span id="MergeSort">MergeSort</span>
 <p>Sort slice with merge sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -345,6 +340,7 @@ func main() {
 ```go
 func MergeSort[T any](slice []T, comparator lancetconstraints.Comparator)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -379,9 +375,8 @@ func main() {
 }
 ```
 
+### CountSort
 
-
-### <span id="CountSort">CountSort</span>
 <p>Sort slice with count sort algorithm. Param comparator should implements lancetconstraints.Comparator.</p>
 
 <b>Signature:</b>
@@ -389,6 +384,7 @@ func main() {
 ```go
 func CountSort[T any](slice []T, comparator lancetconstraints.Comparator) []T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -423,10 +419,8 @@ func main() {
 }
 ```
 
+### BinarySearch
 
-
-
-### <span id="BinarySearch">BinarySearch</span>
 <p>BinarySearch search for target within a sorted slice, recursive call itself. If a target is found, the index of the target is returned. Else the function return -1.</p>
 
 <b>Signature:</b>
@@ -434,6 +428,7 @@ func main() {
 ```go
 func BinarySearch[T any](sortedSlice []T, target T, lowIndex, highIndex int, comparator lancetconstraints.Comparator) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -470,9 +465,8 @@ func main() {
 }
 ```
 
+### BinaryIterativeSearch
 
-
-### <span id="BinaryIterativeSearch">BinaryIterativeSearch</span>
 <p>BinaryIterativeSearch search for target within a sorted slice, recursive call itself. If a target is found, the index of the target is returned. Else the function return -1.</p>
 
 <b>Signature:</b>
@@ -480,6 +474,7 @@ func main() {
 ```go
 func BinaryIterativeSearch[T any](sortedSlice []T, target T, lowIndex, highIndex int, comparator lancetconstraints.Comparator) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -516,10 +511,8 @@ func main() {
 }
 ```
 
+### LinearSearch
 
-
-
-### <span id="LinearSearch">LinearSearch</span>
 <p>LinearSearch Simple linear search algorithm that iterates over all elements of an slice. If a target is found, the index of the target is returned. Else the function return -1.</p>
 
 <b>Signature:</b>
@@ -527,6 +520,7 @@ func main() {
 ```go
 func LinearSearch[T any](slice []T, target T, comparator lancetconstraints.Comparator) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -563,10 +557,8 @@ func main() {
 }
 ```
 
+### LRUCache
 
-
-
-### <span id="LRUCache">LRUCache</span>
 <p>LRUCache implements mem cache with lru.</p>
 
 <b>Signature:</b>
@@ -576,6 +568,7 @@ func NewLRUCache[K comparable, V any](capacity int) *LRUCache[K, V]
 func (l *LRUCache[K, V]) Get(key K) (V, bool)
 func (l *LRUCache[K, V]) Put(key K, value V)
 ```
+
 <b>Example:</b>
 
 ```go

@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Retry
-retry重试执行函数直到函数运行成功或被context cancel。
+
+retry 重试执行函数直到函数运行成功或被 context cancel。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ retry重试执行函数直到函数运行成功或被context cancel。
 
 - [https://github.com/duke-git/lancet/blob/main/retry/retry.go](https://github.com/duke-git/lancet/blob/main/retry/retry.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/retry"
@@ -24,20 +26,19 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [Context](#Context)
 - [Retry](#Retry)
 - [RetryFunc](#RetryFunc)
 - [RetryDuration](#RetryDuration)
 - [RetryTimes](#RetryTimes)
 
-
 <div STYLE="page-break-after: always;"></div>
 
+## Document 文档
 
-## Document文档
+### Context
 
-
-### <span id="Context">Context</span>
 <p>设置重试context参数</p>
 
 <b>函数签名:</b>
@@ -45,6 +46,7 @@ import (
 ```go
 func Context(ctx context.Context)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -78,10 +80,8 @@ func main() {
 }
 ```
 
+### RetryFunc
 
-
-
-### <span id="RetryFunc">RetryFunc</span>
 <p>被重试执行的函数</p>
 
 <b>函数签名:</b>
@@ -89,6 +89,7 @@ func main() {
 ```go
 type RetryFunc func() error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -120,9 +121,8 @@ func main() {
 }
 ```
 
+### RetryTimes
 
-
-### <span id="RetryTimes">RetryTimes</span>
 <p>设置重试次数，默认5</p>
 
 <b>函数签名:</b>
@@ -130,6 +130,7 @@ func main() {
 ```go
 func RetryTimes(n uint)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -159,9 +160,8 @@ func main() {
 }
 ```
 
+### RetryDuration
 
-
-### <span id="RetryDuration">RetryDuration</span>
 <p>设置重试间隔时间，默认3秒</p>
 
 <b>函数签名:</b>
@@ -169,6 +169,7 @@ func main() {
 ```go
 func RetryDuration(d time.Duration)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -200,8 +201,8 @@ func main() {
 }
 ```
 
+### Retry
 
-### <span id="Retry">Retry</span>
 <p>重试执行函数retryFunc，直到函数运行成功，或被context停止</p>
 
 <b>函数签名:</b>
@@ -209,6 +210,7 @@ func main() {
 ```go
 func Retry(retryFunc RetryFunc, opts ...Option) error
 ```
+
 <b>例子:</b>
 
 ```go

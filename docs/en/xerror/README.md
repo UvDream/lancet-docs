@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 3 
+sidebarDepth: 3
 sidebar: auto
 ---
 
@@ -33,7 +33,7 @@ import (
 
 ## Documentation
 
-### <span id="Unwrap">Unwrap</span>
+### Unwrap
 
 <p>Unwrap if err is nil then it returns a valid value. If err is not nil, Unwrap panics with err.</p>
 

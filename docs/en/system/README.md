@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # System
+
 Package system contains some functions about os, runtime, shell command.
 
 <div STYLE="page-break-after: always;"></div>
@@ -11,10 +13,10 @@ Package system contains some functions about os, runtime, shell command.
 
 - [https://github.com/duke-git/lancet/blob/main/system/os.go](https://github.com/duke-git/lancet/blob/main/system/os.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/system"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [IsWindows](#IsWindows)
 - [IsLinux](#IsLinux)
 - [IsMac](#IsMac)
@@ -34,13 +37,12 @@ import (
 - [ExecCommand](#ExecCommand)
 - [GetOsBits](#GetOsBits)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
+### IsWindows
 
-### <span id="IsWindows">IsWindows</span>
 <p>Check if current os is windows.</p>
 
 <b>Signature:</b>
@@ -48,6 +50,7 @@ import (
 ```go
 func IsWindows() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -62,10 +65,8 @@ func main() {
 }
 ```
 
+### IsLinux
 
-
-
-### <span id="IsLinux">IsLinux</span>
 <p>Check if current os is linux.</p>
 
 <b>Signature:</b>
@@ -73,6 +74,7 @@ func main() {
 ```go
 func IsLinux() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -87,9 +89,8 @@ func main() {
 }
 ```
 
+### IsMac
 
-
-### <span id="IsMac">IsMac</span>
 <p>Check if current os is macos.</p>
 
 <b>Signature:</b>
@@ -97,6 +98,7 @@ func main() {
 ```go
 func IsMac() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -111,9 +113,8 @@ func main() {
 }
 ```
 
+### GetOsEnv
 
-
-### <span id="GetOsEnv">GetOsEnv</span>
 <p>Gets the value of the environment variable named by the key.</p>
 
 <b>Signature:</b>
@@ -121,6 +122,7 @@ func main() {
 ```go
 func GetOsEnv(key string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -135,9 +137,8 @@ func main() {
 }
 ```
 
+### SetOsEnv
 
-
-### <span id="SetOsEnv">SetOsEnv</span>
 <p>Sets the value of the environment variable named by the key.</p>
 
 <b>Signature:</b>
@@ -145,6 +146,7 @@ func main() {
 ```go
 func SetOsEnv(key, value string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -159,10 +161,8 @@ func main() {
 }
 ```
 
+### RemoveOsEnv
 
-
-
-### <span id="RemoveOsEnv">RemoveOsEnv</span>
 <p>Remove a single environment variable.</p>
 
 <b>Signature:</b>
@@ -170,6 +170,7 @@ func main() {
 ```go
 func RemoveOsEnv(key string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -186,9 +187,8 @@ func main() {
 }
 ```
 
+### CompareOsEnv
 
-
-### <span id="CompareOsEnv">CompareOsEnv</span>
 <p>Get env named by the key and compare it with comparedEnv.</p>
 
 <b>Signature:</b>
@@ -196,6 +196,7 @@ func main() {
 ```go
 func CompareOsEnv(key, comparedEnv string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -211,10 +212,8 @@ func main() {
 }
 ```
 
+### CompareOsEnv
 
-
-
-### <span id="ExecCommand">CompareOsEnv</span>
 <p>Use shell /bin/bash -c(linux) or cmd (windows) to execute command.</p>
 
 <b>Signature:</b>
@@ -222,6 +221,7 @@ func main() {
 ```go
 func ExecCommand(command string) (stdout, stderr string, err error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -238,10 +238,8 @@ func main() {
 }
 ```
 
+### GetOsBits
 
-
-
-### <span id="GetOsBits">GetOsBits</span>
 <p>Get current os bits, 32bit or 64bit. return 32 or 64</p>
 
 <b>Signature:</b>
@@ -249,6 +247,7 @@ func main() {
 ```go
 func GetOsBits() int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -259,8 +258,6 @@ import (
 
 func main() {
 	osBit := system.GetOsBits()
-	fmt.Println(osBit) 
+	fmt.Println(osBit)
 }
 ```
-
-

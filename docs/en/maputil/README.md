@@ -3,8 +3,8 @@ sidebarDepth: 3
 sidebar: auto
 ---
 
-
 # Maputil
+
 Package maputil includes some functions to manipulate map.
 
 <div STYLE="page-break-after: always;"></div>
@@ -13,10 +13,10 @@ Package maputil includes some functions to manipulate map.
 
 - [https://github.com/duke-git/lancet/blob/main/maputil/map.go](https://github.com/duke-git/lancet/blob/main/maputil/map.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Example:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/maputil"
@@ -26,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [ForEach](#ForEach)
 - [Filter](#Filter)
 - [Intersect](#Intersect)
@@ -39,9 +40,8 @@ import (
 
 ## Documentation
 
+### ForEach
 
-
-### <span id="ForEach">ForEach</span>
 <p>Executes iteratee funcation for every key and value pair in map.</p>
 
 <b>Signature:</b>
@@ -49,6 +49,7 @@ import (
 ```go
 func ForEach[K comparable, V any](m map[K]V, iteratee func(key K, value V))
 ```
+
 <b>Example:</b>
 
 ```go
@@ -76,10 +77,8 @@ func main() {
 }
 ```
 
+### Filter
 
-
-
-### <span id="Filter">Filter</span>
 <p>Iterates over map, return a new map contains all key and value pairs pass the predicate function.</p>
 
 <b>Signature:</b>
@@ -87,6 +86,7 @@ func main() {
 ```go
 func Filter[K comparable, V any](m map[K]V, predicate func(key K, value V) bool) map[K]V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -117,10 +117,8 @@ func main() {
 }
 ```
 
+### Intersect
 
-
-
-### <span id="Intersect">Intersect</span>
 <p>Iterates over maps, return a new map of key and value pairs in all given maps.</p>
 
 <b>Signature:</b>
@@ -128,6 +126,7 @@ func main() {
 ```go
 func Intersect[K comparable, V any](maps ...map[K]V) map[K]V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -166,10 +165,8 @@ func main() {
 }
 ```
 
+### Keys
 
-
-
-### <span id="Keys">Keys</span>
 <p>Returns a slice of the map's keys.</p>
 
 <b>Signature:</b>
@@ -177,6 +174,7 @@ func main() {
 ```go
 func Keys[K comparable, V any](m map[K]V) []K
 ```
+
 <b>Example:</b>
 
 ```go
@@ -202,10 +200,8 @@ func main() {
 }
 ```
 
+### Merge
 
-
-
-### <span id="Merge">Merge</span>
 <p>Merge maps, next key will overwrite previous key.</p>
 
 <b>Signature:</b>
@@ -213,6 +209,7 @@ func main() {
 ```go
 func Merge[K comparable, V any](maps ...map[K]V) map[K]V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -236,10 +233,8 @@ func main() {
 }
 ```
 
+### Minus
 
-
-
-### <span id="Minus">Minus</span>
 <p>Creates an map of whose key in mapA but not in mapB.</p>
 
 <b>Signature:</b>
@@ -247,6 +242,7 @@ func main() {
 ```go
 func Minus[K comparable, V any](mapA, mapB map[K]V) map[K]V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -274,9 +270,8 @@ func main() {
 }
 ```
 
+### Values
 
-
-### <span id="Values">Values</span>
 <p>Returns a slice of the map's values.</p>
 
 <b>Signature:</b>
@@ -284,6 +279,7 @@ func main() {
 ```go
 func Values[K comparable, V any](m map[K]V) []V
 ```
+
 <b>Example:</b>
 
 ```go
@@ -310,7 +306,8 @@ func main() {
 }
 ```
 
-### <span id="IsDisjoint">IsDisjoint</span>
+### IsDisjoint
+
 <p>Checks two maps are disjoint if they have no keys in common</p>
 
 <b>Signature:</b>
@@ -318,6 +315,7 @@ func main() {
 ```go
 func IsDisjoint[K comparable, V any](mapA, mapB map[K]V) bool
 ```
+
 <b>Example:</b>
 
 ```go

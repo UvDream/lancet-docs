@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Function
-function函数包控制函数执行流程，包含部分函数式编程。
+
+function 函数包控制函数执行流程，包含部分函数式编程。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -15,6 +17,7 @@ function函数包控制函数执行流程，包含部分函数式编程。
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/function"
@@ -24,6 +27,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [After](#After)
 - [Before](#Before)
 - [Curry](#Curry)
@@ -36,9 +40,8 @@ import (
 
 ## 文档
 
+### After
 
-
-### <span id="After">After</span>
 <p>创建一个函数，当他被调用n或更多次之后将马上触发fn</p>
 
 <b>函数签名:</b>
@@ -46,6 +49,7 @@ import (
 ```go
 func After(n int, fn any) func(args ...any) []reflect.Value
 ```
+
 <b>例子:</b>
 
 ```go
@@ -76,15 +80,13 @@ func main() {
 
     //output:
     // arr is [a b]
-    // arr[0] is a 
-    // arr[1] is b 
+    // arr[0] is a
+    // arr[1] is b
     // last print
 }
 ```
 
-
-
-### <span id="Before">Before</span>
+### Before
 
 <p>创建一个函数，调用次数不超过n次，之后再调用这个函数，将返回一次最后调用fn的结果</p>
 
@@ -93,6 +95,7 @@ func main() {
 ```go
 func Before(n int, fn any) func(args ...any) []reflect.Value
 ```
+
 <b>例子:</b>
 
 ```go
@@ -125,9 +128,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Curry">Curry</span>
+### Curry
 
 <p>创建一个柯里化的函数</p>
 
@@ -137,6 +138,7 @@ func main() {
 type Fn func(...any) any
 func (f Fn) Curry(i any) func(...any) any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -160,9 +162,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Compose">Compose</span>
+### Compose
 
 <p>从右至左组合函数列表fnList， 返回组合后的函数</p>
 
@@ -171,6 +171,7 @@ func main() {
 ```go
 func Compose(fnList ...func(...any) any) func(...any) any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -196,9 +197,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Debounced">Debounced</span>
+### Debounced
 
 <p>创建一个 debounced 函数，该函数延迟调用 fn 直到自上次调用 debounced 函数后等待持续时间过去。</p>
 
@@ -207,6 +206,7 @@ func main() {
 ```go
 func Debounced(fn func(), duration time.Duration) func()
 ```
+
 <b>例子:</b>
 
 ```go
@@ -238,9 +238,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Delay">Delay</span>
+### Delay
 
 <p>延迟delay时间后调用函数</p>
 
@@ -249,6 +247,7 @@ func main() {
 ```go
 func Delay(delay time.Duration, fn any, args ...any)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -267,9 +266,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Schedule">Schedule</span>
+### Schedule
 
 <p>每次持续时间调用函数，直到关闭返回的 bool chan</p>
 
@@ -278,6 +275,7 @@ func main() {
 ```go
 func Schedule(d time.Duration, fn any, args ...any) chan bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -302,9 +300,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Watcher">Watcher</span>
+### Watcher
 
 <p>Watcher 用于记录代码执行时间。可以启动/停止/重置手表定时器。获取函数执行的时间。 </p>
 
@@ -321,6 +317,7 @@ func (w *Watcher) Stop() //stop the watcher
 func (w *Watcher) Reset() //reset the watcher
 func (w *Watcher) GetElapsedTime() time.Duration //get the elapsed time of function execution
 ```
+
 <b>例子:</b>
 
 ```go
@@ -360,5 +357,3 @@ func longRunningTask() {
 }
 
 ```
-
-

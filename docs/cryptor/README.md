@@ -4,7 +4,8 @@ sidebar: auto
 ---
 
 # Cryptor
-cryptor加密包支持数据加密和解密，获取md5，hash值。支持base64, md5, hmac, aes, des, rsa。
+
+cryptor 加密包支持数据加密和解密，获取 md5，hash 值。支持 base64, md5, hmac, aes, des, rsa。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -18,6 +19,7 @@ cryptor加密包支持数据加密和解密，获取md5，hash值。支持base64
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/cryptor"
@@ -27,6 +29,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [AesEcbEncrypt](#AesEcbEncrypt)
 - [AesEcbDecrypt](#AesEcbDecrypt)
 - [AesCbcEncrypt](#AesCbcEncrypt)
@@ -62,14 +65,11 @@ import (
 - [RsaEncrypt](#RsaEncrypt)
 - [RsaDecrypt](#RsaDecrypt)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 文档
 
-
-
-### <span id="AesEcbEncrypt">AesEcbEncrypt</span>
+### AesEcbEncrypt
 
 <p>使用AES ECB算法模式加密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -78,6 +78,7 @@ import (
 ```go
 func AesEcbEncrypt(data, key []byte) []byte
 ```
+
 <b>列子:</b>
 
 ```go
@@ -97,9 +98,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesEcbDecrypt">AesEcbDecrypt</span>
+### AesEcbDecrypt
 
 <p>使用AES ECB算法模式解密数据. 参数`key`的长度是16, 24 or 32。
 
@@ -108,6 +107,7 @@ func main() {
 ```go
 func AesEcbDecrypt(encrypted, key []byte) []byte
 ```
+
 <b>列子:</b>
 
 ```go
@@ -127,9 +127,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCbcEncrypt">AesCbcEncrypt</span>
+### AesCbcEncrypt
 
 <p>使用AES CBC算法模式加密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -138,6 +136,7 @@ func main() {
 ```go
 func AesCbcEncrypt(data, key []byte) []byte
 ```
+
 <b>列子:</b>
 
 ```go
@@ -157,9 +156,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCbcDecrypt">AesCbcDecrypt</span>
+### AesCbcDecrypt
 
 <p>使用AES CBC算法模式解密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -184,14 +181,12 @@ func main() {
     key := "abcdefghijklmnop"
     encrypted := cryptor.AesCbcEncrypt([]byte(data), []byte(key))
     decrypted := cryptor.AesCbcDecrypt(encrypted, []byte(key))
-    
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="AesCtrCrypt">AesCtrCrypt</span>
+### AesCtrCrypt
 
 <p>使用AES CTR算法模式加密/解密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -221,9 +216,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbEncrypt">AesCfbEncrypt</span>
+### AesCfbEncrypt
 
 <p>使用AES CFB算法模式加密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -251,9 +244,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbDecrypt">AesCfbDecrypt</span>
+### AesCfbDecrypt
 
 <p>使用AES CFB算法模式解密数据. 参数`key`的长度是16, 24 or 32。</p>
 
@@ -282,9 +273,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesOfbEncrypt">AesOfbEncrypt</span>
+### AesOfbEncrypt
 
 <p>使用AES OFB算法模式加密数据. 参数`key`的长度是16, 24 or 32</p>
 
@@ -312,9 +301,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbDecrypt">AesOfbDecrypt</span>
+### AesOfbDecrypt
 
 <p>使用AES OFB算法模式解密数据. 参数`key`的长度是16, 24 or 32</p>
 
@@ -343,9 +330,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Base64StdEncode">Base64StdEncode</span>
+### Base64StdEncode
 
 <p>将字符串base64编码</p>
 
@@ -354,6 +339,7 @@ func main() {
 ```go
 func Base64StdEncode(s string) string
 ```
+
 <b>列子:</b>
 
 ```go
@@ -370,9 +356,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Base64StdDecode">Base64StdDecode</span>
+### Base64StdDecode
 
 <p>解码base64字符串</p>
 
@@ -398,9 +382,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesEcbEncrypt">DesEcbEncrypt</span>
+### DesEcbEncrypt
 
 <p>使用DES ECB算法模式加密数据. 参数`key`的长度是8</p>
 
@@ -429,9 +411,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesEcbDecrypt">DesEcbDecrypt</span>
+### DesEcbDecrypt
 
 <p>使用DES ECB算法模式解密数据. 参数`key`的长度是8</p>
 
@@ -456,14 +436,12 @@ func main() {
     key := "abcdefgh"
     encrypted := cryptor.DesEcbEncrypt([]byte(data), []byte(key))
     decrypted := cryptor.DesEcbDecrypt(encrypted, []byte(key))
-  
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="DesCbcEncrypt">DesCbcEncrypt</span>
+### DesCbcEncrypt
 
 <p>使用DES CBC算法模式加密数据. 参数`key`的长度是8</p>
 
@@ -492,9 +470,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCbcDecrypt">DesCbcDecrypt</span>
+### DesCbcDecrypt
 
 <p>使用DES CBC算法模式解密数据. 参数`key`的长度是8</p>
 
@@ -519,14 +495,12 @@ func main() {
     key := "abcdefgh"
     encrypted := cryptor.DesCbcEncrypt([]byte(data), []byte(key))
     decrypted := cryptor.DesCbcDecrypt(encrypted, []byte(key))
-    
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="DesCtrCrypt">DesCtrCrypt</span>
+### DesCtrCrypt
 
 <p>使用DES CTR算法模式加密/解密数据. 参数`key`的长度是8</p>
 
@@ -556,9 +530,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCfbEncrypt">DesCfbEncrypt</span>
+### DesCfbEncrypt
 
 <p>使用DES CFB算法模式加密数据. 参数`key`的长度是8</p>
 
@@ -586,9 +558,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCfbDecrypt">DesCfbDecrypt</span>
+### DesCfbDecrypt
 
 <p>使用DES CFB算法模式解密数据. 参数`key`的长度是8</p>
 
@@ -617,9 +587,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesOfbEncrypt">DesOfbEncrypt</span>
+### DesOfbEncrypt
 
 <p>使用DES OFB算法模式加密数据. 参数`key`的长度是8</p>
 
@@ -647,9 +615,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesOfbDecrypt">DesOfbDecrypt</span>
+### DesOfbDecrypt
 
 <p>使用DES OFB算法模式解密数据. 参数`key`的长度是8</p>
 
@@ -678,9 +644,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacMd5">HmacMd5</span>
+### HmacMd5
 
 <p>获取字符串md5 hmac值</p>
 
@@ -706,9 +670,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha1">HmacSha1</span>
+### HmacSha1
 
 <p>获取字符串sha1 hmac值</p>
 
@@ -734,9 +696,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha256">HmacSha256</span>
+### HmacSha256
 
 <p>获取字符串sha256 hmac值</p>
 
@@ -762,9 +722,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha512">HmacSha512</span>
+### HmacSha512
 
 <p>获取字符串sha512 hmac值</p>
 
@@ -786,14 +744,12 @@ import (
 
 func main() {
     s := cryptor.HmacSha512("hello world", "12345"))
-    fmt.Println(s) 
+    fmt.Println(s)
  //5b1563ac4e9b49c9ada8ccb232588fc4f0c30fd12f756b3a0b95af4985c236ca60925253bae10ce2c6bf9af1c1679b51e5395ff3d2826c0a2c7c0d72225d4175
 }
 ```
 
-
-
-### <span id="Md5String">Md5String</span>
+### Md5String
 
 <p>获取字符串md5值</p>
 
@@ -819,9 +775,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Md5File">Md5File</span>
+### Md5File
 
 <p>获取文件md5值.</p>
 
@@ -847,9 +801,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha1">Sha1</span>
+### Sha1
 
 <p>获取字符串sha1值</p>
 
@@ -875,9 +827,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha256">Sha256</span>
+### Sha256
 
 <p>获取字符串sha256值</p>
 
@@ -903,9 +853,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha512">Sha512</span>
+### Sha512
 
 <p>获取字符串sha512值</p>
 
@@ -931,9 +879,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="GenerateRsaKey">GenerateRsaKey</span>
+### GenerateRsaKey
 
 <p>在当前目录下创建rsa私钥文件和公钥文件</p>
 
@@ -961,9 +907,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="RsaEncrypt">RsaEncrypt</span>
+### RsaEncrypt
 
 <p>用公钥文件ras加密数据</p>
 
@@ -995,9 +939,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="RsaDecrypt">RsaDecrypt</span>
+### RsaDecrypt
 
 <p>用私钥文件rsa解密数据</p>
 
@@ -1028,5 +970,3 @@ func main() {
   	fmt.Println(string(decrypted)) //hello world
 }
 ```
-
-

@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Cryptor
+
 Package cryptor contains some functions for data encryption and decryption. Support base64, md5, hmac, aes, des, rsa.
 
 <div STYLE="page-break-after: always;"></div>
@@ -17,6 +19,7 @@ Package cryptor contains some functions for data encryption and decryption. Supp
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/cryptor"
@@ -61,14 +64,11 @@ import (
 - [RsaEncrypt](#RsaEncrypt)
 - [RsaDecrypt](#RsaDecrypt)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
-
-
-### <span id="AesEcbEncrypt">AesEcbEncrypt</span>
+### AesEcbEncrypt
 
 <p>Encrypt data with key use AES ECB algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -77,6 +77,7 @@ import (
 ```go
 func AesEcbEncrypt(data, key []byte) []byte
 ```
+
 <b>Example:</b>
 
 ```go
@@ -96,9 +97,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesEcbDecrypt">AesEcbDecrypt</span>
+### AesEcbDecrypt
 
 <p>Decrypt data with key use AES ECB algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -107,6 +106,7 @@ func main() {
 ```go
 func AesEcbDecrypt(encrypted, key []byte) []byte
 ```
+
 <b>Example:</b>
 
 ```go
@@ -126,9 +126,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCbcEncrypt">AesCbcEncrypt</span>
+### AesCbcEncrypt
 
 <p>Encrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -137,6 +135,7 @@ func main() {
 ```go
 func AesCbcEncrypt(data, key []byte) []byte
 ```
+
 <b>Example:</b>
 
 ```go
@@ -156,9 +155,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCbcDecrypt">AesCbcDecrypt</span>
+### AesCbcDecrypt
 
 <p>Decrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -187,9 +184,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCtrCrypt">AesCtrCrypt</span>
+### AesCtrCrypt
 
 <p>Encrypt or decrypt data with key use AES CTR algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -219,9 +214,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbEncrypt">AesCfbEncrypt</span>
+### AesCfbEncrypt
 
 <p>Encrypt data with key use AES CFB algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -249,9 +242,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbDecrypt">AesCfbDecrypt</span>
+### AesCfbDecrypt
 
 <p>Decrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -280,9 +271,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesOfbEncrypt">AesOfbEncrypt</span>
+### AesOfbEncrypt
 
 <p>Enecrypt data with key use AES OFB algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -310,9 +299,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="AesCfbDecrypt">AesOfbDecrypt</span>
+### AesOfbDecrypt
 
 <p>Decrypt data with key use AES OFB algorithm. Length of `key` param should be 16, 24 or 32.</p>
 
@@ -337,14 +324,12 @@ func main() {
     key := "abcdefghijklmnop"
     encrypted := cryptor.AesOfbEncrypt([]byte(data), []byte(key))
     decrypted := cryptor.AesOfbDecrypt(encrypted, []byte(key))
-    
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="Base64StdEncode">Base64StdEncode</span>
+### Base64StdEncode
 
 <p>Encode string with base64 encoding.</p>
 
@@ -353,6 +338,7 @@ func main() {
 ```go
 func Base64StdEncode(s string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -369,9 +355,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Base64StdDecode">Base64StdDecode</span>
+### Base64StdDecode
 
 <p>Decode a base64 encoded string.</p>
 
@@ -397,9 +381,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesEcbEncrypt">DesEcbEncrypt</span>
+### DesEcbEncrypt
 
 <p>Encrypt data with key use DES ECB algorithm. Length of `key` param should be 8.</p>
 
@@ -428,9 +410,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesEcbDecrypt">DesEcbDecrypt</span>
+### DesEcbDecrypt
 
 <p>Decrypt data with key use DES ECB algorithm. Length of `key` param should be 8.</p>
 
@@ -455,14 +435,12 @@ func main() {
     key := "abcdefgh"
     encrypted := cryptor.DesEcbEncrypt([]byte(data), []byt(key)
     decrypted := cryptor.DesEcbDecrypt(encrypted, []byte(key))
-  
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="DesCbcEncrypt">DesCbcEncrypt</span>
+### DesCbcEncrypt
 
 <p>Encrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p>
 
@@ -491,9 +469,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCbcDecrypt">DesCbcDecrypt</span>
+### DesCbcDecrypt
 
 <p>Decrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p>
 
@@ -518,14 +494,12 @@ func main() {
     key := "abcdefgh"
     encrypted := cryptor.DesCbcEncrypt([]byte(data), []byt(key)
 	decrypted := cryptor.DesCbcDecrypt(encrypted, []byte(key))
-    
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="DesCtrCrypt">DesCtrCrypt</span>
+### DesCtrCrypt
 
 <p>Encrypt or decrypt data with key use DES CTR algorithm. Length of `key` param should be 8.</p>
 
@@ -555,9 +529,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCfbEncrypt">DesCfbEncrypt</span>
+### DesCfbEncrypt
 
 <p>Encrypt data with key use DES CFB algorithm. Length of `key` param should be 8.</p>
 
@@ -585,9 +557,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesCfbDecrypt">DesCfbDecrypt</span>
+### DesCfbDecrypt
 
 <p>Decrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p>
 
@@ -616,9 +586,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesOfbEncrypt">DesOfbEncrypt</span>
+### DesOfbEncrypt
 
 <p>Enecrypt data with key use DES OFB algorithm. Length of `key` param should be 8.</p>
 
@@ -646,9 +614,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="DesOfbDecrypt">DesOfbDecrypt</span>
+### DesOfbDecrypt
 
 <p>Decrypt data with key use DES OFB algorithm. Length of `key` param should be 8.</p>
 
@@ -673,14 +639,12 @@ func main() {
     key := "abcdefgh"
     encrypted := cryptor.DesOfbEncrypt([]byte(data), []byte(key))
     decrypted := cryptor.DesOfbDecrypt(encrypted, []byte(key))
-    
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="HmacMd5">HmacMd5</span>
+### HmacMd5
 
 <p>Get the md5 hmac hash of string.</p>
 
@@ -706,9 +670,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha1">HmacSha1</span>
+### HmacSha1
 
 <p>Get the sha1 hmac hash of string.</p>
 
@@ -734,9 +696,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha256">HmacSha256</span>
+### HmacSha256
 
 <p>Get the sha256 hmac hash of string</p>
 
@@ -762,9 +722,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="HmacSha512">HmacSha512</span>
+### HmacSha512
 
 <p>Get the sha512 hmac hash of string.</p>
 
@@ -786,14 +744,12 @@ import (
 
 func main() {
     s := cryptor.HmacSha512("hello world", "12345"))
-    fmt.Println(s) 
+    fmt.Println(s)
  //5b1563ac4e9b49c9ada8ccb232588fc4f0c30fd12f756b3a0b95af4985c236ca60925253bae10ce2c6bf9af1c1679b51e5395ff3d2826c0a2c7c0d72225d4175
 }
 ```
 
-
-
-### <span id="Md5String">Md5String</span>
+### Md5String
 
 <p>Get the md5 value of string.</p>
 
@@ -819,9 +775,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Md5File">Md5File</span>
+### Md5File
 
 <p>Get the md5 value of file.</p>
 
@@ -847,9 +801,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha1">Sha1</span>
+### Sha1
 
 <p>Get the sha1 value of string.</p>
 
@@ -875,9 +827,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha256">Sha256</span>
+### Sha256
 
 <p>Get the sha256 value of string.</p>
 
@@ -903,9 +853,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Sha512">Sha512</span>
+### Sha512
 
 <p>Get the sha512 value of string.</p>
 
@@ -931,9 +879,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="GenerateRsaKey">GenerateRsaKey</span>
+### GenerateRsaKey
 
 <p>Create the rsa public and private key file in current directory.</p>
 
@@ -961,9 +907,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="RsaEncrypt">RsaEncrypt</span>
+### RsaEncrypt
 
 <p>Encrypt data with public key file useing ras algorithm.</p>
 
@@ -988,18 +932,16 @@ func main() {
     if err != nil {
         fmt.Println(err)
     }
-  	
+
     data := []byte("hello world")
     encrypted := cryptor.RsaEncrypt(data, "rsa_public.pem")
     decrypted := cryptor.RsaDecrypt(encrypted, "rsa_private.pem")
-  	
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
 
-
-
-### <span id="RsaDecrypt">RsaDecrypt</span>
+### RsaDecrypt
 
 <p>Decrypt data with private key file useing ras algorithm.</p>
 
@@ -1024,13 +966,11 @@ func main() {
     if err != nil {
         fmt.Println(err)
     }
-  	
+
     data := []byte("hello world")
     encrypted := cryptor.RsaEncrypt(data, "rsa_public.pem")
     decrypted := cryptor.RsaDecrypt(encrypted, "rsa_private.pem")
-  	
+
     fmt.Println(string(decrypted)) //hello world
 }
 ```
-
-

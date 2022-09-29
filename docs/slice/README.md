@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Slice
-slice包包含操作切片的方法集合。
+
+slice 包包含操作切片的方法集合。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ slice包包含操作切片的方法集合。
 
 - [https://github.com/duke-git/lancet/blob/main/slice/slice.go](https://github.com/duke-git/lancet/blob/main/slice/slice.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/slice"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [AppendIfAbsent](#AppendIfAbsent)
 - [Contain](#Contain)
 - [ContainSubSlice](#ContainSubSlice)
@@ -74,7 +77,8 @@ import (
 
 ## 文档
 
-### <span id="AppendIfAbsent">AppendIfAbsent</span>
+### AppendIfAbsent
+
 <p>当前切片中不包含值时，将该值追加到切片中</p>
 
 <b>函数签名:</b>
@@ -82,6 +86,7 @@ import (
 ```go
 func AppendIfAbsent[T comparable](slice []T, value T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -100,9 +105,8 @@ func main() {
 }
 ```
 
+### Contain
 
-
-### <span id="Contain">Contain</span>
 <p>判断slice是否包含value</p>
 
 <b>函数签名:</b>
@@ -110,6 +114,7 @@ func main() {
 ```go
 func Contain[T comparable](slice []T, value T) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -124,8 +129,8 @@ func main() {
 }
 ```
 
+### ContainSubSlice
 
-### <span id="ContainSubSlice">ContainSubSlice</span>
 <p>判断slice是否包含subslice</p>
 
 <b>函数签名:</b>
@@ -133,6 +138,7 @@ func main() {
 ```go
 func ContainSubSlice[T comparable](slice, subslice []T) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -147,10 +153,8 @@ func main() {
 }
 ```
 
+### Chunk
 
-
-
-### <span id="Chunk">Chunk</span>
 <p>按照size参数均分slice</p>
 
 <b>函数签名:</b>
@@ -158,6 +162,7 @@ func main() {
 ```go
 func Chunk[T any](slice []T, size int) [][]T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -173,9 +178,8 @@ func main() {
 }
 ```
 
+### Compact
 
-
-### <span id="Compact">Compact</span>
 <p>去除slice中的假值（false values are false, nil, 0, ""）</p>
 
 <b>函数签名:</b>
@@ -183,6 +187,7 @@ func main() {
 ```go
 func Compact[T any](slice []T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -197,8 +202,8 @@ func main() {
 }
 ```
 
+### Concat
 
-### <span id="Concat">Concat</span>
 <p>连接values到slice中，values类型可以是切片或多个值</p>
 
 <b>函数签名:</b>
@@ -206,6 +211,7 @@ func main() {
 ```go
 func Concat[T any](slice []T, values ...[]T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -223,9 +229,8 @@ func main() {
 }
 ```
 
+### Count
 
-
-### <span id="Count">Count</span>
 <p>遍历切片，对每个元素执行函数function. 返回符合函数返回值为true的元素的个数</p>
 
 <b>函数签名:</b>
@@ -233,6 +238,7 @@ func main() {
 ```go
 func Count[T any](slice []T, predicate func(index int, t T) bool) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -252,10 +258,8 @@ func main() {
 }
 ```
 
+### Difference
 
-
-
-### <span id="Difference">Difference</span>
 <p>创建一个切片，其元素不包含在另一个给定切片中</p>
 
 <b>函数签名:</b>
@@ -263,6 +267,7 @@ func main() {
 ```go
 func Difference[T comparable](slice, comparedSlice []T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -280,10 +285,8 @@ func main() {
 }
 ```
 
+### DifferenceBy
 
-
-
-### <span id="DifferenceBy">DifferenceBy</span>
 <p>在slice和comparedSlice中的每个元素调用iteratee函数，并比较它们的返回值，如果不想等返回在slice中对应的值</p>
 
 <b>函数签名:</b>
@@ -291,6 +294,7 @@ func main() {
 ```go
 func DifferenceBy[T comparable](slice []T, comparedSlice []T, iteratee func(index int, item T) T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -311,9 +315,8 @@ func main() {
 }
 ```
 
+### DifferenceWith
 
-
-### <span id="DifferenceWith">DifferenceWith</span>
 <p>DifferenceWith 接受比较器，该比较器被调用以将切片的元素与值进行比较。 结果值的顺序和引用由第一个切片确定</p>
 
 <b>函数签名:</b>
@@ -321,6 +324,7 @@ func main() {
 ```go
 func DifferenceWith[T any](slice []T, comparedSlice []T, comparator func(value, otherValue T) bool) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -341,8 +345,8 @@ func main() {
 }
 ```
 
+### DeleteAt
 
-### <span id="DeleteAt">DeleteAt</span>
 <p>删除切片中从开始索引到结束索引-1的元素</p>
 
 <b>函数签名:</b>
@@ -350,6 +354,7 @@ func main() {
 ```go
 func DeleteAt[T any](slice []T, start int, end ...int)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -368,10 +373,8 @@ func main() {
 }
 ```
 
+### Drop
 
-
-
-### <span id="Drop">Drop</span>
 <p>创建一个切片，当 n > 0 时从开头删除 n 个元素，或者当 n < 0 时从结尾删除 n 个元素</p>
 
 <b>函数签名:</b>
@@ -379,6 +382,7 @@ func main() {
 ```go
 func Drop[T any](slice []T, n int) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -399,10 +403,8 @@ func main() {
 }
 ```
 
+### Every
 
-
-
-### <span id="Every">Every</span>
 <p>如果切片中的所有值都通过谓词函数，则返回true。 函数签名应该是func(index int, value any) bool</p>
 
 <b>函数签名:</b>
@@ -410,6 +412,7 @@ func main() {
 ```go
 func Every[T any](slice []T, predicate func(index int, item T) bool) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -429,10 +432,8 @@ func main() {
 }
 ```
 
+### Equal
 
-
-
-### <span id="Equal">Equal</span>
 <p>检查两个切片是否相等，相等条件：切片长度相同，元素顺序和值都相同</p>
 
 <b>函数签名:</b>
@@ -440,6 +441,7 @@ func main() {
 ```go
 func Equal[T comparable](slice1, slice2 []T) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -461,9 +463,8 @@ func main() {
 }
 ```
 
+### EqualWith
 
-
-### <span id="EqualWith">EqualWith</span>
 <p>检查两个切片是否相等，相等条件：对两个切片的元素调用比较函数comparator，返回true</p>
 
 <b>函数签名:</b>
@@ -471,6 +472,7 @@ func main() {
 ```go
 func EqualWith[T, U any](slice1 []T, slice2 []U, comparator func(T, U) bool) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -493,9 +495,8 @@ func main() {
 }
 ```
 
+### Filter
 
-
-### <span id="Filter">Filter</span>
 <p>返回切片中通过predicate函数真值测试的所有元素</p>
 
 <b>函数签名:</b>
@@ -503,6 +504,7 @@ func main() {
 ```go
 func Filter[T any](slice []T, predicate func(index int, item T) bool) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -522,9 +524,8 @@ func main() {
 }
 ```
 
+### Find
 
-
-### <span id="Find">Find</span>
 <p>遍历切片的元素，返回第一个通过predicate函数真值测试的元素</p>
 
 <b>函数签名:</b>
@@ -532,6 +533,7 @@ func main() {
 ```go
 func Find[T any](slice []T, predicate func(index int, item T) bool) (*T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -552,10 +554,8 @@ func main() {
 }
 ```
 
+### FindLast
 
-
-
-### <span id="FindLast">FindLast</span>
 <p>从头到尾遍历slice的元素，返回最后一个通过predicate函数真值测试的元素。</p>
 
 <b>函数签名:</b>
@@ -563,6 +563,7 @@ func main() {
 ```go
 func FindLast[T any](slice []T, predicate func(index int, item T) bool) (*T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -583,8 +584,8 @@ func main() {
 }
 ```
 
+### Flatten
 
-### <span id="Flatten">Flatten</span>
 <p>将切片压平一层</p>
 
 <b>函数签名:</b>
@@ -592,6 +593,7 @@ func main() {
 ```go
 func Flatten(slice any) any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -607,9 +609,8 @@ func main() {
 }
 ```
 
+### FlattenDeep
 
-
-### <span id="FlattenDeep">FlattenDeep</span>
 <p>flattens slice recursive.</p>
 
 <b>函数签名:</b>
@@ -617,6 +618,7 @@ func main() {
 ```go
 func FlattenDeep(slice any) any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -632,11 +634,8 @@ func main() {
 }
 ```
 
+### ForEach
 
-
-
-
-### <span id="ForEach">ForEach</span>
 <p>遍历切片的元素并为每个元素调用iteratee函数</p>
 
 <b>函数签名:</b>
@@ -644,6 +643,7 @@ func main() {
 ```go
 func ForEach[T any](slice []T, iteratee func(index int, item T))
 ```
+
 <b>例子:</b>
 
 ```go
@@ -662,10 +662,8 @@ func main() {
 }
 ```
 
+### GroupBy
 
-
-
-### <span id="GroupBy">GroupBy</span>
 <p>迭代切片的元素，每个元素将按条件分组，返回两个切片</p>
 
 <b>函数签名:</b>
@@ -673,6 +671,7 @@ func main() {
 ```go
 func GroupBy[T any](slice []T, groupFn func(index int, item T) bool) ([]T, []T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -693,16 +692,16 @@ func main() {
 }
 ```
 
+### GroupWith
 
-
-### <span id="GroupWith">GroupWith</span>
 <p>创建一个map，key是iteratee遍历slice中的每个元素返回的结果。 分组值的顺序是由他们出现在slice中的顺序确定的。每个键对应的值负责生成key的元素组成的数组。iteratee调用1个参数： (value)</p>
 
 <b>函数签名:</b>
 
 ```go
-func GroupWith[T any, U comparable](slice []T, iteratee func(T) U) map[U][]T 
+func GroupWith[T any, U comparable](slice []T, iteratee func(T) U) map[U][]T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -721,8 +720,8 @@ func main() {
 }
 ```
 
+### IntSlice
 
-### <span id="IntSlice">IntSlice</span>
 <p>将接口切片转换为int切片</p>
 
 <b>函数签名:</b>
@@ -730,6 +729,7 @@ func main() {
 ```go
 func IntSlice(slice any) []int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -745,10 +745,8 @@ func main() {
 }
 ```
 
+### InterfaceSlice
 
-
-
-### <span id="InterfaceSlice">InterfaceSlice</span>
 <p>将值转换为接口切片</p>
 
 <b>函数签名:</b>
@@ -756,6 +754,7 @@ func main() {
 ```go
 func InterfaceSlice(slice any) []any
 ```
+
 <b>例子:</b>
 
 ```go
@@ -771,10 +770,8 @@ func main() {
 }
 ```
 
+### Intersection
 
-
-
-### <span id="Intersection">Intersection</span>
 <p>多个切片的交集</p>
 
 <b>函数签名:</b>
@@ -782,6 +779,7 @@ func main() {
 ```go
 func Intersection[T comparable](slices ...[]T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -799,10 +797,8 @@ func main() {
 }
 ```
 
+### InsertAt
 
-
-
-### <span id="InsertAt">InsertAt</span>
 <p>将元素插入到索引处的切片中</p>
 
 <b>函数签名:</b>
@@ -810,6 +806,7 @@ func main() {
 ```go
 func InsertAt[T any](slice []T, index int, value any) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -820,7 +817,7 @@ import (
 
 func main() {
 	s := []string{"a", "b", "c"}
-	
+
 	res1, _ := slice.InsertAt(s, 0, "1")
 	fmt.Println(res1) //[]string{"1", "a", "b", "c"}
 
@@ -829,10 +826,8 @@ func main() {
 }
 ```
 
+### IndexOf
 
-
-
-### <span id="IndexOf">IndexOf</span>
 <p>返回在切片中找到值的第一个匹配项的索引，如果找不到值，则返回-1</p>
 
 <b>函数签名:</b>
@@ -840,6 +835,7 @@ func main() {
 ```go
 func IndexOf[T comparable](slice []T, value T) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -858,9 +854,8 @@ func main() {
 }
 ```
 
+### LastIndexOf
 
-
-### <span id="LastIndexOf">LastIndexOf</span>
 <p>返回在切片中找到最后一个值的索引，如果找不到该值，则返回-1</p>
 
 <b>函数签名:</b>
@@ -868,6 +863,7 @@ func main() {
 ```go
 func LastIndexOf[T comparable](slice []T, value T) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -886,9 +882,8 @@ func main() {
 }
 ```
 
+### Map
 
-
-### <span id="Map">Map</span>
 <p>通过运行函数slice中的每个元素来创建一个新切片</p>
 
 <b>函数签名:</b>
@@ -896,6 +891,7 @@ func main() {
 ```go
 func Map[T any, U any](slice []T, iteratee func(index int, item T) U) []U
 ```
+
 <b>例子:</b>
 
 ```go
@@ -914,10 +910,8 @@ func main() {
 }
 ```
 
+### Reverse
 
-
-
-### <span id="Reverse">Reverse</span>
 <p>反转切片中的元素顺序</p>
 
 <b>函数签名:</b>
@@ -925,6 +919,7 @@ func main() {
 ```go
 func Reverse[T any](slice []T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -940,9 +935,8 @@ func main() {
 }
 ```
 
+### Reduce
 
-
-### <span id="Reduce">Reduce</span>
 <p>将切片中的元素依次运行iteratee函数，返回运行结果</p>
 
 <b>函数签名:</b>
@@ -950,6 +944,7 @@ func main() {
 ```go
 func Reduce[T any](slice []T, iteratee func(index int, item1, item2 T) T, initial T) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -968,10 +963,8 @@ func main() {
 }
 ```
 
+### Shuffle
 
-
-
-### <span id="Shuffle">Shuffle</span>
 <p>随机打乱切片中的元素顺序</p>
 
 <b>函数签名:</b>
@@ -979,6 +972,7 @@ func main() {
 ```go
 func Shuffle[T any](slice []T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -994,9 +988,8 @@ func main() {
 }
 ```
 
+### SortByField
 
-
-### <span id="SortByField">SortByField</span>
 <p>按字段对结构切片进行排序。slice元素应为struct，字段类型应为int、uint、string或bool。 默认排序类型是升序（asc），如果是降序，设置 sortType 为 desc</p>
 
 <b>函数签名:</b>
@@ -1004,6 +997,7 @@ func main() {
 ```go
 func SortByField(slice any, field string, sortType ...string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1027,7 +1021,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(students) 
+	fmt.Println(students)
 	// []students{
 	// 	{"b", 15},
 	// 	{"a", 10},
@@ -1037,9 +1031,8 @@ func main() {
 }
 ```
 
+### Some
 
-
-### <span id="Some">Some</span>
 <p>如果列表中的任何值通过谓词函数，则返回true</p>
 
 <b>函数签名:</b>
@@ -1047,6 +1040,7 @@ func main() {
 ```go
 func Some[T any](slice []T, predicate func(index int, item T) bool) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1066,9 +1060,8 @@ func main() {
 }
 ```
 
+### StringSlice
 
-
-### <span id="StringSlice">StringSlice</span>
 <p>将接口切片转换为字符串切片</p>
 
 <b>函数签名:</b>
@@ -1076,6 +1069,7 @@ func main() {
 ```go
 func StringSlice(slice any) []string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1091,10 +1085,8 @@ func main() {
 }
 ```
 
+### SymmetricDifference
 
-
-
-### <span id="SymmetricDifference">SymmetricDifference</span>
 <p>返回一个切片，其中的元素存在于参数切片中，但不同时存储在于参数切片中（交集取反）</p>
 
 <b>函数签名:</b>
@@ -1102,6 +1094,7 @@ func main() {
 ```go
 func SymmetricDifference[T comparable](slices ...[]T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1121,8 +1114,8 @@ func main() {
 }
 ```
 
+### ToSlice
 
-### <span id="ToSlice">ToSlice</span>
 <p>将可变参数转为切片</p>
 
 <b>函数签名:</b>
@@ -1130,6 +1123,7 @@ func main() {
 ```go
 func ToSlice[T any](value ...T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1144,9 +1138,8 @@ func main() {
 }
 ```
 
+### ToSlicePointer
 
-
-### <span id="ToSlicePointer">ToSlicePointer</span>
 <p>将可变参数转为指针切片</p>
 
 <b>函数签名:</b>
@@ -1154,6 +1147,7 @@ func main() {
 ```go
 func ToSlicePointer[T any](value ...T) []*T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1170,9 +1164,8 @@ func main() {
 }
 ```
 
+### Unique
 
-
-### <span id="Unique">Unique</span>
 <p>删除切片中的重复元素</p>
 
 <b>函数签名:</b>
@@ -1180,6 +1173,7 @@ func main() {
 ```go
 func Unique[T comparable](slice []T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1194,9 +1188,8 @@ func main() {
 }
 ```
 
+### UniqueBy
 
-
-### <span id="UniqueBy">UniqueBy</span>
 <p>对切片的每个元素调用iteratee函数，然后删除重复元素</p>
 
 <b>函数签名:</b>
@@ -1204,6 +1197,7 @@ func main() {
 ```go
 func UniqueBy[T comparable](slice []T, iteratee func(item T) T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1220,9 +1214,8 @@ func main() {
 }
 ```
 
+### Union
 
-
-### <span id="Union">Union</span>
 <p>从所有给定的切片按顺序创建一个唯一值切片，使用==进行相等比较</p>
 
 <b>函数签名:</b>
@@ -1230,6 +1223,7 @@ func main() {
 ```go
 func Union[T comparable](slices ...[]T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1247,9 +1241,8 @@ func main() {
 }
 ```
 
+### UpdateAt
 
-
-### <span id="UpdateAt">UpdateAt</span>
 <p>更新索引处的切片元素。 如果index < 0或 index >= len(slice)，将返回错误</p>
 
 <b>函数签名:</b>
@@ -1257,6 +1250,7 @@ func main() {
 ```go
 func UpdateAt[T any](slice []T, index int, value T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1267,16 +1261,14 @@ import (
 
 func main() {
 	s := []string{"a", "b", "c"}
-	
+
 	res1, _ := slice.UpdateAt(s, 0, "1")
 	fmt.Println(res1) //[]string{"1", "b", "c"}
 }
 ```
 
+### Without
 
-
-
-### <span id="Without">Without</span>
 <p>创建一个不包括所有给定值的切片</p>
 
 <b>函数签名:</b>
@@ -1284,6 +1276,7 @@ func main() {
 ```go
 func Without[T comparable](slice []T, values ...T) []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -1297,13 +1290,3 @@ func main() {
 	fmt.Println(res) //[]int{3, 4, 5}
 }
 ```
-
-
-
-
-
-
-
-
-
-

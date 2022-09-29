@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Fileutil
-fileutil包支持文件基本操作。
+
+fileutil 包支持文件基本操作。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -14,6 +16,7 @@ fileutil包支持文件基本操作。
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/fileutil"
@@ -23,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [ClearFile](#ClearFile)
 - [CreateFile](#CreateFile)
 - [CreateDir](#CreateDir)
@@ -44,9 +48,8 @@ import (
 
 ## 文档
 
+### ClearFile
 
-
-### <span id="ClearFile">ClearFile</span>
 <p>清空文件内容</p>
 
 <b>函数签名:</b>
@@ -54,6 +57,7 @@ import (
 ```go
 func ClearFile(path string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -72,7 +76,8 @@ func main() {
 }
 ```
 
-### <span id="CreateFile">CreateFile</span>
+### CreateFile
+
 <p>创建文件，创建成功返回true, 否则返回false</p>
 
 <b>函数签名:</b>
@@ -80,6 +85,7 @@ func main() {
 ```go
 func CreateFile(path string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -96,8 +102,8 @@ func main() {
 }
 ```
 
+### CreateDir
 
-### <span id="CreateDir">CreateDir</span>
 <p>使用绝对路径创建嵌套目录，例如/a/, /a/b/</p>
 
 <b>函数签名:</b>
@@ -105,6 +111,7 @@ func main() {
 ```go
 func CreateDir(absPath string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -121,9 +128,8 @@ func main() {
 }
 ```
 
+### CopyFile
 
-
-### <span id="CopyFile">CopyFile</span>
 <p>拷贝文件，会覆盖原有的拷贝文件</p>
 
 <b>函数签名:</b>
@@ -131,6 +137,7 @@ func main() {
 ```go
 func CopyFile(srcFilePath string, dstFilePath string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -149,9 +156,8 @@ func main() {
 }
 ```
 
+### FileMode
 
-
-### <span id="FileMode">FileMode</span>
 <p>获取文件mode信息</p>
 
 <b>函数签名:</b>
@@ -159,6 +165,7 @@ func main() {
 ```go
 func FileMode(path string) (fs.FileMode, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -178,9 +185,8 @@ func main() {
 }
 ```
 
+### MiMeType
 
-
-### <span id="MiMeType">MiMeType</span>
 <p>获取文件mime类型, 'file'参数的类型必须是string或者*os.File</p>
 
 <b>函数签名:</b>
@@ -188,6 +194,7 @@ func main() {
 ```go
 func MiMeType(file any) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -209,10 +216,8 @@ func main() {
 }
 ```
 
+### IsExist
 
-
-
-### <span id="IsExist">IsExist</span>
 <p>判断文件或目录是否存在</p>
 
 <b>函数签名:</b>
@@ -220,6 +225,7 @@ func main() {
 ```go
 func IsExist(path string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -237,9 +243,8 @@ func main() {
 }
 ```
 
+### IsLink
 
-
-### <span id="IsLink">IsLink</span>
 <p>判断文件是否是符号链接</p>
 
 <b>函数签名:</b>
@@ -247,6 +252,7 @@ func main() {
 ```go
 func IsLink(path string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -263,16 +269,16 @@ func main() {
 }
 ```
 
+### IsDir
 
-
-### <span id="IsDir">IsDir</span>
 <p>判断目录是否存在</p>
 
 <b>函数签名:</b>
 
 ```go
-func IsDir(path string) bool 
+func IsDir(path string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -292,9 +298,8 @@ func main() {
 }
 ```
 
+### ListFileNames
 
-
-### <span id="ListFileNames">ListFileNames</span>
 <p>返回目录下所有文件名</p>
 
 <b>函数签名:</b>
@@ -302,6 +307,7 @@ func main() {
 ```go
 func ListFileNames(path string) ([]string, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -318,9 +324,8 @@ func main() {
 }
 ```
 
+### RemoveFile
 
-
-### <span id="RemoveFile">RemoveFile</span>
 <p>删除文件</p>
 
 <b>函数签名:</b>
@@ -328,6 +333,7 @@ func main() {
 ```go
 func RemoveFile(path string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -346,8 +352,8 @@ func main() {
 }
 ```
 
+### ReadFileToString
 
-### <span id="ReadFileToString">ReadFileToString</span>
 <p>读取文件内容并返回字符串</p>
 
 <b>函数签名:</b>
@@ -355,6 +361,7 @@ func main() {
 ```go
 func ReadFileToString(path string) (string, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -378,9 +385,8 @@ func main() {
 }
 ```
 
+### ReadFileByLine
 
-
-### <span id="ReadFileByLine">ReadFileByLine</span>
 <p>按行读取文件内容，返回字符串切片包含每一行</p>
 
 <b>函数签名:</b>
@@ -388,6 +394,7 @@ func main() {
 ```go
 func ReadFileByLine(path string)([]string, error)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -412,9 +419,8 @@ func main() {
 }
 ```
 
+### Zip
 
-
-### <span id="Zip">Zip</span>
 <p>zip压缩文件, fpath参数可以是文件或目录</p>
 
 <b>函数签名:</b>
@@ -422,6 +428,7 @@ func main() {
 ```go
 func Zip(fpath string, destPath string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -440,10 +447,8 @@ func main() {
 }
 ```
 
+### UnZip
 
-
-
-### <span id="UnZip">UnZip</span>
 <p>zip解压缩文件并保存在目录中</p>
 
 <b>Signature:</b>
@@ -451,6 +456,7 @@ func main() {
 ```go
 func UnZip(zipFile string, destPath string) error
 ```
+
 <b>例子:</b>
 
 ```go
@@ -468,7 +474,3 @@ func main() {
     }
 }
 ```
-
-
-
-

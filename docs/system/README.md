@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # System
-system包含os, runtime, shell command相关函数。
+
+system 包含 os, runtime, shell command 相关函数。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ system包含os, runtime, shell command相关函数。
 
 - [https://github.com/duke-git/lancet/blob/main/system/os.go](https://github.com/duke-git/lancet/blob/main/system/os.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/system"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [IsWindows](#IsWindows)
 - [IsLinux](#IsLinux)
 - [IsMac](#IsMac)
@@ -35,13 +38,12 @@ import (
 - [ExecCommand](#ExecCommand)
 - [GetOsBits](#GetOsBits)
 
-
 <div STYLE="page-break-after: always;"></div>
 
-## Documentation文档
+## Documentation 文档
 
+### IsWindows
 
-### <span id="IsWindows">IsWindows</span>
 <p>检查当前操作系统是否是windows</p>
 
 <b>Signature:</b>
@@ -49,6 +51,7 @@ import (
 ```go
 func IsWindows() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -63,10 +66,8 @@ func main() {
 }
 ```
 
+### IsLinux
 
-
-
-### <span id="IsLinux">IsLinux</span>
 <p>检查当前操作系统是否是linux</p>
 
 <b>Signature:</b>
@@ -74,6 +75,7 @@ func main() {
 ```go
 func IsLinux() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -88,9 +90,8 @@ func main() {
 }
 ```
 
+### IsMac
 
-
-### <span id="IsMac">IsMac</span>
 <p>检查当前操作系统是否是macos</p>
 
 <b>Signature:</b>
@@ -98,6 +99,7 @@ func main() {
 ```go
 func IsMac() bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -112,9 +114,8 @@ func main() {
 }
 ```
 
+### GetOsEnv
 
-
-### <span id="GetOsEnv">GetOsEnv</span>
 <p>获取key命名的环境变量的值</p>
 
 <b>Signature:</b>
@@ -122,6 +123,7 @@ func main() {
 ```go
 func GetOsEnv(key string) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -136,9 +138,8 @@ func main() {
 }
 ```
 
+### SetOsEnv
 
-
-### <span id="SetOsEnv">SetOsEnv</span>
 <p>设置由key命名的环境变量的值</p>
 
 <b>Signature:</b>
@@ -146,6 +147,7 @@ func main() {
 ```go
 func SetOsEnv(key, value string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -160,10 +162,8 @@ func main() {
 }
 ```
 
+### RemoveOsEnv
 
-
-
-### <span id="RemoveOsEnv">RemoveOsEnv</span>
 <p>删除单个环境变量</p>
 
 <b>Signature:</b>
@@ -171,6 +171,7 @@ func main() {
 ```go
 func RemoveOsEnv(key string) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -187,9 +188,8 @@ func main() {
 }
 ```
 
+### CompareOsEnv
 
-
-### <span id="CompareOsEnv">CompareOsEnv</span>
 <p>获取key命名的环境变量值并与compareEnv进行比较</p>
 
 <b>Signature:</b>
@@ -197,6 +197,7 @@ func main() {
 ```go
 func CompareOsEnv(key, comparedEnv string) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -212,10 +213,8 @@ func main() {
 }
 ```
 
+### ExecCommand
 
-
-
-### <span id="ExecCommand">ExecCommand</span>
 <p>使用shell /bin/bash -c(linux) 或 cmd (windows) 执行shell命令</p>
 
 <b>Signature:</b>
@@ -223,6 +222,7 @@ func main() {
 ```go
 func ExecCommand(command string) (stdout, stderr string, err error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -239,10 +239,8 @@ func main() {
 }
 ```
 
+### GetOsBits
 
-
-
-### <span id="GetOsBits">GetOsBits</span>
 <p>获取当前操作系统位数，返回32或64</p>
 
 <b>函数签名:</b>
@@ -250,6 +248,7 @@ func main() {
 ```go
 func GetOsBits() int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -260,12 +259,6 @@ import (
 
 func main() {
 	osBit := system.GetOsBits()
-	fmt.Println(osBit) 
+	fmt.Println(osBit)
 }
 ```
-
-
-
-
-
-

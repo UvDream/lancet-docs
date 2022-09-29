@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Maputil
-maputil包包括一些操作map的函数。
+
+maputil 包包括一些操作 map 的函数。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ maputil包包括一些操作map的函数。
 
 - [https://github.com/duke-git/lancet/blob/main/maputil/map.go](https://github.com/duke-git/lancet/blob/main/maputil/map.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/maputil"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录:
+
 - [ForEach](#ForEach)
 - [Filter](#Filter)
 - [Intersect](#Intersect)
@@ -35,11 +38,10 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## API文档:
+## API 文档:
 
+### ForEach
 
-
-### <span id="ForEach">ForEach</span>
 <p>对map中的每对key和value执行iteratee函数</p>
 
 <b>函数签名:</b>
@@ -47,6 +49,7 @@ import (
 ```go
 func ForEach[K comparable, V any](m map[K]V, iteratee func(key K, value V))
 ```
+
 <b>例子:</b>
 
 ```go
@@ -74,10 +77,8 @@ func main() {
 }
 ```
 
+### Filter
 
-
-
-### <span id="Filter">Filter</span>
 <p>迭代map中的每对key和value, 返回符合predicate函数的key, value</p>
 
 <b>函数签名:</b>
@@ -85,6 +86,7 @@ func main() {
 ```go
 func Filter[K comparable, V any](m map[K]V, predicate func(key K, value V) bool) map[K]V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -115,10 +117,8 @@ func main() {
 }
 ```
 
+### Intersect
 
-
-
-### <span id="Intersect">Intersect</span>
 <p>多个map的交集操作</p>
 
 <b>函数签名:</b>
@@ -126,6 +126,7 @@ func main() {
 ```go
 func Intersect[K comparable, V any](maps ...map[K]V) map[K]V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -164,10 +165,8 @@ func main() {
 }
 ```
 
+### Keys
 
-
-
-### <span id="Keys">Keys</span>
 <p>返回map中所有key的切片</p>
 
 <b>函数签名:</b>
@@ -175,6 +174,7 @@ func main() {
 ```go
 func Keys[K comparable, V any](m map[K]V) []K
 ```
+
 <b>例子:</b>
 
 ```go
@@ -200,10 +200,8 @@ func main() {
 }
 ```
 
+### Merge
 
-
-
-### <span id="Merge">Merge</span>
 <p>合并多个maps, 相同的key会被后来的key覆盖</p>
 
 <b>函数签名:</b>
@@ -211,6 +209,7 @@ func main() {
 ```go
 func Merge[K comparable, V any](maps ...map[K]V) map[K]V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -234,9 +233,8 @@ func main() {
 }
 ```
 
+### Minus
 
-
-### <span id="Minus">Minus</span>
 <p>返回一个map，其中的key存在于mapA，不存在于mapB.</p>
 
 <b>函数签名:</b>
@@ -244,6 +242,7 @@ func main() {
 ```go
 func Minus[K comparable, V any](mapA, mapB map[K]V) map[K]V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -271,9 +270,8 @@ func main() {
 }
 ```
 
+### Values
 
-
-### <span id="Values">Values</span>
 <p>返回map中所有value的切片</p>
 
 <b>函数签名:</b>
@@ -281,6 +279,7 @@ func main() {
 ```go
 func Values[K comparable, V any](m map[K]V) []V
 ```
+
 <b>例子:</b>
 
 ```go
@@ -307,8 +306,8 @@ func main() {
 }
 ```
 
+### IsDisjoint
 
-### <span id="IsDisjoint">IsDisjoint</span>
 <p>验证两个map是否具有不同的key</p>
 
 <b>函数签名:</b>
@@ -316,6 +315,7 @@ func main() {
 ```go
 func IsDisjoint[K comparable, V any](mapA, mapB map[K]V) bool
 ```
+
 <b>例子:</b>
 
 ```go

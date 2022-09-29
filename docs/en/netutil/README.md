@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Netutil
+
 Package netutil contains functions to get net information and send http request.
 
 <div STYLE="page-break-after: always;"></div>
@@ -18,6 +20,7 @@ Package netutil contains functions to get net information and send http request.
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/netutil"
@@ -27,6 +30,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [ConvertMapToQueryString](#ConvertMapToQueryString)
 - [EncodeUrl](#EncodeUrl)
 
@@ -54,8 +58,8 @@ import (
 
 ## Documentation
 
+### ConvertMapToQueryString
 
-### <span id="ConvertMapToQueryString">ConvertMapToQueryString</span>
 <p>Convert map to url query string.</p>
 
 <b>Signature:</b>
@@ -63,6 +67,7 @@ import (
 ```go
 func ConvertMapToQueryString(param map[string]any) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -85,9 +90,8 @@ func main() {
 }
 ```
 
+### EncodeUrl
 
-
-### <span id="EncodeUrl">EncodeUrl</span>
 <p>Encode url query string values.</p>
 
 <b>Signature:</b>
@@ -95,6 +99,7 @@ func main() {
 ```go
 func EncodeUrl(urlStr string) (string, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -115,9 +120,8 @@ func main() {
 }
 ```
 
+### GetInternalIp
 
-
-### <span id="GetInternalIp">GetInternalIp</span>
 <p>Get internal ip information.</p>
 
 <b>Signature:</b>
@@ -125,6 +129,7 @@ func main() {
 ```go
 func GetInternalIp() string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -144,9 +149,8 @@ func main() {
 }
 ```
 
+### GetIps
 
-
-### <span id="GetIps">GetIps</span>
 <p>Get all ipv4 list.</p>
 
 <b>Signature:</b>
@@ -154,6 +158,7 @@ func main() {
 ```go
 func GetIps() []string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -171,9 +176,8 @@ func main() {
 }
 ```
 
+### GetMacAddrs
 
-
-### <span id="GetMacAddrs">GetMacAddrs</span>
 <p>Get all mac addresses list.</p>
 
 <b>Signature:</b>
@@ -181,6 +185,7 @@ func main() {
 ```go
 func GetMacAddrs() []string {
 ```
+
 <b>Example:</b>
 
 ```go
@@ -198,9 +203,8 @@ func main() {
 }
 ```
 
+### GetPublicIpInfo
 
-
-### <span id="GetPublicIpInfo">GetPublicIpInfo</span>
 <p>Get public ip information.</p>
 
 <b>Signature:</b>
@@ -222,6 +226,7 @@ type PublicIpInfo struct {
 	Ip          string  `json:"query"`
 }
 ```
+
 <b>Example:</b>
 
 ```go
@@ -242,9 +247,8 @@ func main() {
 }
 ```
 
+### GetRequestPublicIp
 
-
-### <span id="GetRequestPublicIp">GetRequestPublicIp</span>
 <p>Get http request public ip.</p>
 
 <b>Signature:</b>
@@ -252,6 +256,7 @@ func main() {
 ```go
 func GetRequestPublicIp(req *http.Request) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -285,9 +290,8 @@ func main() {
 }
 ```
 
+### IsPublicIP
 
-
-### <span id="IsPublicIP">IsPublicIP</span>
 <p>Checks if an ip is public or not.</p>
 
 <b>Signature:</b>
@@ -295,6 +299,7 @@ func main() {
 ```go
 func IsPublicIP(IP net.IP) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -315,10 +320,8 @@ func main() {
 }
 ```
 
+### IsInternalIP
 
-
-
-### <span id="IsInternalIP">IsInternalIP</span>
 <p>Checks if an ip is intranet or not.</p>
 
 <b>Signature:</b>
@@ -326,6 +329,7 @@ func main() {
 ```go
 func IsInternalIP(IP net.IP) bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -346,8 +350,8 @@ func main() {
 }
 ```
 
+### HttpRequest
 
-### <span id="HttpRequest">HttpRequest</span>
 <p>HttpRequest is a struct used to abstract HTTP request entity.</p>
 
 <b>Signature:</b>
@@ -362,6 +366,7 @@ type HttpRequest struct {
 	Body        []byte
 }
 ```
+
 <b>Example:</b>
 
 ```go
@@ -390,8 +395,8 @@ func main() {
 }
 ```
 
+### HttpClient
 
-### <span id="HttpClient">HttpClient</span>
 <p>HttpClient is a struct used to send HTTP request. It can be instanced with some configurations or none config.</p>
 
 <b>Signature:</b>
@@ -418,6 +423,7 @@ func NewHttpClient() *HttpClient
 func NewHttpClientWithConfig(config *HttpClientConfig) *HttpClient
 
 ```
+
 <b>Example:</b>
 
 ```go
@@ -439,9 +445,8 @@ func main() {
 }
 ```
 
+### SendRequest
 
-
-### <span id="SendRequest">SendRequest</span>
 <p>Use HttpClient to send HTTP request.</p>
 
 <b>Signature:</b>
@@ -449,6 +454,7 @@ func main() {
 ```go
 func (client *HttpClient) SendRequest(request *HttpRequest) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -487,9 +493,8 @@ func main() {
 }
 ```
 
+### DecodeResponse
 
-
-### <span id="DecodeResponse">DecodeResponse</span>
 <p>Decode http response into target object.</p>
 
 <b>Signature:</b>
@@ -497,6 +502,7 @@ func main() {
 ```go
 func (client *HttpClient) DecodeResponse(resp *http.Response, target any) error
 ```
+
 <b>Example:</b>
 
 ```go
@@ -535,8 +541,8 @@ func main() {
 }
 ```
 
+### StructToUrlValues
 
-### <span id="StructToUrlValues">StructToUrlValues</span>
 <p>Convert struct to url values, only convert the field which is exported and has `json` tag.</p>
 
 <b>Signature:</b>
@@ -544,6 +550,7 @@ func main() {
 ```go
 func StructToUrlValues(targetStruct any) url.Values
 ```
+
 <b>Example:</b>
 
 ```go
@@ -570,9 +577,8 @@ func main() {
 }
 ```
 
+### HttpGet (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpGet">HttpGet (Deprecated: use SendRequest for replacement)</span>
 <p>Send http get request.</p>
 
 <b>Signature:</b>
@@ -584,6 +590,7 @@ func main() {
 // params[3] is http client which type should be http.Client.
 func HttpGet(url string, params ...any) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -612,9 +619,8 @@ func main() {
 }
 ```
 
+### HttpPost (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPost">HttpPost (Deprecated: use SendRequest for replacement)</span>
 <p>Send http post request.</p>
 
 <b>Signature:</b>
@@ -626,6 +632,7 @@ func main() {
 // params[3] is http client which type should be http.Client.
 func HttpPost(url string, params ...any) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -661,9 +668,8 @@ func main() {
 }
 ```
 
+### HttpPut (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPut">HttpPut (Deprecated: use SendRequest for replacement)</span>
 <p>Send http put request.</p>
 
 <b>Signature:</b>
@@ -675,6 +681,7 @@ func main() {
 // params[3] is http client which type should be http.Client.
 func HttpPut(url string, params ...any) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -711,9 +718,8 @@ func main() {
 }
 ```
 
+### HttpDelete (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpDelete">HttpDelete (Deprecated: use SendRequest for replacement)</span>
 <p>Send http delete request.</p>
 
 <b>Signature:</b>
@@ -725,6 +731,7 @@ func main() {
 // params[3] is http client which type should be http.Client.
 func HttpDelete(url string, params ...any) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -750,9 +757,8 @@ func main() {
 }
 ```
 
+### HttpPatch (Deprecated: use SendRequest for replacement)
 
-
-### <span id="HttpPatch">HttpPatch (Deprecated: use SendRequest for replacement)</span>
 <p>Send http patch request.</p>
 
 <b>Signature:</b>
@@ -764,6 +770,7 @@ func main() {
 // params[3] is http client which type should be http.Client.
 func HttpPatch(url string, params ...any) (*http.Response, error)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -800,9 +807,8 @@ func main() {
 }
 ```
 
+### ParseHttpResponse
 
-
-### <span id="ParseHttpResponse">ParseHttpResponse</span>
 <p>Decode http response to specified interface.</p>
 
 <b>Signature:</b>
@@ -810,6 +816,7 @@ func main() {
 ```go
 func ParseHttpResponse(resp *http.Response, obj any) error
 ```
+
 <b>Example:</b>
 
 ```go

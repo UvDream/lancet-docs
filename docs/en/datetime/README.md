@@ -87,7 +87,7 @@ import (
 - hh:mm:ss
 - mm:ss
 
-### <span id="AddDay">AddDay</span>
+### AddDay
 
 <p>Add or sub days to time.</p>
 
@@ -117,7 +117,7 @@ func main() {
 }
 ```
 
-### <span id="AddHour">AddHour</span>
+### AddHour
 
 <p>Add or sub hours to time.</p>
 
@@ -147,7 +147,7 @@ func main() {
 }
 ```
 
-### <span id="AddMinute">AddMinute</span>
+### AddMinute
 
 <p>Add or sub minutes to time.</p>
 
@@ -177,7 +177,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfMinute">BeginOfMinute</span>
+### BeginOfMinute
 
 <p>Return beginning minute time of day.</p>
 
@@ -205,7 +205,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfHour">BeginOfHour</span>
+### BeginOfHour
 
 <p>Return zero time of day.</p>
 
@@ -233,7 +233,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfDay">BeginOfDay</span>
+### BeginOfDay
 
 <p>Return begin time of day.</p>
 
@@ -261,7 +261,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfWeek">BeginOfWeek</span>
+### BeginOfWeek
 
 <p>Return beginning time of week, week begin from Sunday.</p>
 
@@ -289,7 +289,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfMonth">BeginOfMonth</span>
+### BeginOfMonth
 
 <p>Return beginning time of month</p>
 
@@ -317,7 +317,7 @@ func main() {
 }
 ```
 
-### <span id="BeginOfYear">BeginOfYear</span>
+### BeginOfYear
 
 <p>Return beginning time of year.</p>
 
@@ -345,7 +345,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfMinute">EndOfMinute</span>
+### EndOfMinute
 
 <p>Return end time minute of day.</p>
 
@@ -373,7 +373,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfHour">EndOfHour</span>
+### EndOfHour
 
 <p>Return end time hour of day.</p>
 
@@ -401,7 +401,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfDay">EndOfDay</span>
+### EndOfDay
 
 <p>Return end time hour of day.</p>
 
@@ -429,7 +429,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfWeek">EndOfWeek</span>
+### EndOfWeek
 
 <p>Return end time of week, week end with Saturday.</p>
 
@@ -457,7 +457,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfMonth">EndOfMonth</span>
+### EndOfMonth
 
 <p>Return end time of month</p>
 
@@ -485,7 +485,7 @@ func main() {
 }
 ```
 
-### <span id="EndOfYear">EndOfYear</span>
+### EndOfYear
 
 <p>Return beginning time of year.</p>
 
@@ -513,7 +513,7 @@ func main() {
 }
 ```
 
-### <span id="GetNowDate">GetNowDate</span>
+### GetNowDate
 
 <p>Get current date string, format is yyyy-mm-dd.</p>
 
@@ -541,7 +541,7 @@ func main() {
 }
 ```
 
-### <span id="GetNowTime">GetNowTime</span>
+### GetNowTime
 
 <p>Get current time string, format is hh:mm:ss.</p>
 
@@ -569,7 +569,7 @@ func main() {
 }
 ```
 
-### <span id="GetNowDateTime">GetNowDateTime</span>
+### GetNowDateTime
 
 <p>Get current date time string, format is yyyy-mm-dd hh:mm:ss.</p>
 
@@ -597,7 +597,7 @@ func main() {
 }
 ```
 
-### <span id="GetZeroHourTimestamp">GetZeroHourTimestamp</span>
+### GetZeroHourTimestamp
 
 <p>Return timestamp of zero hour (timestamp of 00:00).</p>
 
@@ -625,7 +625,7 @@ func main() {
 }
 ```
 
-### <span id="GetNightTimestamp">GetNightTimestamp</span>
+### GetNightTimestamp
 
 <p>Return timestamp of zero hour (timestamp of 23:59).</p>
 
@@ -653,7 +653,7 @@ func main() {
 }
 ```
 
-### <span id="FormatTimeToStr">FormatTimeToStr</span>
+### FormatTimeToStr
 
 <p>Format time to string, `format` param specification see note 1.</p>
 
@@ -681,7 +681,7 @@ func main() {
 }
 ```
 
-### <span id="FormatStrToTime">FormatStrToTime</span>
+### FormatStrToTime
 
 <p>Format string to time, `format` param specification see note 1.</p>
 
@@ -707,7 +707,7 @@ func main() {
 }
 ```
 
-### <span id="NewUnixNow">NewUnixNow</span>
+### NewUnixNow
 
 <p>Return unix timestamp of current time</p>
 
@@ -736,7 +736,7 @@ func main() {
 }
 ```
 
-### <span id="NewUnix">NewUnix</span>
+### NewUnix
 
 <p>Return unix timestamp of specified int64 value.</p>
 
@@ -765,7 +765,7 @@ func main() {
 }
 ```
 
-### <span id="NewFormat">NewFormat</span>
+### NewFormat
 
 <p>Return unix timestamp of specified time string, t should be "yyyy-mm-dd hh:mm:ss".</p>
 
@@ -794,7 +794,7 @@ func main() {
 }
 ```
 
-### <span id="NewISO8601">NewISO8601</span>
+### NewISO8601
 
 <p>Return unix timestamp of specified iso8601 time string.</p>
 
@@ -823,7 +823,7 @@ func main() {
 }
 ```
 
-### <span id="ToUnix">ToUnix</span>
+### ToUnix
 
 <p>Return unix timestamp.</p>
 
@@ -849,7 +849,7 @@ func main() {
 }
 ```
 
-### <span id="ToFormat">ToFormat</span>
+### ToFormat
 
 <p>Return time string 'yyyy-mm-dd hh:mm:ss'.</p>
 
@@ -875,7 +875,7 @@ func main() {
 }
 ```
 
-### <span id="ToFormatForTpl">ToFormatForTpl</span>
+### ToFormatForTpl
 
 <p>Return the time string which format is specified tpl.</p>
 
@@ -902,7 +902,7 @@ func main() {
 }
 ```
 
-### <span id="ToIso8601">ToIso8601</span>
+### ToIso8601
 
 <p>Return iso8601 time string.</p>
 

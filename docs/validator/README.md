@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Validator
-validator验证器包，包含常用字符串格式验证函数。
+
+validator 验证器包，包含常用字符串格式验证函数。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ validator验证器包，包含常用字符串格式验证函数。
 
 - [https://github.com/duke-git/lancet/blob/main/validator/validator.go](https://github.com/duke-git/lancet/blob/main/validator/validator.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/validator"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录：
+
 - [ContainChinese](#ContainChinese)
 - [ContainLetter](#ContainLetter)
 - [ContainLower](#ContainLower)
@@ -53,13 +56,12 @@ import (
 - [IsWeakPassword](#IsWeakPassword)
 - [IsZeroValue](#IsZeroValue)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 文档
 
+### ContainChinese
 
-### <span id="ContainChinese">ContainChinese</span>
 <p>验证字符串是否包含中文字符</p>
 
 <b>函数签名:</b>
@@ -67,6 +69,7 @@ import (
 ```go
 func ContainChinese(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -87,9 +90,8 @@ func main() {
 }
 ```
 
+### ContainLetter
 
-
-### <span id="ContainLetter">ContainLetter</span>
 <p>验证字符串是否包含至少一个英文字母</p>
 
 <b>函数签名:</b>
@@ -97,6 +99,7 @@ func main() {
 ```go
 func ContainLetter(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -117,10 +120,8 @@ func main() {
 }
 ```
 
+### ContainLower
 
-
-
-### <span id="ContainLower">ContainLower</span>
 <p>验证字符串是否包含至少一个英文小写字母</p>
 
 <b>函数签名:</b>
@@ -128,6 +129,7 @@ func main() {
 ```go
 func ContainLower(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -148,10 +150,8 @@ func main() {
 }
 ```
 
+### ContainUpper
 
-
-
-### <span id="ContainUpper">ContainUpper</span>
 <p>验证字符串是否包含至少一个英文大写字母.</p>
 
 <b>函数签名:</b>
@@ -159,6 +159,7 @@ func main() {
 ```go
 func ContainUpper(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -179,10 +180,8 @@ func main() {
 }
 ```
 
+### IsAlpha
 
-
-
-### <span id="IsAlpha">IsAlpha</span>
 <p>验证字符串是否只包含英文字母</p>
 
 <b>函数签名:</b>
@@ -190,6 +189,7 @@ func main() {
 ```go
 func IsAlpha(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -210,7 +210,8 @@ func main() {
 }
 ```
 
-### <span id="IsAllUpper">IsAllUpper</span>
+### IsAllUpper
+
 <p>验证字符串是否全是大写英文字母</p>
 
 <b>函数签名:</b>
@@ -218,6 +219,7 @@ func main() {
 ```go
 func IsAllUpper(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -235,10 +237,8 @@ func main() {
 }
 ```
 
+### IsAllLower
 
-
-
-### <span id="IsAllLower">IsAllLower</span>
 <p>验证字符串是否全是小写英文字母</p>
 
 <b>函数签名:</b>
@@ -246,6 +246,7 @@ func main() {
 ```go
 func IsAllLower(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -263,10 +264,8 @@ func main() {
 }
 ```
 
+### IsBase64
 
-
-
-### <span id="IsBase64">IsBase64</span>
 <p>验证字符串是否是base64编码</p>
 
 <b>函数签名:</b>
@@ -274,6 +273,7 @@ func main() {
 ```go
 func IsBase64(base64 string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -291,10 +291,8 @@ func main() {
 }
 ```
 
+### IsChineseMobile
 
-
-
-### <span id="IsChineseMobile">IsChineseMobile</span>
 <p>验证字符串是否是中国手机号码</p>
 
 <b>函数签名:</b>
@@ -302,6 +300,7 @@ func main() {
 ```go
 func IsChineseMobile(mobileNum string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -319,9 +318,8 @@ func main() {
 }
 ```
 
+### IsChineseIdNum
 
-
-### <span id="IsChineseIdNum">IsChineseIdNum</span>
 <p>验证字符串是否是中国身份证号码</p>
 
 <b>函数签名:</b>
@@ -329,6 +327,7 @@ func main() {
 ```go
 func IsChineseIdNum(id string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -346,10 +345,8 @@ func main() {
 }
 ```
 
+### IsChinesePhone
 
-
-
-### <span id="IsChinesePhone">IsChinesePhone</span>
 <p>验证字符串是否是中国电话座机号码</p>
 
 <b>函数签名:</b>
@@ -357,6 +354,7 @@ func main() {
 ```go
 func IsChinesePhone(phone string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -374,10 +372,8 @@ func main() {
 }
 ```
 
+### IsCreditCard
 
-
-
-### <span id="IsCreditCard">IsCreditCard</span>
 <p>验证字符串是否是信用卡号码</p>
 
 <b>函数签名:</b>
@@ -385,6 +381,7 @@ func main() {
 ```go
 func IsCreditCard(creditCart string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -402,10 +399,8 @@ func main() {
 }
 ```
 
+### IsDns
 
-
-
-### <span id="IsDns">IsDns</span>
 <p>验证字符串是否是有效dns</p>
 
 <b>函数签名:</b>
@@ -413,6 +408,7 @@ func main() {
 ```go
 func IsDns(dns string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -433,10 +429,8 @@ func main() {
 }
 ```
 
+### IsEmail
 
-
-
-### <span id="IsEmail">IsEmail</span>
 <p>验证字符串是否是有效电子邮件地址</p>
 
 <b>函数签名:</b>
@@ -444,6 +438,7 @@ func main() {
 ```go
 func IsEmail(email string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -461,11 +456,8 @@ func main() {
 }
 ```
 
+### IsEmptyString
 
-
-
-
-### <span id="IsEmptyString">IsEmptyString</span>
 <p>验证字符串是否是空字符串</p>
 
 <b>函数签名:</b>
@@ -473,6 +465,7 @@ func main() {
 ```go
 func IsEmptyString(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -490,10 +483,8 @@ func main() {
 }
 ```
 
+### IsFloatStr
 
-
-
-### <span id="IsFloatStr">IsFloatStr</span>
 <p>验证字符串是否是可以转换为浮点数</p>
 
 <b>函数签名:</b>
@@ -501,6 +492,7 @@ func main() {
 ```go
 func IsFloatStr(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -519,10 +511,8 @@ func main() {
 }
 ```
 
+### IsNumberStr
 
-
-
-### <span id="IsNumberStr">IsNumberStr</span>
 <p>验证字符串是否是可以转换为数字</p>
 
 <b>函数签名:</b>
@@ -530,6 +520,7 @@ func main() {
 ```go
 func IsNumberStr(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -548,10 +539,8 @@ func main() {
 }
 ```
 
+### IsJSON
 
-
-
-### <span id="IsJSON">IsJSON</span>
 <p>验证字符串是否是有效json</p>
 
 <b>函数签名:</b>
@@ -559,6 +548,7 @@ func main() {
 ```go
 func IsJSON(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -577,10 +567,8 @@ func main() {
 }
 ```
 
+### IsRegexMatch
 
-
-
-### <span id="IsRegexMatch">IsRegexMatch</span>
 <p>验证字符串是否可以匹配正则表达式</p>
 
 <b>函数签名:</b>
@@ -588,6 +576,7 @@ func main() {
 ```go
 func IsRegexMatch(s, regex string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -603,10 +592,8 @@ func main() {
 }
 ```
 
+### IsIntStr
 
-
-
-### <span id="IsIntStr">IsIntStr</span>
 <p>验证字符串是否是可以转换为整数</p>
 
 <b>函数签名:</b>
@@ -614,6 +601,7 @@ func main() {
 ```go
 func IsIntStr(s string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -630,10 +618,8 @@ func main() {
 }
 ```
 
+### IsIp
 
-
-
-### <span id="IsIp">IsIp</span>
 <p>验证字符串是否是ip地址</p>
 
 <b>函数签名:</b>
@@ -641,6 +627,7 @@ func main() {
 ```go
 func IsIp(ipstr string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -657,10 +644,8 @@ func main() {
 }
 ```
 
+### IsIpV4
 
-
-
-### <span id="IsIpV4">IsIpV4</span>
 <p>验证字符串是否是ipv4地址</p>
 
 <b>函数签名:</b>
@@ -668,6 +653,7 @@ func main() {
 ```go
 func IsIpV4(ipstr string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -684,10 +670,8 @@ func main() {
 }
 ```
 
+### IsIpV6
 
-
-
-### <span id="IsIpV6">IsIpV6</span>
 <p>验证字符串是否是ipv6地址</p>
 
 <b>函数签名:</b>
@@ -695,6 +679,7 @@ func main() {
 ```go
 func IsIpV6(ipstr string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -711,10 +696,8 @@ func main() {
 }
 ```
 
+### IsStrongPassword
 
-
-
-### <span id="IsStrongPassword">IsStrongPassword</span>
 <p>验证字符串是否是强密码：(alpha(lower+upper) + number + special chars(!@#$%^&*()?><))</p>
 
 <b>函数签名:</b>
@@ -722,6 +705,7 @@ func main() {
 ```go
 func IsStrongPassword(password string, length int) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -739,17 +723,16 @@ func main() {
 }
 ```
 
+### IsUrl
 
-
-
-### <span id="IsUrl">IsUrl</span>
 <p>验证字符串是否是url</p>
 
 <b>函数签名:</b>
 
 ```go
-func IsUrl(str string) bool 
+func IsUrl(str string) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -766,10 +749,8 @@ func main() {
 }
 ```
 
+### IsWeakPassword
 
-
-
-### <span id="IsWeakPassword">IsWeakPassword</span>
 <p>验证字符串是否是弱密码：（only letter or only number or letter + number）
 .</p>
 
@@ -778,6 +759,7 @@ func main() {
 ```go
 func IsWeakPassword(password string, length int) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -794,10 +776,8 @@ func main() {
 }
 ```
 
+### IsZeroValue
 
-
-
-### <span id="IsZeroValue">IsZeroValue</span>
 <p>判断传入的参数值是否为零值</p>
 
 <b>函数签名:</b>
@@ -805,6 +785,7 @@ func main() {
 ```go
 func IsZeroValue(value any) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -819,7 +800,7 @@ func main() {
 	fmt.Println(validator.IsZeroValue("")) //true
 	fmt.Println(validator.IsZeroValue([]int)) //true
 	fmt.Println(validator.IsZeroValue(interface{})) //true
-	
+
 	fmt.Println(validator.IsZeroValue("0")) //false
 	fmt.Println(validator.IsZeroValue("nil")) //false
 }

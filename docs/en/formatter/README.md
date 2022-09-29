@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Formatter
+
 formatter contains some functions for data formatting.
 
 <div STYLE="page-break-after: always;"></div>
@@ -14,6 +16,7 @@ formatter contains some functions for data formatting.
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/formatter"
@@ -23,15 +26,15 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [Comma](#Comma)
 
 <div STYLE="page-break-after: always;"></div>
 
 ## Documentation
 
+### Comma
 
-
-### <span id="Comma">Comma</span>
 <p>Add comma to number by every 3 numbers from right. ahead by symbol char.
 Param should be number or numberic string.</p>
 
@@ -40,6 +43,7 @@ Param should be number or numberic string.</p>
 ```go
 func Comma(v any, symbol string) string
 ```
+
 <b>Example:</b>
 
 ```go

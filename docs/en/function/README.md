@@ -2,7 +2,9 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Function
+
 Package function can control the flow of function execution and support part of functional programming.
 
 <div STYLE="page-break-after: always;"></div>
@@ -15,6 +17,7 @@ Package function can control the flow of function execution and support part of 
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/function"
@@ -24,6 +27,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [After](#After)
 - [Before](#Before)
 - [Curry](#Curry)
@@ -36,9 +40,8 @@ import (
 
 ## Documentation
 
+### After
 
-
-### <span id="After">After</span>
 <p>Creates a function that invokes given func once it's called n or more times.</p>
 
 <b>Signature:</b>
@@ -46,6 +49,7 @@ import (
 ```go
 func After(n int, fn any) func(args ...any) []reflect.Value
 ```
+
 <b>Example:</b>
 
 ```go
@@ -76,15 +80,13 @@ func main() {
 
     //output:
     // arr is [a b]
-    // arr[0] is a 
-    // arr[1] is b 
+    // arr[0] is a
+    // arr[1] is b
     // last print
 }
 ```
 
-
-
-### <span id="Before">Before</span>
+### Before
 
 <p>creates a function that invokes func once it's called less than n times.</p>
 
@@ -93,6 +95,7 @@ func main() {
 ```go
 func Before(n int, fn any) func(args ...any) []reflect.Value
 ```
+
 <b>Example:</b>
 
 ```go
@@ -126,9 +129,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Curry">Curry</span>
+### Curry
 
 <p>Make a curry function.</p>
 
@@ -138,6 +139,7 @@ func main() {
 type Fn func(...any) any
 func (f Fn) Curry(i any) func(...any) any
 ```
+
 <b>Example:</b>
 
 ```go
@@ -161,9 +163,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Compose">Compose</span>
+### Compose
 
 <p>Compose the function list from right to left, then return the composed function.</p>
 
@@ -172,6 +172,7 @@ func main() {
 ```go
 func Compose(fnList ...func(...any) any) func(...any) any
 ```
+
 <b>Example:</b>
 
 ```go
@@ -197,9 +198,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Debounced">Debounced</span>
+### Debounced
 
 <p>Creates a debounced function that delays invoking fn until after wait duration have elapsed since the last time the debounced function was invoked.</p>
 
@@ -208,6 +207,7 @@ func main() {
 ```go
 func Debounced(fn func(), duration time.Duration) func()
 ```
+
 <b>Example:</b>
 
 ```go
@@ -239,9 +239,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Delay">Delay</span>
+### Delay
 
 <p>Invoke function after delayed time.</p>
 
@@ -250,6 +248,7 @@ func main() {
 ```go
 func Delay(delay time.Duration, fn any, args ...any)
 ```
+
 <b>Example:</b>
 
 ```go
@@ -268,9 +267,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Schedule">Schedule</span>
+### Schedule
 
 <p>Invoke function every duration time, until close the returned bool chan.</p>
 
@@ -279,6 +276,7 @@ func main() {
 ```go
 func Schedule(d time.Duration, fn any, args ...any) chan bool
 ```
+
 <b>Example:</b>
 
 ```go
@@ -303,9 +301,7 @@ func main() {
 }
 ```
 
-
-
-### <span id="Watcher">Watcher</span>
+### Watcher
 
 <p>Watcher is used for record code excution time. can start/stop/reset the watch timer. get the elapsed time of function execution.</p>
 
@@ -322,6 +318,7 @@ func (w *Watcher) Stop() //stop the watcher
 func (w *Watcher) Reset() //reset the watcher
 func (w *Watcher) GetElapsedTime() time.Duration //get the elapsed time of function execution
 ```
+
 <b>Example:</b>
 
 ```go
@@ -361,5 +358,3 @@ func longRunningTask() {
 }
 
 ```
-
-

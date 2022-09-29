@@ -4,6 +4,7 @@ sidebar: auto
 ---
 
 # Mathutil
+
 Package mathutil implements some functions for math calculation.
 
 <div STYLE="page-break-after: always;"></div>
@@ -12,10 +13,10 @@ Package mathutil implements some functions for math calculation.
 
 - [https://github.com/duke-git/lancet/blob/main/mathutil/mathutil.go](https://github.com/duke-git/lancet/blob/main/mathutil/mathutil.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## Example:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/mathutil"
@@ -25,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## Index
+
 - [Average](#Average)
 - [Exponent](#Exponent)
 - [Fibonacci](#Fibonacci)
@@ -43,9 +45,8 @@ import (
 
 ## Documentation
 
+### Average
 
-
-### <span id="Average">Average</span>
 <p>Return average value of numbers. Maybe call RoundToFloat to round result.</p>
 
 <b>Signature:</b>
@@ -53,6 +54,7 @@ import (
 ```go
 func Average[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -71,9 +73,8 @@ func main() {
 }
 ```
 
+### Exponent
 
-
-### <span id="Exponent">Exponent</span>
 <p>Calculate x to the nth power.</p>
 
 <b>Signature:</b>
@@ -81,6 +82,7 @@ func main() {
 ```go
 func Exponent(x, n int64) int64
 ```
+
 <b>Example:</b>
 
 ```go
@@ -98,9 +100,8 @@ func main() {
 }
 ```
 
+### Fibonacci
 
-
-### <span id="Fibonacci">Fibonacci</span>
 <p>Calculate the nth number of fibonacci sequence.</p>
 
 <b>Signature:</b>
@@ -108,6 +109,7 @@ func main() {
 ```go
 func Fibonacci(first, second, n int) int
 ```
+
 <b>Example:</b>
 
 ```go
@@ -127,9 +129,8 @@ func main() {
 }
 ```
 
+### Factorial
 
-
-### <span id="Factorial">Factorial</span>
 <p>Calculate the factorial of x.</p>
 
 <b>Signature:</b>
@@ -137,6 +138,7 @@ func main() {
 ```go
 func Factorial(x uint) uint
 ```
+
 <b>Example:</b>
 
 ```go
@@ -155,9 +157,8 @@ func main() {
 }
 ```
 
+### Max
 
-
-### <span id="Max">Max</span>
 <p>Return max value of numbers.</p>
 
 <b>Signature:</b>
@@ -165,6 +166,7 @@ func main() {
 ```go
 func Max[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -182,17 +184,16 @@ func main() {
 }
 ```
 
+### MaxBy
 
-
-
-### <span id="MaxBy">MaxBy</span>
 <p>Return the maximum value of a slice using the given comparator function.</p>
 
 <b>Signature:</b>
 
 ```go
-func MaxBy[T any](slice []T, comparator func(T, T) bool) T 
+func MaxBy[T any](slice []T, comparator func(T, T) bool) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -221,9 +222,8 @@ func main() {
 }
 ```
 
+### Min
 
-
-### <span id="Min">Min</span>
 <p>Return min value of numbers.</p>
 
 <b>Signature:</b>
@@ -231,6 +231,7 @@ func main() {
 ```go
 func Min[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -248,16 +249,16 @@ func main() {
 }
 ```
 
+### MinBy
 
-
-### <span id="MinBy">MinBy</span>
 <p>Return the minimum value of a slice using the given comparator function.</p>
 
 <b>Signature:</b>
 
 ```go
-func MinBy[T any](slice []T, comparator func(T, T) bool) T 
+func MinBy[T any](slice []T, comparator func(T, T) bool) T
 ```
+
 <b>Example:</b>
 
 ```go
@@ -286,10 +287,8 @@ func main() {
 }
 ```
 
+### Percent
 
-
-
-### <span id="Percent">Percent</span>
 <p>calculate the percentage of val to total, retain n decimal places.</p>
 
 <b>Signature:</b>
@@ -297,6 +296,7 @@ func main() {
 ```go
 func Percent(val, total float64, n int) float64
 ```
+
 <b>Example:</b>
 
 ```go
@@ -313,9 +313,8 @@ func main() {
 }
 ```
 
+### RoundToFloat
 
-
-### <span id="RoundToFloat">RoundToFloat</span>
 <p>Round float up to n decimal places.</p>
 
 <b>Signature:</b>
@@ -323,6 +322,7 @@ func main() {
 ```go
 func RoundToFloat(x float64, n int) float64
 ```
+
 <b>Example:</b>
 
 ```go
@@ -342,10 +342,8 @@ func main() {
 }
 ```
 
+### RoundToString
 
-
-
-### <span id="RoundToString">RoundToString</span>
 <p>Round float up to n decimal places. will return string.</p>
 
 <b>Signature:</b>
@@ -353,6 +351,7 @@ func main() {
 ```go
 func RoundToString(x float64, n int) string
 ```
+
 <b>Example:</b>
 
 ```go
@@ -372,9 +371,8 @@ func main() {
 }
 ```
 
+### TruncRound
 
-
-### <span id="TruncRound">TruncRound</span>
 <p>Round float off n decimal places.</p>
 
 <b>Signature:</b>
@@ -382,6 +380,7 @@ func main() {
 ```go
 func TruncRound(x float64, n int) float64
 ```
+
 <b>Example:</b>
 
 ```go
@@ -400,5 +399,3 @@ func main() {
 	fmt.Println(mathutil.TruncRound(0.125, 3)) //0.125
 }
 ```
-
-

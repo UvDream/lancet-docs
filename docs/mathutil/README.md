@@ -2,8 +2,10 @@
 sidebarDepth: 3
 sidebar: auto
 ---
+
 # Mathutil
-mathutil包实现了一些数学计算的函数.
+
+mathutil 包实现了一些数学计算的函数.
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -11,10 +13,10 @@ mathutil包实现了一些数学计算的函数.
 
 - [https://github.com/duke-git/lancet/blob/main/mathutil/mathutil.go](https://github.com/duke-git/lancet/blob/main/mathutil/mathutil.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法:
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/mathutil"
@@ -24,6 +26,7 @@ import (
 <div STYLE="page-break-after: always;"></div>
 
 ## 目录
+
 - [Average](#Average)
 - [Exponent](#Exponent)
 - [Fibonacci](#Fibonacci)
@@ -42,8 +45,8 @@ import (
 
 ## Documentation
 
+### Average
 
-### <span id="Average">Average</span>
 <p>计算平均数. 可能需要对结果调用RoundToFloat方法四舍五入</p>
 
 <b>函数签名:</b>
@@ -51,6 +54,7 @@ import (
 ```go
 func Average[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -69,8 +73,8 @@ func main() {
 }
 ```
 
+### Exponent
 
-### <span id="Exponent">Exponent</span>
 <p>指数计算（x的n次方）</p>
 
 <b>函数签名:</b>
@@ -78,6 +82,7 @@ func main() {
 ```go
 func Exponent(x, n int64) int64
 ```
+
 <b>例子:</b>
 
 ```go
@@ -95,9 +100,8 @@ func main() {
 }
 ```
 
+### Fibonacci
 
-
-### <span id="Fibonacci">Fibonacci</span>
 <p>计算斐波那契数列的第n个数</p>
 
 <b>函数签名:</b>
@@ -105,6 +109,7 @@ func main() {
 ```go
 func Fibonacci(first, second, n int) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -124,9 +129,8 @@ func main() {
 }
 ```
 
+### Factorial
 
-
-### <span id="Factorial">Factorial</span>
 <p>计算阶乘</p>
 
 <b>函数签名:</b>
@@ -134,6 +138,7 @@ func main() {
 ```go
 func Factorial(x uint) uint
 ```
+
 <b>例子:</b>
 
 ```go
@@ -152,8 +157,8 @@ func main() {
 }
 ```
 
+### Max
 
-### <span id="Max">Max</span>
 <p>返回参数中的最大数</p>
 
 <b>函数签名:</b>
@@ -161,6 +166,7 @@ func main() {
 ```go
 func Max[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -178,16 +184,16 @@ func main() {
 }
 ```
 
+### MaxBy
 
-
-### <span id="MaxBy">MaxBy</span>
 <p>使用给定的比较器函数返回切片的最大值</p>
 
 <b>函数签名:</b>
 
 ```go
-func MaxBy[T any](slice []T, comparator func(T, T) bool) T 
+func MaxBy[T any](slice []T, comparator func(T, T) bool) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -216,10 +222,8 @@ func main() {
 }
 ```
 
+### Min
 
-
-
-### <span id="Min">Min</span>
 <p>返回参数中的最小数</p>
 
 <b>函数签名:</b>
@@ -227,6 +231,7 @@ func main() {
 ```go
 func Min[T lancetconstraints.Number](numbers ...T) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -244,16 +249,16 @@ func main() {
 }
 ```
 
+### MinBy
 
-
-### <span id="MinBy">MinBy</span>
 <p>使用给定的比较器函数返回切片的最小值</p>
 
 <b>函数签名:</b>
 
 ```go
-func MinBy[T any](slice []T, comparator func(T, T) bool) T 
+func MinBy[T any](slice []T, comparator func(T, T) bool) T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -282,10 +287,8 @@ func main() {
 }
 ```
 
+### Percent
 
-
-
-### <span id="Percent">Percent</span>
 <p>计算百分比，保留n位小数</p>
 
 <b>函数签名:</b>
@@ -293,6 +296,7 @@ func main() {
 ```go
 func Percent(val, total float64, n int) float64
 ```
+
 <b>例子:</b>
 
 ```go
@@ -309,9 +313,8 @@ func main() {
 }
 ```
 
+### RoundToFloat
 
-
-### <span id="RoundToFloat">RoundToFloat</span>
 <p>四舍五入，保留n位小数</p>
 
 <b>函数签名:</b>
@@ -319,6 +322,7 @@ func main() {
 ```go
 func RoundToFloat(x float64, n int) float64
 ```
+
 <b>例子:</b>
 
 ```go
@@ -338,10 +342,8 @@ func main() {
 }
 ```
 
+### RoundToString
 
-
-
-### <span id="RoundToString">RoundToString</span>
 <p>四舍五入，保留n位小数，返回字符串</p>
 
 <b>函数签名:</b>
@@ -349,6 +351,7 @@ func main() {
 ```go
 func RoundToString(x float64, n int) string
 ```
+
 <b>例子:</b>
 
 ```go
@@ -368,9 +371,8 @@ func main() {
 }
 ```
 
+### TruncRound
 
-
-### <span id="TruncRound">TruncRound</span>
 <p>截短n位小数（不进行四舍五入）</p>
 
 <b>函数签名:</b>
@@ -378,6 +380,7 @@ func main() {
 ```go
 func TruncRound(x float64, n int) float64
 ```
+
 <b>例子:</b>
 
 ```go
@@ -396,5 +399,3 @@ func main() {
 	fmt.Println(mathutil.TruncRound(0.125, 3)) //0.125
 }
 ```
-
-
