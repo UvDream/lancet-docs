@@ -7,7 +7,7 @@ import {defineConfig} from "vuepress/config";
 export = defineConfig((ctx) => ({
     base:"/lancet-docs/",
     title: "Lancet-docs",
-    description: "Lancet 文档",
+    description: "lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。",
     configureWebpack: {
         resolve: {
             alias: {
@@ -18,13 +18,13 @@ export = defineConfig((ctx) => ({
     locales: {
         '/': {
             lang: 'zh-CN',
-            title: 'Lancet-docs',
-            description: 'Lancet-docs'
+            title: 'Lancet文档',
+            description: 'lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。'
         },
         '/en/': {
             lang: 'en-US',
             title: 'Lancet-docs',
-            description: 'Lancet-docs'
+            description: 'Lancet is a comprehensive, efficient, and reusable util function library of go. Inspired by the java apache common package and lodash.js.'
         }
     },
     themeConfig: {
