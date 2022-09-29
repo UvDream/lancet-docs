@@ -41,14 +41,16 @@ export = defineConfig((ctx) => ({
                 label: "简体中文",
                 editLinkText: "在 GitHub 上编辑此页",
                 nav: nav_zh,
+                lastUpdated: '最后更新时间',
             },
             "/en/": {
                 selectText: "Languages",
                 label: "English",
                 editLinkText: "Edit this page on GitHub",
                 nav: nav_en,
+                lastUpdated: 'Last Updated',
             },
         },
     },
-    plugins:[['vuepress-plugin-code-copy', true]]
+    plugins:[['vuepress-plugin-code-copy', true],["@vuepress/plugin-last-updated"],["@vuepress/plugin-back-to-top"],["@vuepress/pwa"]]
 }));
