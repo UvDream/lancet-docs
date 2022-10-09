@@ -88,4 +88,8 @@ export const nav_en = [
     text: "Github",
     link: "https://github.com/UvDream/lancet-docs",
   },
+  {
+    text: "domestic mirror",
+    link: "https://uvdream.gitee.io/lancet-docs",
+  },
 ];

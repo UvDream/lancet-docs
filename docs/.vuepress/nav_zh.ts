@@ -88,4 +88,8 @@ export const nav_zh = [
     text: "Github",
     link: "https://github.com/UvDream/lancet-docs",
   },
+  {
+    text: "国内镜像",
+    link: "https://uvdream.gitee.io/lancet-docs",
+  },
 ];
