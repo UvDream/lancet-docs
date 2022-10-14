@@ -226,12 +226,12 @@ func main() {
 
 ### BeginOfWeek
 
-<p>返回指定时间的星期开始时间</p>
+<p>返回指定时间的每周开始时间,默认开始时间星期日</p>
 
 <b>函数签名:</b>
 
 ```go
-func BeginOfWeek(t time.Time) time.Time
+func BeginOfWeek(t time.Time, beginFrom ...time.Weekday) time.Time
 ```
 
 <b>例子:</b>
@@ -394,12 +394,12 @@ func main() {
 
 ### EndOfWeek
 
-<p>返回指定时间的星期结束时间</p>
+<p>返回指定时间的星期结束时间,默认结束时间星期六</p>
 
 <b>函数签名:</b>
 
 ```go
-func EndOfWeek(t time.Time) time.Time
+func EndOfWeek(t time.Time, endWith ...time.Weekday) time.Time
 ```
 
 <b>例子:</b>

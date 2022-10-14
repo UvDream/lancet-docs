@@ -232,7 +232,7 @@ func main() {
 <b>Signature:</b>
 
 ```go
-func BeginOfWeek(t time.Time) time.Time
+func BeginOfWeek(t time.Time, beginFrom ...time.Weekday) time.Time
 ```
 
 <b>Example:</b>
@@ -400,7 +400,7 @@ func main() {
 <b>Signature:</b>
 
 ```go
-func EndOfWeek(t time.Time) time.Time
+func EndOfWeek(t time.Time, endWith ...time.Weekday) time.Time
 ```
 
 <b>Example:</b>
