@@ -44,6 +44,18 @@ export = defineConfig((ctx) => ({
         label: "简体中文",
         editLinkText: "在 GitHub 上编辑此页",
         nav: nav_zh,
+        sidebar: {
+          "/datastructure/": [
+            "",
+            "linklist",
+            "stack",
+            "queue",
+            "set",
+            "tree",
+            "heap",
+            "hashmap",
+          ],
+        },
         lastUpdated: "最后更新时间",
       },
       "/en/": {
@@ -51,6 +63,18 @@ export = defineConfig((ctx) => ({
         label: "English",
         editLinkText: "Edit this page on GitHub",
         nav: nav_en,
+        sidebar: {
+          "/en/datastructure/": [
+            "",
+            "linklist",
+            "stack",
+            "queue",
+            "set",
+            "tree",
+            "heap",
+            "hashmap",
+          ],
+        },
         lastUpdated: "Last Updated",
       },
     },

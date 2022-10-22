@@ -1,10 +1,4 @@
----
-sidebarDepth: 3
-sidebar: auto
----
-
 # List
-
 List is a linear table, implemented with slice.
 
 <div STYLE="page-break-after: always;"></div>
@@ -13,10 +7,10 @@ List is a linear table, implemented with slice.
 
 - [https://github.com/duke-git/lancet/blob/main/datastructure/list/list.go](https://github.com/duke-git/lancet/blob/main/datastructure/list/list.go)
 
+
 <div STYLE="page-break-after: always;"></div>
 
 ## Usage
-
 ```go
 import (
     list "github.com/duke-git/lancet/v2/datastructure/list"
@@ -25,10 +19,42 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
+## Index
+
+- [NewList](#NewList)
+- [Contain](#Contain)
+- [Data](#Data)
+- [ValueOf](#ValueOf)
+- [IndexOf](#IndexOf)
+- [LastIndexOf](#LastIndexOf)
+- [IndexOfFunc](#IndexOfFunc)
+- [LastIndexOfFunc](#LastIndexOfFunc)
+- [Push](#Push)
+- [PopFirst](#PopFirst)
+- [PopLast](#PopLast)
+- [DeleteAt](#DeleteAt)
+- [InsertAt](#InsertAt)
+- [UpdateAt](#UpdateAt)
+- [Equal](#Equal)
+- [IsEmpty](#IsEmpty)
+- [Clear](#Clear)
+- [Clone](#Clone)
+- [Merge](#Merge)
+- [Size](#Size)
+- [Cap](#Cap)
+- [Swap](#Swap)
+- [Reverse](#Reverse)
+- [Unique](#Unique)
+- [Union](#Union)
+- [Intersection](#Intersection)
+- [SubList](#SubList)
+- [DeleteIf](#DeleteIf)
+
+<div STYLE="page-break-after: always;"></div>
+
 ## Documentation
 
-### NewList
-
+### <span id="NewList">NewList</span>
 <p>List is a linear table, implemented with slice.
 NewList function return a list pointer</p>
 
@@ -40,7 +66,6 @@ type List[T any] struct {
 }
 func NewList[T any](data []T) *List[T]
 ```
-
 <b>Example:</b>
 
 ```go
@@ -57,8 +82,9 @@ func main() {
 }
 ```
 
-### Contain
 
+
+### <span id="Contain">Contain</span>
 <p>Check if the value in the list or not</p>
 
 <b>Signature:</b>
@@ -66,7 +92,6 @@ func main() {
 ```go
 func (l *List[T]) Contain(value T) bool
 ```
-
 <b>Example:</b>
 
 ```go
@@ -85,8 +110,10 @@ func main() {
 }
 ```
 
-### Data
 
+
+
+### <span id="Data">Data</span>
 <p>Return slice of list data</p>
 
 <b>Signature:</b>
@@ -94,7 +121,6 @@ func main() {
 ```go
 func (l *List[T]) Data() []T
 ```
-
 <b>Example:</b>
 
 ```go
@@ -113,8 +139,10 @@ func main() {
 }
 ```
 
-### ValueOf
 
+
+
+### <span id="ValueOf">ValueOf</span>
 <p>Return the value pointer at index in list</p>
 
 <b>Signature:</b>
@@ -122,7 +150,6 @@ func main() {
 ```go
 func (l *List[T]) ValueOf(index int) (*T, bool)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -142,8 +169,10 @@ func main() {
 }
 ```
 
-### IndexOf
 
+
+
+### <span id="IndexOf">IndexOf</span>
 <p>Returns the index of value in the list. if not found return -1</p>
 
 <b>Signature:</b>
@@ -151,7 +180,6 @@ func main() {
 ```go
 func (l *List[T]) IndexOf(value T) int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -170,8 +198,7 @@ func main() {
 }
 ```
 
-### LastIndexOf
-
+### <span id="LastIndexOf">LastIndexOf</span>
 <p> Returns the index of the last occurrence of the value in this list if not found return -1</p>
 
 <b>Signature:</b>
@@ -179,7 +206,6 @@ func main() {
 ```go
 func (l *List[T]) LastIndexOf(value T) int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -198,16 +224,14 @@ func main() {
 }
 ```
 
-### IndexOfFunc
-
+### <span id="IndexOfFunc">IndexOfFunc</span>
 <p> IndexOfFunc returns the first index satisfying f(v). if not found return -1</p>
 
 <b>Signature:</b>
 
 ```go
-func (l *List[T]) IndexOfFunc(f func(T) bool) int
+func (l *List[T]) IndexOfFunc(f func(T) bool) int 
 ```
-
 <b>Example:</b>
 
 ```go
@@ -226,8 +250,7 @@ func main() {
 }
 ```
 
-### LastIndexOfFunc
-
+### <span id="LastIndexOfFunc">LastIndexOfFunc</span>
 <p>LastIndexOfFunc returns the index of the last occurrence of the value in this list satisfying f(data[i]). if not found return -1</p>
 
 <b>Signature:</b>
@@ -235,7 +258,6 @@ func main() {
 ```go
 func (l *List[T]) LastIndexOfFunc(f func(T) bool) int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -254,8 +276,9 @@ func main() {
 }
 ```
 
-### Push
 
+
+### <span id="Push">Push</span>
 <p>Append value to the list</p>
 
 <b>Signature:</b>
@@ -263,7 +286,6 @@ func main() {
 ```go
 func (l *List[T]) Push(value T)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -282,8 +304,10 @@ func main() {
 }
 ```
 
-### PopFirst
 
+
+
+### <span id="PopFirst">PopFirst</span>
 <p>Delete the first value of list and return it</p>
 
 <b>Signature:</b>
@@ -291,7 +315,6 @@ func main() {
 ```go
 func (l *List[T]) PopFirst() (*T, bool)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -312,8 +335,11 @@ func main() {
 }
 ```
 
-### PopFirst
 
+
+
+
+### <span id="PopLast">PopFirst</span>
 <p>Delete the last value of list and return it</p>
 
 <b>Signature:</b>
@@ -321,7 +347,6 @@ func main() {
 ```go
 func (l *List[T]) PopLast() (*T, bool)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -342,8 +367,10 @@ func main() {
 }
 ```
 
-### DeleteAt
 
+
+
+### <span id="DeleteAt">DeleteAt</span>
 <p>Delete the value of list at index, if index is not between 0 and length of list data, do nothing</p>
 
 <b>Signature:</b>
@@ -351,7 +378,6 @@ func main() {
 ```go
 func (l *List[T]) DeleteAt(index int)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -379,8 +405,10 @@ func main() {
 }
 ```
 
-### InsertAt
 
+
+
+### <span id="InsertAt">InsertAt</span>
 <p>Insert value into list at index, if index is not between 0 and length of list data, do nothing</p>
 
 <b>Signature:</b>
@@ -388,7 +416,6 @@ func main() {
 ```go
 func (l *List[T]) InsertAt(index int, value T)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -416,8 +443,9 @@ func main() {
 }
 ```
 
-### UpdateAt
 
+
+### <span id="UpdateAt">UpdateAt</span>
 <p>Update value of list at index, index shoud between 0 and list size - 1</p>
 
 <b>Signature:</b>
@@ -425,7 +453,6 @@ func main() {
 ```go
 func (l *List[T]) UpdateAt(index int, value T)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -450,8 +477,8 @@ func main() {
 }
 ```
 
-### Equal
 
+### <span id="Equal">Equal</span>
 <p>Compare a list to another list, use reflect.DeepEqual on every element</p>
 
 <b>Signature:</b>
@@ -459,7 +486,6 @@ func main() {
 ```go
 func (l *List[T]) Equal(other *List[T]) bool
 ```
-
 <b>Example:</b>
 
 ```go
@@ -480,8 +506,9 @@ func main() {
 }
 ```
 
-### IsEmpty
 
+
+### <span id="IsEmpty">IsEmpty</span>
 <p>Check if a list is empty or not</p>
 
 <b>Signature:</b>
@@ -489,7 +516,6 @@ func main() {
 ```go
 func (l *List[T]) IsEmpty() bool
 ```
-
 <b>Example:</b>
 
 ```go
@@ -509,8 +535,10 @@ func main() {
 }
 ```
 
-### Clear
 
+
+
+### <span id="Clear">Clear</span>
 <p>Clear the data of list</p>
 
 <b>Signature:</b>
@@ -518,7 +546,6 @@ func main() {
 ```go
 func (l *List[T]) Clear()
 ```
-
 <b>Example:</b>
 
 ```go
@@ -537,8 +564,9 @@ func main() {
 }
 ```
 
-### Clone
 
+
+### <span id="Clone">Clone</span>
 <p>Return a copy of list</p>
 
 <b>Signature:</b>
@@ -546,7 +574,6 @@ func main() {
 ```go
 func (l *List[T]) Clone() *List[T]
 ```
-
 <b>Example:</b>
 
 ```go
@@ -565,8 +592,10 @@ func main() {
 }
 ```
 
-### Merge
 
+
+
+### <span id="Merge">Merge</span>
 <p>Merge two list, return new list, don't change original list</p>
 
 <b>Signature:</b>
@@ -574,7 +603,6 @@ func main() {
 ```go
 func (l *List[T]) Merge(other *List[T]) *List[T]
 ```
-
 <b>Example:</b>
 
 ```go
@@ -594,8 +622,9 @@ func main() {
 }
 ```
 
-### Size
 
+
+### <span id="Size">Size</span>
 <p>Return number of list data items</p>
 
 <b>Signature:</b>
@@ -603,7 +632,6 @@ func main() {
 ```go
 func (l *List[T]) Size() int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -621,8 +649,10 @@ func main() {
 }
 ```
 
-### Cap
 
+
+
+### <span id="Cap">Cap</span>
 <p>Cap return cap of the inner data</p>
 
 <b>Signature:</b>
@@ -630,7 +660,6 @@ func main() {
 ```go
 func (l *List[T]) Cap() int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -643,15 +672,17 @@ import (
 
 func main() {
 	data := make([]int, 0, 100)
-
+	
     li := list.NewList(data)
 
     fmt.Println(li.Cap()) // 100
 }
 ```
 
-### Swap
 
+
+
+### <span id="Swap">Swap</span>
 <p>Swap the value at two index in list</p>
 
 <b>Signature:</b>
@@ -659,7 +690,6 @@ func main() {
 ```go
 func (l *List[T]) Swap(i, j int)
 ```
-
 <b>Example:</b>
 
 ```go
@@ -678,8 +708,10 @@ func main() {
 }
 ```
 
-### Reverse
 
+
+
+### <span id="Reverse">Reverse</span>
 <p>Reverse the data item order of list</p>
 
 <b>Signature:</b>
@@ -687,7 +719,6 @@ func main() {
 ```go
 func (l *List[T]) Reverse()
 ```
-
 <b>Example:</b>
 
 ```go
@@ -706,8 +737,10 @@ func main() {
 }
 ```
 
-### Unique
 
+
+
+### <span id="Unique">Unique</span>
 <p>Remove duplicate items in list</p>
 
 <b>Signature:</b>
@@ -715,7 +748,6 @@ func main() {
 ```go
 func (l *List[T]) Unique()
 ```
-
 <b>Example:</b>
 
 ```go
@@ -734,8 +766,10 @@ func main() {
 }
 ```
 
-### Union
 
+
+
+### <span id="Union">Union</span>
 <p>Creates a new list contain all elements in list l and other, remove duplicate element</p>
 
 <b>Signature:</b>
@@ -743,7 +777,6 @@ func main() {
 ```go
 func (l *List[T]) Union(other *List[T]) *List[T]
 ```
-
 <b>Example:</b>
 
 ```go
@@ -763,8 +796,10 @@ func main() {
 }
 ```
 
-### Intersection
 
+
+
+### <span id="Intersection">Intersection</span>
 <p>Creates a new list whose element both be contained in list l and other</p>
 
 <b>Signature:</b>
@@ -772,7 +807,6 @@ func main() {
 ```go
 func (l *List[T]) Intersection(other *List[T]) *List[T]
 ```
-
 <b>Example:</b>
 
 ```go
@@ -792,16 +826,17 @@ func main() {
 }
 ```
 
-### SubList
 
+
+
+### <span id="SubList">SubList</span>
 <p>SubList returns a sub list of the original list between the specified fromIndex, inclusive, and toIndex, exclusive.</p>
 
 <b>Signature:</b>
 
 ```go
-func (l *List[T]) SubList(fromIndex, toIndex int) *List[T]
+func (l *List[T]) SubList(fromIndex, toIndex int) *List[T] 
 ```
-
 <b>Example:</b>
 
 ```go
@@ -814,13 +849,15 @@ import (
 
 func main() {
     l := list.NewList([]int{1, 2, 3, 4, 5, 6})
-
+   
     fmt.Println(l.SubList(2, 5)) // []int{3, 4, 5}
 }
 ```
 
-### DeleteIf
 
+
+
+### <span id="DeleteIf">DeleteIf</span>
 <p>DeleteIf delete all satisfying f(data[i]), returns count of removed elements</p>
 
 <b>Signature:</b>
@@ -828,7 +865,6 @@ func main() {
 ```go
 func (l *List[T]) DeleteIf(f func(T) bool) int
 ```
-
 <b>Example:</b>
 
 ```go
@@ -842,7 +878,7 @@ import (
 func main() {
 	l := list.NewList([]int{1, 1, 1, 1, 2, 3, 1, 1, 4, 1, 1, 1, 1, 1, 1})
 
-	fmt.Println(l.DeleteIf(func(a int) bool { return a == 1 })) // 12
+	fmt.Println(l.DeleteIf(func(a int) bool { return a == 1 })) // 12 
 	fmt.Println(l.Data()) // []int{2, 3, 4}
 }
 ```
