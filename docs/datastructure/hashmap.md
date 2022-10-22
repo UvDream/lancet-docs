@@ -1,21 +1,16 @@
----
-sidebarDepth: 3
-sidebar: auto
----
-
 # HashMap
 
-HashMap 数据结构实现
+HashMap is a key value map data structure.
 
 <div STYLE="page-break-after: always;"></div>
 
-## 源码
+## Source
 
 - [https://github.com/duke-git/lancet/blob/main/datastructure/hashmap/hashmap.go](https://github.com/duke-git/lancet/blob/main/datastructure/hashmap/hashmap.go)
 
 <div STYLE="page-break-after: always;"></div>
 
-## 用法
+## Usage
 
 ```go
 import (
@@ -25,11 +20,10 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
+## Index
 
 - [NewHashMap](#NewHashMap)
 - [NewHashMapWithCapacity](#NewHashMapWithCapacity)
-
 - [Get](#Get)
 - [Put](#Put)
 - [Delete](#Delete)
@@ -37,19 +31,19 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## API 文档
+## Documentation
 
 ### <span id="NewHashMap">NewHashMap</span>
 
-<p>新建默认容量（1 << 10）的HashMap指针实例</p>
+<p>Make a HashMap instance with default capacity is 1 << 10.</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func NewHashMap() *HashMap
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main
@@ -65,17 +59,17 @@ func main() {
 }
 ```
 
-### <span id="NewHashMapWithCapacity">NewHashMapWithCapacity</span>
+### <span id="NewHashMap">NewHashMap</span>
 
-<p>新建指定容量和长度的HashMap指针实例.</p>
+<p>Make a HashMap instance with given size and capacity.</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func NewHashMapWithCapacity(size, capacity uint64) *HashMap
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main
@@ -93,15 +87,15 @@ func main() {
 
 ### <span id="Get">Get</span>
 
-<p>在hashmap中根据key获取值</p>
+<p>Get the value of given key in hashmap</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func (hm *HashMap) Get(key any) any
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main
@@ -121,15 +115,15 @@ func main() {
 
 ### <span id="Put">Put</span>
 
-<p>将key-value放入hashmap中</p>
+<p>Put new key value in hashmap, then return value</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func (hm *HashMap) Put(key any, value any) any
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main
@@ -150,15 +144,15 @@ func main() {
 
 ### <span id="Delete">Delete</span>
 
-<p>将指定的key从hashmap中删除</p>
+<p>Delete key-value item by given key in hashmap.</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func (hm *HashMap) Delete(key any)
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main
@@ -182,15 +176,15 @@ func main() {
 
 ### <span id="Contains">Contains</span>
 
-<p>判断hashmap中是否包含指定的key</p>
+<p>Checks if given key is in hashmap or not.</p>
 
-<b>函数签名:</b>
+<b>Signature:</b>
 
 ```go
 func (hm *HashMap) Contains(key any) bool
 ```
 
-<b>例子:</b>
+<b>Example:</b>
 
 ```go
 package main

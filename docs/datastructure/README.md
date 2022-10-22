@@ -1,5 +1,6 @@
 # List
-List是线性表数据结构, 用go切片实现。
+
+List 是线性表数据结构, 用 go 切片实现。
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -7,10 +8,10 @@ List是线性表数据结构, 用go切片实现。
 
 - [https://github.com/duke-git/lancet/blob/main/datastructure/list/list.go](https://github.com/duke-git/lancet/blob/main/datastructure/list/list.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法
+
 ```go
 import (
     "github.com/duke-git/lancet/v2/datastructure"
@@ -56,6 +57,7 @@ import (
 ## 文档
 
 ### <span id="NewList">NewList</span>
+
 <p>返回List指针实例</p>
 
 <b>函数签名:</b>
@@ -66,6 +68,7 @@ type List[T any] struct {
 }
 func NewList[T any](data []T) *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -82,9 +85,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Contain">Contain</span>
+
 <p>判断列表中是否包含特定值</p>
 
 <b>函数签名:</b>
@@ -92,6 +94,7 @@ func main() {
 ```go
 func (l *List[T]) Contain(value T) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -110,10 +113,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Data">Data</span>
+
 <p>返回List中所有数据（切片）</p>
 
 <b>函数签名:</b>
@@ -121,6 +122,7 @@ func main() {
 ```go
 func (l *List[T]) Data() []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -139,10 +141,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="ValueOf">ValueOf</span>
+
 <p>返回列表中索引处的值指针</p>
 
 <b>函数签名:</b>
@@ -150,6 +150,7 @@ func main() {
 ```go
 func (l *List[T]) ValueOf(index int) (*T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -169,10 +170,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="IndexOf">IndexOf</span>
+
 <p>返回列表中值的索引，如果没有找到返回-1</p>
 
 <b>函数签名:</b>
@@ -180,6 +179,7 @@ func main() {
 ```go
 func (l *List[T]) IndexOf(value T) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -198,8 +198,8 @@ func main() {
 }
 ```
 
-
 ### <span id="LastIndexOf">LastIndexOf</span>
+
 <p>返回列表中最后一次出现的值的索引。如果未找到，则返回-1</p>
 
 <b>函数签名:</b>
@@ -207,6 +207,7 @@ func main() {
 ```go
 func (l *List[T]) LastIndexOf(value T) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -226,13 +227,15 @@ func main() {
 ```
 
 ### <span id="IndexOfFunc">IndexOfFunc</span>
+
 <p>返回第一个符合函数条件的元素的索引。如果未找到，则返回-1</p>
 
 <b>函数签名:</b>
 
 ```go
-func (l *List[T]) IndexOfFunc(f func(T) bool) int 
+func (l *List[T]) IndexOfFunc(f func(T) bool) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -252,6 +255,7 @@ func main() {
 ```
 
 ### <span id="LastIndexOfFunc">LastIndexOfFunc</span>
+
 <p>返回最后一个符合函数条件的元素的索引。如果未找到，则返回-1</p>
 
 <b>函数签名:</b>
@@ -259,6 +263,7 @@ func main() {
 ```go
 func (l *List[T]) LastIndexOfFunc(f func(T) bool) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -277,9 +282,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Push">Push</span>
+
 <p>将值附加到列表末尾</p>
 
 <b>函数签名:</b>
@@ -287,6 +291,7 @@ func main() {
 ```go
 func (l *List[T]) Push(value T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -305,10 +310,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="PopFirst">PopFirst</span>
+
 <p>删除列表的第一个值并返回该值</p>
 
 <b>函数签名:</b>
@@ -316,6 +319,7 @@ func main() {
 ```go
 func (l *List[T]) PopFirst() (*T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -336,11 +340,8 @@ func main() {
 }
 ```
 
-
-
-
-
 ### <span id="PopLast">PopFirst</span>
+
 <p>删除列表的最后一个值并返回该值</p>
 
 <b>函数签名:</b>
@@ -348,6 +349,7 @@ func main() {
 ```go
 func (l *List[T]) PopLast() (*T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -368,10 +370,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="DeleteAt">DeleteAt</span>
+
 <p>删除索引处列表的值，如果索引不在0和列表数据长度之间，则不执行任何操作</p>
 
 <b>函数签名:</b>
@@ -379,6 +379,7 @@ func main() {
 ```go
 func (l *List[T]) DeleteAt(index int)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -406,10 +407,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="InsertAt">InsertAt</span>
+
 <p>在索引处插入值到列表中，如果索引不在 0 和列表数据长度之间，则不执行任何操作</p>
 
 <b>函数签名:</b>
@@ -417,6 +416,7 @@ func main() {
 ```go
 func (l *List[T]) InsertAt(index int, value T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -444,9 +444,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="UpdateAt">UpdateAt</span>
+
 <p>更新索引处列表的值，索引应该在0和列表数据长度-1之间</p>
 
 <b>函数签名:</b>
@@ -454,6 +453,7 @@ func main() {
 ```go
 func (l *List[T]) UpdateAt(index int, value T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -478,8 +478,8 @@ func main() {
 }
 ```
 
-
 ### <span id="Equal">Equal</span>
+
 <p>比较一个列表和另一个列表，在每个元素上使用 reflect.DeepEqual</p>
 
 <b>函数签名:</b>
@@ -487,6 +487,7 @@ func main() {
 ```go
 func (l *List[T]) Equal(other *List[T]) bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -507,9 +508,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="IsEmpty">IsEmpty</span>
+
 <p>判断列表是否为空</p>
 
 <b>函数签名:</b>
@@ -517,6 +517,7 @@ func main() {
 ```go
 func (l *List[T]) IsEmpty() bool
 ```
+
 <b>例子:</b>
 
 ```go
@@ -536,10 +537,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Clear">Clear</span>
+
 <p>清空列表数据</p>
 
 <b>函数签名:</b>
@@ -547,6 +546,7 @@ func main() {
 ```go
 func (l *List[T]) Clear()
 ```
+
 <b>例子:</b>
 
 ```go
@@ -565,9 +565,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Clone">Clone</span>
+
 <p>返回列表的一个拷贝</p>
 
 <b>函数签名:</b>
@@ -575,6 +574,7 @@ func main() {
 ```go
 func (l *List[T]) Clone() *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -593,10 +593,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Merge">Merge</span>
+
 <p>合并两个列表，返回新的列表</p>
 
 <b>函数签名:</b>
@@ -604,6 +602,7 @@ func main() {
 ```go
 func (l *List[T]) Merge(other *List[T]) *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -623,9 +622,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Size">Size</span>
+
 <p>返回列表数据项的数量</p>
 
 <b>函数签名:</b>
@@ -633,6 +631,7 @@ func main() {
 ```go
 func (l *List[T]) Size() int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -650,9 +649,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Cap">Cap</span>
+
 <p>返回列表数据容量</p>
 
 <b>函数签名:</b>
@@ -660,6 +658,7 @@ func main() {
 ```go
 func (l *List[T]) Cap() int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -672,16 +671,15 @@ import (
 
 func main() {
 	data := make([]int, 0, 100)
-	
+
     li := list.NewList(data)
 
     fmt.Println(li.Cap()) // 100
 }
 ```
 
-
-
 ### <span id="Swap">Swap</span>
+
 <p>交换列表中两个索引位置的值</p>
 
 <b>函数签名:</b>
@@ -689,6 +687,7 @@ func main() {
 ```go
 func (l *List[T]) Swap(i, j int)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -707,10 +706,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Reverse">Reverse</span>
+
 <p>反转列表的数据项顺序</p>
 
 <b>函数签名:</b>
@@ -718,6 +715,7 @@ func main() {
 ```go
 func (l *List[T]) Reverse()
 ```
+
 <b>例子:</b>
 
 ```go
@@ -736,10 +734,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Unique">Unique</span>
+
 <p>列表去除重复数据项</p>
 
 <b>函数签名:</b>
@@ -747,6 +743,7 @@ func main() {
 ```go
 func (l *List[T]) Unique()
 ```
+
 <b>例子:</b>
 
 ```go
@@ -765,10 +762,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Union">Union</span>
+
 <p>两个列表取并集，去除重复数据项</p>
 
 <b>函数签名:</b>
@@ -776,6 +771,7 @@ func main() {
 ```go
 func (l *List[T]) Union(other *List[T]) *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -795,10 +791,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Intersection">Intersection</span>
+
 <p>两个列表取交集</p>
 
 <b>函数签名:</b>
@@ -806,6 +800,7 @@ func main() {
 ```go
 func (l *List[T]) Intersection(other *List[T]) *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -825,16 +820,16 @@ func main() {
 }
 ```
 
-
-
 ### <span id="SubList">SubList</span>
+
 <p>SubList returns a sub list of the original list between the specified fromIndex, inclusive, and toIndex, exclusive.</p>
 
 <b>函数签名:</b>
 
 ```go
-func (l *List[T]) SubList(fromIndex, toIndex int) *List[T] 
+func (l *List[T]) SubList(fromIndex, toIndex int) *List[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -847,15 +842,13 @@ import (
 
 func main() {
     l := list.NewList([]int{1, 2, 3, 4, 5, 6})
-   
+
     fmt.Println(l.SubList(2, 5)) // []int{3, 4, 5}
 }
 ```
 
-
-
-
 ### <span id="DeleteIf">DeleteIf</span>
+
 <p>删除列表中所有符合函数（调用函数返回true)的元素，返回删除元素的数量</p>
 
 <b>函数签名:</b>
@@ -863,6 +856,7 @@ func main() {
 ```go
 func (l *List[T]) DeleteIf(f func(T) bool) int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -876,7 +870,7 @@ import (
 func main() {
 	l := list.NewList([]int{1, 1, 1, 1, 2, 3, 1, 1, 4, 1, 1, 1, 1, 1, 1})
 
-	fmt.Println(l.DeleteIf(func(a int) bool { return a == 1 })) // 12 
+	fmt.Println(l.DeleteIf(func(a int) bool { return a == 1 })) // 12
 	fmt.Println(l.Data()) // []int{2, 3, 4}
 }
 ```

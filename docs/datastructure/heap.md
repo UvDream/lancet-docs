@@ -1,4 +1,5 @@
 # Heap
+
 堆，切片实现的二叉堆数据结构。
 
 <div STYLE="page-break-after: always;"></div>
@@ -7,10 +8,10 @@
 
 - [https://github.com/duke-git/lancet/blob/main/datastructure/heap/maxheap.go](https://github.com/duke-git/lancet/blob/main/datastructure/heap/maxheap.go)
 
-
 <div STYLE="page-break-after: always;"></div>
 
 ## 用法
+
 ```go
 import (
     heap "github.com/duke-git/lancet/v2/datastructure/heap"
@@ -19,24 +20,14 @@ import (
 
 <div STYLE="page-break-after: always;"></div>
 
-## 目录
-
-- [MaxHeap](#MaxHeap)
-- [Push](#Push)
-- [Pop](#Pop)
-- [Peek](#Peek)
-- [Data](#Data)
-- [Size](#Size)
-
-
-<div STYLE="page-break-after: always;"></div>
-
-## API文档
+## API 文档
 
 ### 1. MaxHeap
-MaxHeap是通过slice实现的二叉堆树，根节点的key既大于等于左子树的key值且大于等于右子树的key值。
+
+MaxHeap 是通过 slice 实现的二叉堆树，根节点的 key 既大于等于左子树的 key 值且大于等于右子树的 key 值。
 
 ### <span id="NewMaxHeap">NewMaxHeap</span>
+
 <p>返回NewMaxHeap指针实例</p>
 
 <b>函数签名:</b>
@@ -48,6 +39,7 @@ type MaxHeap[T any] struct {
 }
 func NewMaxHeap[T any](comparator lancetconstraints.Comparator) *MaxHeap[T]
 ```
+
 <b>例子:</b>
 
 ```go
@@ -78,10 +70,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Push">Push</span>
+
 <p>向堆中插入数据</p>
 
 <b>函数签名:</b>
@@ -89,6 +79,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) Push(value T)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -125,10 +116,8 @@ func main() {
 }
 ```
 
-
-
-
 ### <span id="Pop">Pop</span>
+
 <p>返回堆中最大值并将其从堆中删除，如果堆为空，返回零值并返回false</p>
 
 <b>函数签名:</b>
@@ -136,6 +125,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) Pop() (T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -174,9 +164,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Peek">Peek</span>
+
 <p>返回堆中最大值，如果堆为空，返回零值并返回false</p>
 
 <b>函数签名:</b>
@@ -184,6 +173,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) Peek() (T, bool)
 ```
+
 <b>例子:</b>
 
 ```go
@@ -222,9 +212,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="Data">Data</span>
+
 <p>返回堆中全部元素的切片</p>
 
 <b>函数签名:</b>
@@ -232,6 +221,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) Data() []T
 ```
+
 <b>例子:</b>
 
 ```go
@@ -268,8 +258,8 @@ func main() {
 }
 ```
 
-
 ### <span id="Size">Size</span>
+
 <p>返回堆中元素的数量</p>
 
 <b>函数签名:</b>
@@ -277,6 +267,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) Size() int
 ```
+
 <b>例子:</b>
 
 ```go
@@ -313,9 +304,8 @@ func main() {
 }
 ```
 
-
-
 ### <span id="PrintStructure">PrintStructure</span>
+
 <p>打印堆的树形结构</p>
 
 <b>函数签名:</b>
@@ -323,6 +313,7 @@ func main() {
 ```go
 func (h *MaxHeap[T]) PrintStructure()
 ```
+
 <b>例子:</b>
 
 ```go
