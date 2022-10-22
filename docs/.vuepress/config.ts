@@ -64,7 +64,7 @@ export = defineConfig((ctx) => ({
         editLinkText: "Edit this page on GitHub",
         nav: nav_en,
         sidebar: {
-          "/en/datastructure/": [
+          "/datastructure/": [
             "",
             "linklist",
             "stack",

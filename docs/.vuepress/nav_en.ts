@@ -28,7 +28,7 @@ export const nav_en = [
       },
       {
         text: "datastructure",
-        link: "/en/en/datastructure/",
+        link: "/en/datastructure/",
       },
       {
         text: "fileutil",
