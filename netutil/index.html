@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Netutil | Lancet文档</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/56.5a8cac25.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet文档" class="logo"> <span class="site-name can-hide">Lancet文档</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Netutil</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/netutil/#源码" class="sidebar-link">源码:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/netutil/#用法" class="sidebar-link">用法:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/netutil/#文档" class="sidebar-link">文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#convertmaptoquerystring" class="sidebar-link">ConvertMapToQueryString</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#encodeurl" class="sidebar-link">EncodeUrl</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#getinternalip" class="sidebar-link">GetInternalIp</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#getips" class="sidebar-link">GetIps</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#getmacaddrs" class="sidebar-link">GetMacAddrs</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#getpublicipinfo" class="sidebar-link">GetPublicIpInfo</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#getrequestpublicip" class="sidebar-link">GetRequestPublicIp</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#ispublicip" class="sidebar-link">IsPublicIP</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#isinternalip" class="sidebar-link">IsInternalIP</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httprequest" class="sidebar-link">HttpRequest</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httpclient" class="sidebar-link">HttpClient</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#sendrequest" class="sidebar-link">SendRequest</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#decoderesponse" class="sidebar-link">DecodeResponse</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#structtourlvalues" class="sidebar-link">StructToUrlValues</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httpget-deprecated-use-sendrequest-for-replacement" class="sidebar-link">HttpGet (Deprecated: use SendRequest for replacement)</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httppost-deprecated-use-sendrequest-for-replacement" class="sidebar-link">HttpPost (Deprecated: use SendRequest for replacement)</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httpput-deprecated-use-sendrequest-for-replacement" class="sidebar-link">HttpPut (Deprecated: use SendRequest for replacement)</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httpdelete-deprecated-use-sendrequest-for-replacement" class="sidebar-link">HttpDelete (Deprecated: use SendRequest for replacement)</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#httppatch-deprecated-use-sendrequest-for-replacement" class="sidebar-link">HttpPatch (Deprecated: use SendRequest for replacement)</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/netutil/#parsehttpresponse" class="sidebar-link">ParseHttpResponse</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="netutil"><a href="#netutil" class="header-anchor">#</a> Netutil</h1> <p>netutil 网络包支持获取 ip 地址，发送 http 请求。</p> <div STYLE="page-break-after: always;"></div> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码:</h2> <ul><li><p><a href="https://github.com/duke-git/lancet/blob/main/netutil/net.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/netutil/net.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p><a href="https://github.com/duke-git/lancet/blob/main/netutil/http_client.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/netutil/http_client.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li> <li><p><a href="https://github.com/duke-git/lancet/blob/main/netutil/http.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/netutil/http.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="用法"><a href="#用法" class="header-anchor">#</a> 用法:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="文档"><a href="#文档" class="header-anchor">#</a> 文档</h2> <h3 id="convertmaptoquerystring"><a href="#convertmaptoquerystring" class="header-anchor">#</a> ConvertMapToQueryString</h3> <p>将map转换成http查询字符串.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ConvertMapToQueryString</span><span class="token punctuation">(</span>param <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span>any<span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> m <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span>any<span class="token punctuation">{</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	qs <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">ConvertMapToQueryString</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>qs<span class="token punctuation">)</span> <span class="token comment">//a=1&amp;b=2&amp;c=3</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="encodeurl"><a href="#encodeurl" class="header-anchor">#</a> EncodeUrl</h3> <p>编码url query string的值</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EncodeUrl</span><span class="token punctuation">(</span>urlStr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	urlAddr <span class="token operator">:=</span> <span class="token string">&quot;http://www.lancet.com?a=1&amp;b=[2]&quot;</span>
+	encodedUrl<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">EncodeUrl</span><span class="token punctuation">(</span>urlAddr<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>encodedUrl<span class="token punctuation">)</span> <span class="token comment">//http://www.lancet.com?a=1&amp;b=%5B2%5D</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getinternalip"><a href="#getinternalip" class="header-anchor">#</a> GetInternalIp</h3> <p>获取内部ip</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetInternalIp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	internalIp <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetInternalIp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	ip <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span>internalIp<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ip<span class="token punctuation">)</span> <span class="token comment">//192.168.1.9</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getips"><a href="#getips" class="header-anchor">#</a> GetIps</h3> <p>获取ipv4地址列表</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetIps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ips <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetIps</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ips<span class="token punctuation">)</span> <span class="token comment">//[192.168.1.9]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getmacaddrs"><a href="#getmacaddrs" class="header-anchor">#</a> GetMacAddrs</h3> <p>获取mac地址列</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetMacAddrs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token punctuation">{</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	addrs <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetMacAddrs</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>addrs<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getpublicipinfo"><a href="#getpublicipinfo" class="header-anchor">#</a> GetPublicIpInfo</h3> <p>获取公网ip信息</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetPublicIpInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>PublicIpInfo<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+<span class="token keyword">type</span> PublicIpInfo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Status      <span class="token builtin">string</span>  <span class="token string">`json:&quot;status&quot;`</span>
+	Country     <span class="token builtin">string</span>  <span class="token string">`json:&quot;country&quot;`</span>
+	CountryCode <span class="token builtin">string</span>  <span class="token string">`json:&quot;countryCode&quot;`</span>
+	Region      <span class="token builtin">string</span>  <span class="token string">`json:&quot;region&quot;`</span>
+	RegionName  <span class="token builtin">string</span>  <span class="token string">`json:&quot;regionName&quot;`</span>
+	City        <span class="token builtin">string</span>  <span class="token string">`json:&quot;city&quot;`</span>
+	Lat         <span class="token builtin">float64</span> <span class="token string">`json:&quot;lat&quot;`</span>
+	Lon         <span class="token builtin">float64</span> <span class="token string">`json:&quot;lon&quot;`</span>
+	Isp         <span class="token builtin">string</span>  <span class="token string">`json:&quot;isp&quot;`</span>
+	Org         <span class="token builtin">string</span>  <span class="token string">`json:&quot;org&quot;`</span>
+	As          <span class="token builtin">string</span>  <span class="token string">`json:&quot;as&quot;`</span>
+	Ip          <span class="token builtin">string</span>  <span class="token string">`json:&quot;query&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	publicIpInfo<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetPublicIpInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>publicIpInfo<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getrequestpublicip"><a href="#getrequestpublicip" class="header-anchor">#</a> GetRequestPublicIp</h3> <p>获取http请求ip</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetRequestPublicIp</span><span class="token punctuation">(</span>req <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ip <span class="token operator">:=</span> <span class="token string">&quot;36.112.24.10&quot;</span>
+
+	request1 <span class="token operator">:=</span> http<span class="token punctuation">.</span>Request<span class="token punctuation">{</span>
+		Method<span class="token punctuation">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+		Header<span class="token punctuation">:</span> http<span class="token punctuation">.</span>Header<span class="token punctuation">{</span>
+			<span class="token string">&quot;X-Forwarded-For&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>ip<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	publicIp1 <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetRequestPublicIp</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>request1<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>publicIp1<span class="token punctuation">)</span> <span class="token comment">//36.112.24.10</span>
+
+	request2 <span class="token operator">:=</span> http<span class="token punctuation">.</span>Request<span class="token punctuation">{</span>
+		Method<span class="token punctuation">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+		Header<span class="token punctuation">:</span> http<span class="token punctuation">.</span>Header<span class="token punctuation">{</span>
+			<span class="token string">&quot;X-Real-Ip&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>ip<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	publicIp2 <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">GetRequestPublicIp</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>request2<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>publicIp2<span class="token punctuation">)</span> <span class="token comment">//36.112.24.10</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="ispublicip"><a href="#ispublicip" class="header-anchor">#</a> IsPublicIP</h3> <p>判断ip是否是公共ip</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsPublicIP</span><span class="token punctuation">(</span>IP net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ip1 <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span><span class="token string">&quot;192.168.0.1&quot;</span><span class="token punctuation">)</span>
+	ip2 <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span><span class="token string">&quot;36.112.24.10&quot;</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>netutil<span class="token punctuation">.</span><span class="token function">IsPublicIP</span><span class="token punctuation">(</span>ip1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>netutil<span class="token punctuation">.</span><span class="token function">IsPublicIP</span><span class="token punctuation">(</span>ip2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isinternalip"><a href="#isinternalip" class="header-anchor">#</a> IsInternalIP</h3> <p>判断ip是否是局域网ip.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsInternalIP</span><span class="token punctuation">(</span>IP net<span class="token punctuation">.</span>IP<span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ip1 <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span>
+	ip2 <span class="token operator">:=</span> net<span class="token punctuation">.</span><span class="token function">ParseIP</span><span class="token punctuation">(</span><span class="token string">&quot;36.112.24.10&quot;</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>netutil<span class="token punctuation">.</span><span class="token function">IsInternalIP</span><span class="token punctuation">(</span>ip1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>netutil<span class="token punctuation">.</span><span class="token function">IsInternalIP</span><span class="token punctuation">(</span>ip2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httprequest"><a href="#httprequest" class="header-anchor">#</a> HttpRequest</h3> <p>HttpRequest用于抽象HTTP请求实体的结构</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> HttpRequest <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	RawURL      <span class="token builtin">string</span>
+	Method      <span class="token builtin">string</span>
+	Headers     http<span class="token punctuation">.</span>Header
+	QueryParams url<span class="token punctuation">.</span>Values
+	FormData    url<span class="token punctuation">.</span>Values
+	Body        <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	header <span class="token operator">:=</span> http<span class="token punctuation">.</span>Header<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	header<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;multipart/form-data&quot;</span><span class="token punctuation">)</span>
+
+	postData <span class="token operator">:=</span> url<span class="token punctuation">.</span>Values<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	postData<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">)</span>
+	postData<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;testItem&quot;</span><span class="token punctuation">)</span>
+
+	request <span class="token operator">:=</span> <span class="token operator">&amp;</span>netutil<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">{</span>
+		RawURL<span class="token punctuation">:</span>   <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span><span class="token punctuation">,</span>
+		Method<span class="token punctuation">:</span>   <span class="token string">&quot;POST&quot;</span><span class="token punctuation">,</span>
+		Headers<span class="token punctuation">:</span>  header<span class="token punctuation">,</span>
+		FormData<span class="token punctuation">:</span> postData<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httpclient"><a href="#httpclient" class="header-anchor">#</a> HttpClient</h3> <p>HttpClient是用于发送HTTP请求的结构体。它可以用一些配置参数或无配置实例化.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> HttpClient <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	<span class="token operator">*</span>http<span class="token punctuation">.</span>Client
+	TLS     <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config
+	Request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request
+	Config  HttpClientConfig
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> HttpClientConfig <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	SSLEnabled       <span class="token builtin">bool</span>
+	TLSConfig        <span class="token operator">*</span>tls<span class="token punctuation">.</span>Config
+	Compressed       <span class="token builtin">bool</span>
+	HandshakeTimeout time<span class="token punctuation">.</span>Duration
+	ResponseTimeout  time<span class="token punctuation">.</span>Duration
+	Verbose          <span class="token builtin">bool</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">NewHttpClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>HttpClient
+
+<span class="token keyword">func</span> <span class="token function">NewHttpClientWithConfig</span><span class="token punctuation">(</span>config <span class="token operator">*</span>HttpClientConfig<span class="token punctuation">)</span> <span class="token operator">*</span>HttpClient
+
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	httpClientCfg <span class="token operator">:=</span> netutil<span class="token punctuation">.</span>HttpClientConfig<span class="token punctuation">{</span>
+		SSLEnabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+		HandshakeTimeout<span class="token punctuation">:</span><span class="token number">10</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second
+	<span class="token punctuation">}</span>
+	httpClient <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">NewHttpClientWithConfig</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>httpClientCfg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="sendrequest"><a href="#sendrequest" class="header-anchor">#</a> SendRequest</h3> <p>HttpClient发送http请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>client <span class="token operator">*</span>HttpClient<span class="token punctuation">)</span> <span class="token function">SendRequest</span><span class="token punctuation">(</span>request <span class="token operator">*</span>HttpRequest<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	request <span class="token operator">:=</span> <span class="token operator">&amp;</span>netutil<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">{</span>
+		RawURL<span class="token punctuation">:</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span><span class="token punctuation">,</span>
+		Method<span class="token punctuation">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	httpClient <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">NewHttpClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> httpClient<span class="token punctuation">.</span><span class="token function">SendRequest</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">||</span> resp<span class="token punctuation">.</span>StatusCode <span class="token operator">!=</span> <span class="token number">200</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		UserId    <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Id        <span class="token builtin">int</span>    <span class="token string">`json:&quot;id&quot;`</span>
+		Title     <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+		Completed <span class="token builtin">bool</span>   <span class="token string">`json:&quot;completed&quot;`</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">var</span> todo Todo
+	httpClient<span class="token punctuation">.</span><span class="token function">DecodeResponse</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token operator">&amp;</span>todo<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token comment">//1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="decoderesponse"><a href="#decoderesponse" class="header-anchor">#</a> DecodeResponse</h3> <p>解析http响应体到目标结构体</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>client <span class="token operator">*</span>HttpClient<span class="token punctuation">)</span> <span class="token function">DecodeResponse</span><span class="token punctuation">(</span>resp <span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> target any<span class="token punctuation">)</span> <span class="token builtin">error</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;net&quot;</span>
+	<span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	request <span class="token operator">:=</span> <span class="token operator">&amp;</span>netutil<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">{</span>
+		RawURL<span class="token punctuation">:</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span><span class="token punctuation">,</span>
+		Method<span class="token punctuation">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	httpClient <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">NewHttpClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> httpClient<span class="token punctuation">.</span><span class="token function">SendRequest</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">||</span> resp<span class="token punctuation">.</span>StatusCode <span class="token operator">!=</span> <span class="token number">200</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		UserId    <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Id        <span class="token builtin">int</span>    <span class="token string">`json:&quot;id&quot;`</span>
+		Title     <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+		Completed <span class="token builtin">bool</span>   <span class="token string">`json:&quot;completed&quot;`</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">var</span> todo Todo
+	httpClient<span class="token punctuation">.</span><span class="token function">DecodeResponse</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> <span class="token operator">&amp;</span>todo<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token comment">//1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="structtourlvalues"><a href="#structtourlvalues" class="header-anchor">#</a> StructToUrlValues</h3> <p>将结构体转为url values, 仅转化结构体导出字段并且包含`json` tag.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">StructToUrlValues</span><span class="token punctuation">(</span>targetStruct any<span class="token punctuation">)</span> url<span class="token punctuation">.</span>Values
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">type</span> TodoQuery <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		Id     <span class="token builtin">int</span> <span class="token string">`json:&quot;id&quot;`</span>
+		UserId <span class="token builtin">int</span> <span class="token string">`json:&quot;userId&quot;`</span>
+	<span class="token punctuation">}</span>
+	todoQuery <span class="token operator">:=</span> TodoQuery<span class="token punctuation">{</span>
+		Id<span class="token punctuation">:</span>     <span class="token number">1</span><span class="token punctuation">,</span>
+		UserId<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	todoValues <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">StructToUrlValues</span><span class="token punctuation">(</span>todoQuery<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>todoValues<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">&quot;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>todoValues<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">&quot;userId&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//2</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httpget-deprecated-use-sendrequest-for-replacement"><a href="#httpget-deprecated-use-sendrequest-for-replacement" class="header-anchor">#</a> HttpGet (Deprecated: use SendRequest for replacement)</h3> <p>发送http get请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// params[0] http请求header，类型必须是http.Header或者map[string]string</span>
+<span class="token comment">// params[1] http查询字符串，类型必须是url.Values或者map[string]string</span>
+<span class="token comment">// params[2] post请求体，类型必须是[]byte</span>
+<span class="token comment">// params[3] http client，类型必须是http.Client</span>
+<span class="token keyword">func</span> <span class="token function">HttpGet</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">,</span> params <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>
+	header <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpGet</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	body<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httppost-deprecated-use-sendrequest-for-replacement"><a href="#httppost-deprecated-use-sendrequest-for-replacement" class="header-anchor">#</a> HttpPost (Deprecated: use SendRequest for replacement)</h3> <p>发送http post请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// params[0] http请求header，类型必须是http.Header或者map[string]string</span>
+<span class="token comment">// params[1] http查询字符串，类型必须是url.Values或者map[string]string</span>
+<span class="token comment">// params[2] post请求体，类型必须是[]byte</span>
+<span class="token comment">// params[3] http client，类型必须是http.Client</span>
+<span class="token keyword">func</span> <span class="token function">HttpPost</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">,</span> params <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos&quot;</span>
+	header <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		UserId <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Title  <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+	<span class="token punctuation">}</span>
+	todo <span class="token operator">:=</span> Todo<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;TestAddToDo&quot;</span><span class="token punctuation">}</span>
+	bodyParams<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpPost</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> bodyParams<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	body<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httpput-deprecated-use-sendrequest-for-replacement"><a href="#httpput-deprecated-use-sendrequest-for-replacement" class="header-anchor">#</a> HttpPut (Deprecated: use SendRequest for replacement)</h3> <p>发送http put请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// params[0] http请求header，类型必须是http.Header或者map[string]string</span>
+<span class="token comment">// params[1] http查询字符串，类型必须是url.Values或者map[string]string</span>
+<span class="token comment">// params[2] post请求体，类型必须是[]byte</span>
+<span class="token comment">// params[3] http client，类型必须是http.Client</span>
+<span class="token keyword">func</span> <span class="token function">HttpPut</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">,</span> params <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>
+	header <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		Id     <span class="token builtin">int</span>    <span class="token string">`json:&quot;id&quot;`</span>
+		UserId <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Title  <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+	<span class="token punctuation">}</span>
+	todo <span class="token operator">:=</span> Todo<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;TestPutToDo&quot;</span><span class="token punctuation">}</span>
+	bodyParams<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpPut</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> bodyParams<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	body<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httpdelete-deprecated-use-sendrequest-for-replacement"><a href="#httpdelete-deprecated-use-sendrequest-for-replacement" class="header-anchor">#</a> HttpDelete (Deprecated: use SendRequest for replacement)</h3> <p>发送http delete请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// params[0] http请求header，类型必须是http.Header或者map[string]string</span>
+<span class="token comment">// params[1] http查询字符串，类型必须是url.Values或者map[string]string</span>
+<span class="token comment">// params[2] post请求体，类型必须是[]byte</span>
+<span class="token comment">// params[3] http client，类型必须是http.Client</span>
+<span class="token keyword">func</span> <span class="token function">HttpDelete</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">,</span> params <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpDelete</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	body<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="httppatch-deprecated-use-sendrequest-for-replacement"><a href="#httppatch-deprecated-use-sendrequest-for-replacement" class="header-anchor">#</a> HttpPatch (Deprecated: use SendRequest for replacement)</h3> <p>发送http patch请求</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// params[0] http请求header，类型必须是http.Header或者map[string]string</span>
+<span class="token comment">// params[1] http查询字符串，类型必须是url.Values或者map[string]string</span>
+<span class="token comment">// params[2] post请求体，类型必须是[]byte</span>
+<span class="token comment">// params[3] http client，类型必须是http.Client</span>
+<span class="token keyword">func</span> <span class="token function">HttpPatch</span><span class="token punctuation">(</span>url <span class="token builtin">string</span><span class="token punctuation">,</span> params <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>
+	header <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		Id     <span class="token builtin">int</span>    <span class="token string">`json:&quot;id&quot;`</span>
+		UserId <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Title  <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+	<span class="token punctuation">}</span>
+	todo <span class="token operator">:=</span> Todo<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;TestPatchToDo&quot;</span><span class="token punctuation">}</span>
+	bodyParams<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpPatch</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> bodyParams<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	body<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadAll</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>Body<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="parsehttpresponse"><a href="#parsehttpresponse" class="header-anchor">#</a> ParseHttpResponse</h3> <p>将http请求响应解码成特定struct值</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ParseHttpResponse</span><span class="token punctuation">(</span>resp <span class="token operator">*</span>http<span class="token punctuation">.</span>Response<span class="token punctuation">,</span> obj any<span class="token punctuation">)</span> <span class="token builtin">error</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;encoding/json&quot;</span>
+    <span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;io/ioutil&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/netutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	url <span class="token operator">:=</span> <span class="token string">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>
+	header <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	resp<span class="token punctuation">,</span> err <span class="token operator">:=</span> netutil<span class="token punctuation">.</span><span class="token function">HttpGet</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> header<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">type</span> Todo <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+		Id        <span class="token builtin">int</span>    <span class="token string">`json:&quot;id&quot;`</span>
+		UserId    <span class="token builtin">int</span>    <span class="token string">`json:&quot;userId&quot;`</span>
+		Title     <span class="token builtin">string</span> <span class="token string">`json:&quot;title&quot;`</span>
+		Completed <span class="token builtin">bool</span>   <span class="token string">`json:&quot;completed&quot;`</span>
+	<span class="token punctuation">}</span>
+
+	toDoResp <span class="token operator">:=</span> <span class="token operator">&amp;</span>Todo<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	err <span class="token operator">=</span> netutil<span class="token punctuation">.</span><span class="token function">ParseHttpResponse</span><span class="token punctuation">(</span>resp<span class="token punctuation">,</span> toDoResp<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>toDoResp<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2022/9/29 下午1:53:14</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/56.5a8cac25.js" defer></script>
+  </body>
+</html>

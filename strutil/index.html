@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Strutil | Lancet文档</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/60.f64d9940.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet文档" class="logo"> <span class="site-name can-hide">Lancet文档</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Strutil</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/strutil/#源码" class="sidebar-link">源码:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/strutil/#用法" class="sidebar-link">用法:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/strutil/#documentation-文档" class="sidebar-link">Documentation 文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#after" class="sidebar-link">After</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#afterlast" class="sidebar-link">AfterLast</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#before" class="sidebar-link">Before</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#beforelast" class="sidebar-link">BeforeLast</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#camelcase" class="sidebar-link">CamelCase</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#capitalize" class="sidebar-link">Capitalize</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#isstring" class="sidebar-link">IsString</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#kebabcase" class="sidebar-link">KebabCase</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#lowerfirst" class="sidebar-link">LowerFirst</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#upperfirst" class="sidebar-link">UpperFirst</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#padend" class="sidebar-link">PadEnd</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#padstart" class="sidebar-link">PadStart</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#reverse" class="sidebar-link">Reverse</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#snakecase" class="sidebar-link">SnakeCase</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#splitex" class="sidebar-link">SplitEx</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#wrap" class="sidebar-link">Wrap</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/strutil/#unwrap" class="sidebar-link">Unwrap</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="strutil"><a href="#strutil" class="header-anchor">#</a> Strutil</h1> <p>strutil 包含处理字符串的相关函数。</p> <div STYLE="page-break-after: always;"></div> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/strutil/string.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/strutil/string.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="用法"><a href="#用法" class="header-anchor">#</a> 用法:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="documentation-文档"><a href="#documentation-文档" class="header-anchor">#</a> Documentation 文档</h2> <h3 id="after"><a href="#after" class="header-anchor">#</a> After</h3> <p>截取源字符串中char首次出现时的位置之后的子字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">After</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> char <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span><span class="token string">&quot;lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//lancet</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//test/lancet</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">// /lancet</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="afterlast"><a href="#afterlast" class="header-anchor">#</a> AfterLast</h3> <p>截取源字符串中char最后一次出现时的位置之后的子字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AfterLast</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> char <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">AfterLast</span><span class="token punctuation">(</span><span class="token string">&quot;lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//lancet</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">AfterLast</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//lancet</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">AfterLast</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">// /lancet</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="before"><a href="#before" class="header-anchor">#</a> Before</h3> <p>截取源字符串中char首次出现时的位置之前的子字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Before</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> char <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Before</span><span class="token punctuation">(</span><span class="token string">&quot;lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//lancet</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Before</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//github.com</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Before</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">// github.com/</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beforelast"><a href="#beforelast" class="header-anchor">#</a> BeforeLast</h3> <p>截取源字符串中char最后一次出现时的位置之前的子字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeforeLast</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> char <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">BeforeLast</span><span class="token punctuation">(</span><span class="token string">&quot;lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//lancet</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">BeforeLast</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//github.com/test</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">BeforeLast</span><span class="token punctuation">(</span><span class="token string">&quot;github.com/test/test/lancet&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//github.com/test/</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="camelcase"><a href="#camelcase" class="header-anchor">#</a> CamelCase</h3> <p>将字符串转换为驼峰式字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">CamelCase</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">CamelCase</span><span class="token punctuation">(</span><span class="token string">&quot;foo_bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//fooBar</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">CamelCase</span><span class="token punctuation">(</span><span class="token string">&quot;Foo-Bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//fooBar</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">CamelCase</span><span class="token punctuation">(</span><span class="token string">&quot;Foo&amp;bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//fooBar</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">CamelCase</span><span class="token punctuation">(</span><span class="token string">&quot;foo bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//fooBar</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="capitalize"><a href="#capitalize" class="header-anchor">#</a> Capitalize</h3> <p>将字符串的第一个字符转换为大写</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Capitalize</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Capitalize</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//foo</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Capitalize</span><span class="token punctuation">(</span><span class="token string">&quot;Foo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//foo</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Capitalize</span><span class="token punctuation">(</span><span class="token string">&quot;FOo&quot;</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//fOo</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isstring"><a href="#isstring" class="header-anchor">#</a> IsString</h3> <p>检查值的数据类型是否为字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsString</span><span class="token punctuation">(</span>v any<span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strutil<span class="token punctuation">.</span><span class="token function">IsString</span><span class="token punctuation">(</span><span class="token string">&quot;lancet&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strutil<span class="token punctuation">.</span><span class="token function">IsString</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strutil<span class="token punctuation">.</span><span class="token function">IsString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strutil<span class="token punctuation">.</span><span class="token function">IsString</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>strutil<span class="token punctuation">.</span><span class="token function">IsString</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="kebabcase"><a href="#kebabcase" class="header-anchor">#</a> KebabCase</h3> <p>将字符串转换为kebab-case</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">KebabCase</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">KebabCase</span><span class="token punctuation">(</span><span class="token string">&quot;Foo Bar-&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//foo-bar</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">KebabCase</span><span class="token punctuation">(</span><span class="token string">&quot;foo_Bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//foo-bar</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">KebabCase</span><span class="token punctuation">(</span><span class="token string">&quot;fooBar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//foo-bar</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">KebabCase</span><span class="token punctuation">(</span><span class="token string">&quot;__FOO_BAR__&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//f-o-o-b-a-r</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="lowerfirst"><a href="#lowerfirst" class="header-anchor">#</a> LowerFirst</h3> <p>将字符串的第一个字符转换为小写</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">LowerFirst</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">LowerFirst</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//foo</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">LowerFirst</span><span class="token punctuation">(</span><span class="token string">&quot;BAR&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//bAR</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">LowerFirst</span><span class="token punctuation">(</span><span class="token string">&quot;FOo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//fOo</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">LowerFirst</span><span class="token punctuation">(</span><span class="token string">&quot;fOo大&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//fOo大</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="upperfirst"><a href="#upperfirst" class="header-anchor">#</a> UpperFirst</h3> <p>将字符串的第一个字符转换为大写</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">UpperFirst</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">UpperFirst</span><span class="token punctuation">(</span><span class="token string">&quot;foo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//Foo</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">UpperFirst</span><span class="token punctuation">(</span><span class="token string">&quot;bAR&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//BAR</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">UpperFirst</span><span class="token punctuation">(</span><span class="token string">&quot;FOo&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//FOo</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">UpperFirst</span><span class="token punctuation">(</span><span class="token string">&quot;fOo大&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//FOo大</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="padend"><a href="#padend" class="header-anchor">#</a> PadEnd</h3> <p>如果字符串长度短于size，则在右侧填充字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PadEnd</span><span class="token punctuation">(</span>source <span class="token builtin">string</span><span class="token punctuation">,</span> size <span class="token builtin">int</span><span class="token punctuation">,</span> padStr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadEnd</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//a</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadEnd</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//ab</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadEnd</span><span class="token punctuation">(</span><span class="token string">&quot;abcd&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">&quot;mno&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//abcdmn</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadEnd</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">&quot;ab&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//abcaba</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="padstart"><a href="#padstart" class="header-anchor">#</a> PadStart</h3> <p>如果字符串长度短于size，则在左侧填充字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">PadStart</span><span class="token punctuation">(</span>source <span class="token builtin">string</span><span class="token punctuation">,</span> size <span class="token builtin">int</span><span class="token punctuation">,</span> padStr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadStart</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//a</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadStart</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//ba</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadStart</span><span class="token punctuation">(</span><span class="token string">&quot;abcd&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">&quot;mno&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//mnabcd</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">PadStart</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">&quot;ab&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//abaabc</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="reverse"><a href="#reverse" class="header-anchor">#</a> Reverse</h3> <p>返回字符顺序与给定字符串相反的字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Reverse</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">ReverseStr</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//cba</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">ReverseStr</span><span class="token punctuation">(</span><span class="token string">&quot;12345&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//54321</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="snakecase"><a href="#snakecase" class="header-anchor">#</a> SnakeCase</h3> <p>将字符串转换为snake_case形式</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">SnakeCase</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SnakeCase</span><span class="token punctuation">(</span><span class="token string">&quot;Foo Bar-&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//foo_bar</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SnakeCase</span><span class="token punctuation">(</span><span class="token string">&quot;foo_Bar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//foo_bar</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SnakeCase</span><span class="token punctuation">(</span><span class="token string">&quot;fooBar&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//foo_bar</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SnakeCase</span><span class="token punctuation">(</span><span class="token string">&quot;__FOO_BAR__&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//f_o_o_b_a_r</span>
+
+	s5 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SnakeCase</span><span class="token punctuation">(</span><span class="token string">&quot;aBbc-s$@a&amp;%_B.B^C&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span> <span class="token comment">//a_bbc_s_a_b_b_c</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="splitex"><a href="#splitex" class="header-anchor">#</a> SplitEx</h3> <p>分割字符串为切片，removeEmptyString参数指定是否去除空字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">SplitEx</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> sep <span class="token builtin">string</span><span class="token punctuation">,</span> removeEmptyString <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	arr1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SplitEx</span><span class="token punctuation">(</span><span class="token string">&quot; a b c &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span> <span class="token comment">//[]string{}</span>
+
+	arr2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SplitEx</span><span class="token punctuation">(</span><span class="token string">&quot; a b c &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span> <span class="token comment">//[]string{&quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;&quot;}</span>
+
+	arr3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SplitEx</span><span class="token punctuation">(</span><span class="token string">&quot; a b c &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>arr3<span class="token punctuation">)</span> <span class="token comment">//[]string{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}</span>
+
+	arr4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SplitEx</span><span class="token punctuation">(</span><span class="token string">&quot; a = b = c = &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot; = &quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>arr4<span class="token punctuation">)</span> <span class="token comment">//[]string{&quot; a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;&quot;}</span>
+
+	arr5 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">SplitEx</span><span class="token punctuation">(</span><span class="token string">&quot; a = b = c = &quot;</span><span class="token punctuation">,</span> <span class="token string">&quot; = &quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>arr5<span class="token punctuation">)</span> <span class="token comment">//[]string{&quot; a&quot;, &quot;b&quot;, &quot;c&quot;}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="wrap"><a href="#wrap" class="header-anchor">#</a> Wrap</h3> <p>用另一个字符串包裹一个字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Wrap</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">,</span> wrapWith <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Wrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//ab</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Wrap</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//&quot;&quot;</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Wrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//*ab*</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Wrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;\&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//\&quot;ab\&quot;</span>
+
+	s5 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Wrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;'&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span> <span class="token comment">//'ab'</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="unwrap"><a href="#unwrap" class="header-anchor">#</a> Unwrap</h3> <p>用另一个字符串解开包裹一个字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Unwrap</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">,</span> wrapToken <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/strutil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s1 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Unwrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> <span class="token comment">//ab</span>
+
+	s2 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Unwrap</span><span class="token punctuation">(</span><span class="token string">&quot;ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span> <span class="token comment">//ab</span>
+
+	s3 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Unwrap</span><span class="token punctuation">(</span><span class="token string">&quot;**ab**&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s3<span class="token punctuation">)</span> <span class="token comment">//*ab*</span>
+
+	s4 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Unwrap</span><span class="token punctuation">(</span><span class="token string">&quot;*ab&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s4<span class="token punctuation">)</span> <span class="token comment">//*ab</span>
+
+	s5 <span class="token operator">:=</span> strutil<span class="token punctuation">.</span><span class="token function">Unwrap</span><span class="token punctuation">(</span><span class="token string">&quot;***&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;**&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s5<span class="token punctuation">)</span> <span class="token comment">//***</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2022/9/29 下午1:53:14</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/60.f64d9940.js" defer></script>
+  </body>
+</html>

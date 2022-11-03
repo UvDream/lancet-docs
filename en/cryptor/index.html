@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cryptor | Lancet-docs</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Lancet is a comprehensive, efficient, and reusable util function library of go. Inspired by the java apache common package and lodash.js.">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/28.53f49ea2.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/en/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet-docs" class="logo"> <span class="site-name can-hide">Lancet-docs</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docs" class="dropdown-title"><span class="title">Docs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docs" class="mobile-dropdown-title"><span class="title">Docs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/en/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  domestic mirror
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docs" class="dropdown-title"><span class="title">Docs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docs" class="mobile-dropdown-title"><span class="title">Docs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/en/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  domestic mirror
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Cryptor</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/en/cryptor/#source" class="sidebar-link">Source:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/en/cryptor/#usage" class="sidebar-link">Usage:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/en/cryptor/#documentation" class="sidebar-link">Documentation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aesecbencrypt" class="sidebar-link">AesEcbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aesecbdecrypt" class="sidebar-link">AesEcbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aescbcencrypt" class="sidebar-link">AesCbcEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aescbcdecrypt" class="sidebar-link">AesCbcDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aesctrcrypt" class="sidebar-link">AesCtrCrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aescfbencrypt" class="sidebar-link">AesCfbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aescfbdecrypt" class="sidebar-link">AesCfbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aesofbencrypt" class="sidebar-link">AesOfbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#aesofbdecrypt" class="sidebar-link">AesOfbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#base64stdencode" class="sidebar-link">Base64StdEncode</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#base64stddecode" class="sidebar-link">Base64StdDecode</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#desecbencrypt" class="sidebar-link">DesEcbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#desecbdecrypt" class="sidebar-link">DesEcbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#descbcencrypt" class="sidebar-link">DesCbcEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#descbcdecrypt" class="sidebar-link">DesCbcDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#desctrcrypt" class="sidebar-link">DesCtrCrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#descfbencrypt" class="sidebar-link">DesCfbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#descfbdecrypt" class="sidebar-link">DesCfbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#desofbencrypt" class="sidebar-link">DesOfbEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#desofbdecrypt" class="sidebar-link">DesOfbDecrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#hmacmd5" class="sidebar-link">HmacMd5</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#hmacsha1" class="sidebar-link">HmacSha1</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#hmacsha256" class="sidebar-link">HmacSha256</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#hmacsha512" class="sidebar-link">HmacSha512</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#md5string" class="sidebar-link">Md5String</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#md5file" class="sidebar-link">Md5File</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#sha1" class="sidebar-link">Sha1</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#sha256" class="sidebar-link">Sha256</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#sha512" class="sidebar-link">Sha512</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#generatersakey" class="sidebar-link">GenerateRsaKey</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#rsaencrypt" class="sidebar-link">RsaEncrypt</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/cryptor/#rsadecrypt" class="sidebar-link">RsaDecrypt</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="cryptor"><a href="#cryptor" class="header-anchor">#</a> Cryptor</h1> <p>Package cryptor contains some functions for data encryption and decryption. Support base64, md5, hmac, aes, des, rsa.</p> <div STYLE="page-break-after: always;"></div> <h2 id="source"><a href="#source" class="header-anchor">#</a> Source:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/cryptor/aes.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/cryptor/aes.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/duke-git/lancet/blob/main/cryptor/des.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/cryptor/des.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/duke-git/lancet/blob/main/cryptor/basic.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/cryptor/basic.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/duke-git/lancet/blob/main/cryptor/rsa.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/cryptor/rsa.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="usage"><a href="#usage" class="header-anchor">#</a> Usage:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="documentation"><a href="#documentation" class="header-anchor">#</a> Documentation</h2> <h3 id="aesecbencrypt"><a href="#aesecbencrypt" class="header-anchor">#</a> AesEcbEncrypt</h3> <p>Encrypt data with key use AES ECB algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesEcbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesEcbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aesecbdecrypt"><a href="#aesecbdecrypt" class="header-anchor">#</a> AesEcbDecrypt</h3> <p>Decrypt data with key use AES ECB algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesEcbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesEcbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesEcbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aescbcencrypt"><a href="#aescbcencrypt" class="header-anchor">#</a> AesCbcEncrypt</h3> <p>Encrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesCbcEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCbcEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aescbcdecrypt"><a href="#aescbcdecrypt" class="header-anchor">#</a> AesCbcDecrypt</h3> <p>Decrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesCbcDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCbcEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCbcDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aesctrcrypt"><a href="#aesctrcrypt" class="header-anchor">#</a> AesCtrCrypt</h3> <p>Encrypt or decrypt data with key use AES CTR algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesCtrCrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCtrCrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCtrCrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aescfbencrypt"><a href="#aescfbencrypt" class="header-anchor">#</a> AesCfbEncrypt</h3> <p>Encrypt data with key use AES CFB algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesCfbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aescfbdecrypt"><a href="#aescfbdecrypt" class="header-anchor">#</a> AesCfbDecrypt</h3> <p>Decrypt data with key use AES CBC algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesCfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesCfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aesofbencrypt"><a href="#aesofbencrypt" class="header-anchor">#</a> AesOfbEncrypt</h3> <p>Enecrypt data with key use AES OFB algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesOfbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesOfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="aesofbdecrypt"><a href="#aesofbdecrypt" class="header-anchor">#</a> AesOfbDecrypt</h3> <p>Decrypt data with key use AES OFB algorithm. Length of `key` param should be 16, 24 or 32.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AesOfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefghijklmnop&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesOfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">AesOfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="base64stdencode"><a href="#base64stdencode" class="header-anchor">#</a> Base64StdEncode</h3> <p>Encode string with base64 encoding.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Base64StdEncode</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    base64Str <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Base64StdEncode</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>base64Str<span class="token punctuation">)</span> <span class="token comment">//aGVsbG8gd29ybGQ=</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="base64stddecode"><a href="#base64stddecode" class="header-anchor">#</a> Base64StdDecode</h3> <p>Decode a base64 encoded string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Base64StdDecode</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    str <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Base64StdDecode</span><span class="token punctuation">(</span><span class="token string">&quot;aGVsbG8gd29ybGQ=&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="desecbencrypt"><a href="#desecbencrypt" class="header-anchor">#</a> DesEcbEncrypt</h3> <p>Encrypt data with key use DES ECB algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesEcbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesEcbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="desecbdecrypt"><a href="#desecbdecrypt" class="header-anchor">#</a> DesEcbDecrypt</h3> <p>Decrypt data with key use DES ECB algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesEcbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesEcbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byt</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesEcbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="descbcencrypt"><a href="#descbcencrypt" class="header-anchor">#</a> DesCbcEncrypt</h3> <p>Encrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesCbcEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCbcEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byt</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="descbcdecrypt"><a href="#descbcdecrypt" class="header-anchor">#</a> DesCbcDecrypt</h3> <p>Decrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesCbcDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCbcEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byt</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+	decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCbcDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="desctrcrypt"><a href="#desctrcrypt" class="header-anchor">#</a> DesCtrCrypt</h3> <p>Encrypt or decrypt data with key use DES CTR algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesCtrCrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCtrCrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCtrCrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="descfbencrypt"><a href="#descfbencrypt" class="header-anchor">#</a> DesCfbEncrypt</h3> <p>Encrypt data with key use DES CFB algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesCfbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byt</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="descfbdecrypt"><a href="#descfbdecrypt" class="header-anchor">#</a> DesCfbDecrypt</h3> <p>Decrypt data with key use DES CBC algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesCfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byt</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesCfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="desofbencrypt"><a href="#desofbencrypt" class="header-anchor">#</a> DesOfbEncrypt</h3> <p>Enecrypt data with key use DES OFB algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesOfbEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesOfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="desofbdecrypt"><a href="#desofbdecrypt" class="header-anchor">#</a> DesOfbDecrypt</h3> <p>Decrypt data with key use DES OFB algorithm. Length of `key` param should be 8.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">DesOfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> key <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">:=</span> <span class="token string">&quot;hello world&quot;</span>
+    key <span class="token operator">:=</span> <span class="token string">&quot;abcdefgh&quot;</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesOfbEncrypt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">DesOfbDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="hmacmd5"><a href="#hmacmd5" class="header-anchor">#</a> HmacMd5</h3> <p>Get the md5 hmac hash of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">HmacMd5</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  	s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">HmacMd5</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12345&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//5f4c9faaff0a1ad3007d9ddc06abe36d</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="hmacsha1"><a href="#hmacsha1" class="header-anchor">#</a> HmacSha1</h3> <p>Get the sha1 hmac hash of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">HmacSha1</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">HmacSha1</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12345&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//3826f812255d8683f051ee97346d1359234d5dbd</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="hmacsha256"><a href="#hmacsha256" class="header-anchor">#</a> HmacSha256</h3> <p>Get the sha256 hmac hash of string</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">HmacSha256</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">HmacSha256</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12345&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//9dce2609f2d67d41f74c7f9efc8ccd44370d41ad2de52982627588dfe7289ab8</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="hmacsha512"><a href="#hmacsha512" class="header-anchor">#</a> HmacSha512</h3> <p>Get the sha512 hmac hash of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">HmacSha512</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">HmacSha512</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12345&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+ <span class="token comment">//5b1563ac4e9b49c9ada8ccb232588fc4f0c30fd12f756b3a0b95af4985c236ca60925253bae10ce2c6bf9af1c1679b51e5395ff3d2826c0a2c7c0d72225d4175</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="md5string"><a href="#md5string" class="header-anchor">#</a> Md5String</h3> <p>Get the md5 value of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Md5String</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Md5String</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//5d41402abc4b2a76b9719d911017c592</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="md5file"><a href="#md5file" class="header-anchor">#</a> Md5File</h3> <p>Get the md5 value of file.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Md5File</span><span class="token punctuation">(</span>filepath <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Md5File</span><span class="token punctuation">(</span><span class="token string">&quot;./main.go&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="sha1"><a href="#sha1" class="header-anchor">#</a> Sha1</h3> <p>Get the sha1 value of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Sha1</span><span class="token punctuation">(</span>data <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Sha1</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//2aae6c35c94fcfb415dbe95f408b9ce91ee846ed</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="sha256"><a href="#sha256" class="header-anchor">#</a> Sha256</h3> <p>Get the sha256 value of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Sha256</span><span class="token punctuation">(</span>data <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Sha256</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="sha512"><a href="#sha512" class="header-anchor">#</a> Sha512</h3> <p>Get the sha512 value of string.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Sha512</span><span class="token punctuation">(</span>data <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    s <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">Sha512</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token comment">//309ecc489c12d6eb4cc40f50c902f2b4d0ed77ee511a7c7a9bcd3ca86d4cd86f989dd35bc5ff499670da34255b45b0cfd830e81f605dcf7dc5542e93ae9cd76f</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="generatersakey"><a href="#generatersakey" class="header-anchor">#</a> GenerateRsaKey</h3> <p>Create the rsa public and private key file in current directory.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GenerateRsaKey</span><span class="token punctuation">(</span>keySize <span class="token builtin">int</span><span class="token punctuation">,</span> priKeyFile<span class="token punctuation">,</span> pubKeyFile <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    err <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">GenerateRsaKey</span><span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_private.pem&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_public.pem&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="rsaencrypt"><a href="#rsaencrypt" class="header-anchor">#</a> RsaEncrypt</h3> <p>Encrypt data with public key file useing ras algorithm.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">RsaEncrypt</span><span class="token punctuation">(</span>data <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> pubKeyFileName <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    err <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">GenerateRsaKey</span><span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_private.pem&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_public.pem&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    data <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">RsaEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">&quot;rsa_public.pem&quot;</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">RsaDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token string">&quot;rsa_private.pem&quot;</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="rsadecrypt"><a href="#rsadecrypt" class="header-anchor">#</a> RsaDecrypt</h3> <p>Decrypt data with private key file useing ras algorithm.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">RsaDecrypt</span><span class="token punctuation">(</span>data <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> privateKeyFileName <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/cryptor&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    err <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">GenerateRsaKey</span><span class="token punctuation">(</span><span class="token number">4096</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_private.pem&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;rsa_public.pem&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    data <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">&quot;hello world&quot;</span><span class="token punctuation">)</span>
+    encrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">RsaEncrypt</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">&quot;rsa_public.pem&quot;</span><span class="token punctuation">)</span>
+    decrypted <span class="token operator">:=</span> cryptor<span class="token punctuation">.</span><span class="token function">RsaDecrypt</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token string">&quot;rsa_private.pem&quot;</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//hello world</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/29/2022, 1:53:14 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/28.53f49ea2.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Datetime | Lancet文档</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/22.d81c3100.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet文档" class="logo"> <span class="site-name can-hide">Lancet文档</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/datetime/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datetime/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/datetime/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datetime/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Datetime</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/datetime/#源码" class="sidebar-link">源码:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/datetime/#用法" class="sidebar-link">用法:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/datetime/#文档" class="sidebar-link">文档</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/datetime/#注" class="sidebar-link">注:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#addday" class="sidebar-link">AddDay</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#addhour" class="sidebar-link">AddHour</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#addminute" class="sidebar-link">AddMinute</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofminute" class="sidebar-link">BeginOfMinute</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofhour" class="sidebar-link">BeginOfHour</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofday" class="sidebar-link">BeginOfDay</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofweek" class="sidebar-link">BeginOfWeek</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofmonth" class="sidebar-link">BeginOfMonth</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#beginofyear" class="sidebar-link">BeginOfYear</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofminute" class="sidebar-link">EndOfMinute</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofhour" class="sidebar-link">EndOfHour</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofday" class="sidebar-link">EndOfDay</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofweek" class="sidebar-link">EndOfWeek</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofmonth" class="sidebar-link">EndOfMonth</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#endofyear" class="sidebar-link">EndOfYear</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#getnowdate" class="sidebar-link">GetNowDate</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#getnowtime" class="sidebar-link">GetNowTime</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#getnowdatetime" class="sidebar-link">GetNowDateTime</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#getzerohourtimestamp" class="sidebar-link">GetZeroHourTimestamp</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#getnighttimestamp" class="sidebar-link">GetNightTimestamp</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#formattimetostr" class="sidebar-link">FormatTimeToStr</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#formatstrtotime" class="sidebar-link">FormatStrToTime</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#newunixnow" class="sidebar-link">NewUnixNow</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#newunix" class="sidebar-link">NewUnix</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#newformat" class="sidebar-link">NewFormat</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#newiso8601" class="sidebar-link">NewISO8601</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#tounix" class="sidebar-link">ToUnix</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#toformat" class="sidebar-link">ToFormat</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#toformatfortpl" class="sidebar-link">ToFormatForTpl</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/datetime/#toiso8601" class="sidebar-link">ToIso8601</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="datetime"><a href="#datetime" class="header-anchor">#</a> Datetime</h1> <p>datetime 日期时间处理包，格式化日期，比较日期。</p> <div STYLE="page-break-after: always;"></div> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/datetime/datetime.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/datetime/datetime.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="用法"><a href="#用法" class="header-anchor">#</a> 用法:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="文档"><a href="#文档" class="header-anchor">#</a> 文档</h2> <h2 id="注"><a href="#注" class="header-anchor">#</a> 注:</h2> <ol><li>方法 FormatTimeToStr 和 FormatStrToTime 中的 format 参数值需要传以下类型之一：</li></ol> <ul><li>yyyy-mm-dd hh:mm:ss</li> <li>yyyy-mm-dd hh:mm</li> <li>yyyy-mm-dd hh</li> <li>yyyy-mm-dd</li> <li>yyyy-mm</li> <li>mm-dd</li> <li>dd-mm-yy hh:mm:ss</li> <li>yyyy/mm/dd hh:mm:ss</li> <li>yyyy/mm/dd hh:mm</li> <li>yyyy-mm-dd hh</li> <li>yyyy/mm/dd</li> <li>yyyy/mm</li> <li>mm/dd</li> <li>dd/mm/yy hh:mm:ss</li> <li>yyyy</li> <li>mm</li> <li>hh:mm:ss</li> <li>mm:ss</li></ul> <h3 id="addday"><a href="#addday" class="header-anchor">#</a> AddDay</h3> <p>将日期加/减天数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AddDay</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> day <span class="token builtin">int64</span><span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	after2Days <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddDay</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+	before2Days <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddDay</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>after2Days<span class="token punctuation">,</span> before2Days<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="addhour"><a href="#addhour" class="header-anchor">#</a> AddHour</h3> <p>将日期加/减小时数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AddHour</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> hour <span class="token builtin">int64</span><span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    after2Hours <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddHour</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    before2Hours <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddHour</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>after2Hours<span class="token punctuation">,</span> after2Hours<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="addminute"><a href="#addminute" class="header-anchor">#</a> AddMinute</h3> <p>将日期加/减分钟数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">AddMinute</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> minute <span class="token builtin">int64</span><span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    after2Minute <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddMinute</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    before2Minute <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">AddMinute</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>after2Minute<span class="token punctuation">,</span> before2Minute<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofminute"><a href="#beginofminute" class="header-anchor">#</a> BeginOfMinute</h3> <p>返回指定时间的分钟开始时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfMinute</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfMinute</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 15:48:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofhour"><a href="#beginofhour" class="header-anchor">#</a> BeginOfHour</h3> <p>返回指定时间的小时开始时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfHour</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfHour</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 15:00:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofday"><a href="#beginofday" class="header-anchor">#</a> BeginOfDay</h3> <p>返回指定时间的当天开始时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfDay</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfDay</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 00:00:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofweek"><a href="#beginofweek" class="header-anchor">#</a> BeginOfWeek</h3> <p>返回指定时间的每周开始时间,默认开始时间星期日</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfWeek</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> beginFrom <span class="token operator">...</span>time<span class="token punctuation">.</span>Weekday<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfWeek</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-13 00:00:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofmonth"><a href="#beginofmonth" class="header-anchor">#</a> BeginOfMonth</h3> <p>返回指定时间的当月开始时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfMonth</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfMonth</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-01 00:00:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="beginofyear"><a href="#beginofyear" class="header-anchor">#</a> BeginOfYear</h3> <p>返回指定时间的当年开始时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">BeginOfYear</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">BeginOfYear</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-01-01 00:00:00 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofminute"><a href="#endofminute" class="header-anchor">#</a> EndOfMinute</h3> <p>返回指定时间的分钟结束时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfMinute</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfMinute</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 15:48:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofhour"><a href="#endofhour" class="header-anchor">#</a> EndOfHour</h3> <p>返回指定时间的小时结束时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfHour</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfHour</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 15:59:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofday"><a href="#endofday" class="header-anchor">#</a> EndOfDay</h3> <p>返回指定时间的当天结束时间.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfDay</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfDay</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-15 23:59:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofweek"><a href="#endofweek" class="header-anchor">#</a> EndOfWeek</h3> <p>返回指定时间的星期结束时间,默认结束时间星期六</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfWeek</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> endWith <span class="token operator">...</span>time<span class="token punctuation">.</span>Weekday<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfWeek</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-19 23:59:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofmonth"><a href="#endofmonth" class="header-anchor">#</a> EndOfMonth</h3> <p>返回指定时间的月份结束时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfMonth</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfMonth</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-02-28 23:59:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="endofyear"><a href="#endofyear" class="header-anchor">#</a> EndOfYear</h3> <p>返回指定时间的年份结束时间</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">EndOfYear</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">)</span> time<span class="token punctuation">.</span>Time
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    td <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Date</span><span class="token punctuation">(</span><span class="token number">2022</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">48</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>Local<span class="token punctuation">)</span>
+    bm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">EndOfYear</span><span class="token punctuation">(</span>td<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>bm<span class="token punctuation">)</span> <span class="token comment">//2022-12-31 23:59:59.999999999 +0800 CST</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getnowdate"><a href="#getnowdate" class="header-anchor">#</a> GetNowDate</h3> <p>获取当天日期，返回格式：yyyy-mm-dd</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetNowDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	currentDate <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">GetNowDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>currentDate<span class="token punctuation">)</span> <span class="token comment">// 2022-01-28</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getnowtime"><a href="#getnowtime" class="header-anchor">#</a> GetNowTime</h3> <p>获取当时时间，返回格式：hh:mm:ss</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetNowTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    currentTime <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">GetNowTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>currentDate<span class="token punctuation">)</span> <span class="token comment">// 15:57:33</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getnowdatetime"><a href="#getnowdatetime" class="header-anchor">#</a> GetNowDateTime</h3> <p>获取当时日期和时间，返回格式：yyyy-mm-dd hh:mm:ss.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetNowDateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    current <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">GetNowDateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>current<span class="token punctuation">)</span> <span class="token comment">// 2022-01-28 15:59:33</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getzerohourtimestamp"><a href="#getzerohourtimestamp" class="header-anchor">#</a> GetZeroHourTimestamp</h3> <p>获取零时时间戳(timestamp of 00:00).</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetZeroHourTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int64</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    zeroTime <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">GetZeroHourTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>zeroTime<span class="token punctuation">)</span> <span class="token comment">// 1643299200</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="getnighttimestamp"><a href="#getnighttimestamp" class="header-anchor">#</a> GetNightTimestamp</h3> <p>获取午夜时间戳(timestamp of 23:59).</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">GetNightTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int64</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    nightTime <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">GetNightTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>nightTime<span class="token punctuation">)</span> <span class="token comment">// 1643385599</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="formattimetostr"><a href="#formattimetostr" class="header-anchor">#</a> FormatTimeToStr</h3> <p>将日期格式化成字符串，`format` 参数格式参考注<sup>1</sup></p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">FormatTimeToStr</span><span class="token punctuation">(</span>t time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> format <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;time&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    now <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    timeStr <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">FormatTimeToStr</span><span class="token punctuation">(</span>now<span class="token punctuation">,</span> <span class="token string">&quot;yyyy/mm/dd hh:mm:ss&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>timeStr<span class="token punctuation">)</span> <span class="token comment">//2022/01/28 16:07:44</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="formatstrtotime"><a href="#formatstrtotime" class="header-anchor">#</a> FormatStrToTime</h3> <p>将字符串格式化成时间，`format` 参数格式参考注<sup>1</sup></p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">FormatStrToTime</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> format <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>time<span class="token punctuation">.</span>Time<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    time <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">FormatStrToTime</span><span class="token punctuation">(</span><span class="token string">&quot;2006-01-02 15:04:05&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;yyyy/mm/dd hh:mm:ss&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="newunixnow"><a href="#newunixnow" class="header-anchor">#</a> NewUnixNow</h3> <p>创建一个当前时间的unix时间戳</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> theTime <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    unix <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">NewUnixNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>theTime
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewUnixNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">)</span> <span class="token comment">//&amp;{1647597438}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="newunix"><a href="#newunix" class="header-anchor">#</a> NewUnix</h3> <p>创建一个unix时间戳</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> theTime <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    unix <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">NewUnix</span><span class="token punctuation">(</span>unix <span class="token builtin">int64</span><span class="token punctuation">)</span> <span class="token operator">*</span>theTime
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewUnix</span><span class="token punctuation">(</span><span class="token number">1647597438</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">)</span> <span class="token comment">//&amp;{1647597438}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="newformat"><a href="#newformat" class="header-anchor">#</a> NewFormat</h3> <p>创建一个yyyy-mm-dd hh:mm:ss格式时间字符串的unix时间戳</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> theTime <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    unix <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">NewFormat</span><span class="token punctuation">(</span>t <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>theTime<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm<span class="token punctuation">,</span> err <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewFormat</span><span class="token punctuation">(</span><span class="token string">&quot;2022-03-18 17:04:05&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">)</span> <span class="token comment">//&amp;{1647594245}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="newiso8601"><a href="#newiso8601" class="header-anchor">#</a> NewISO8601</h3> <p>创建一个iso8601格式时间字符串的unix时间戳</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> theTime <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    unix <span class="token builtin">int64</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">NewISO8601</span><span class="token punctuation">(</span>iso8601 <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token operator">*</span>theTime<span class="token punctuation">,</span> <span class="token builtin">error</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm<span class="token punctuation">,</span> err <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewISO8601</span><span class="token punctuation">(</span><span class="token string">&quot;2006-01-02T15:04:05.999Z&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">)</span> <span class="token comment">//&amp;{1136214245}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="tounix"><a href="#tounix" class="header-anchor">#</a> ToUnix</h3> <p>返回unix时间戳</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>theTime<span class="token punctuation">)</span> <span class="token function">ToUnix</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">int64</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewUnixNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">.</span><span class="token function">ToUnix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//1647597438</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="toformat"><a href="#toformat" class="header-anchor">#</a> ToFormat</h3> <p>返回格式'yyyy-mm-dd hh:mm:ss'的日期字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>theTime<span class="token punctuation">)</span> <span class="token function">ToFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewFormat</span><span class="token punctuation">(</span><span class="token string">&quot;2022-03-18 17:04:05&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>tm<span class="token punctuation">.</span><span class="token function">ToFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//&quot;2022-03-18 17:04:05&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="toformatfortpl"><a href="#toformatfortpl" class="header-anchor">#</a> ToFormatForTpl</h3> <p>返回tpl格式指定的日期字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>theTime<span class="token punctuation">)</span> <span class="token function">ToFormatForTpl</span><span class="token punctuation">(</span>tpl <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewFormat</span><span class="token punctuation">(</span><span class="token string">&quot;2022-03-18 17:04:05&quot;</span><span class="token punctuation">)</span>
+    ts <span class="token operator">:=</span> tm<span class="token punctuation">.</span><span class="token function">ToFormatForTpl</span><span class="token punctuation">(</span><span class="token string">&quot;2006/01/02 15:04:05&quot;</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span> <span class="token comment">//&quot;2022/03/18 17:04:05&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="toiso8601"><a href="#toiso8601" class="header-anchor">#</a> ToIso8601</h3> <p>返回iso8601日期字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>theTime<span class="token punctuation">)</span> <span class="token function">ToIso8601</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/datetime&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tm<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> datetime<span class="token punctuation">.</span><span class="token function">NewISO8601</span><span class="token punctuation">(</span><span class="token string">&quot;2006-01-02T15:04:05.999Z&quot;</span><span class="token punctuation">)</span>
+    ts <span class="token operator">:=</span> tm<span class="token punctuation">.</span><span class="token function">ToIso8601</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span> <span class="token comment">//&quot;2006-01-02T23:04:05+08:00&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2022/10/14 上午10:24:23</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/22.d81c3100.js" defer></script>
+  </body>
+</html>

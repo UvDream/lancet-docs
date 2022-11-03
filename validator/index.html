@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Validator | Lancet文档</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/62.871f23fd.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet文档" class="logo"> <span class="site-name can-hide">Lancet文档</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Validator</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/validator/#源码" class="sidebar-link">源码:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/validator/#用法" class="sidebar-link">用法:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/validator/#文档" class="sidebar-link">文档</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#containchinese" class="sidebar-link">ContainChinese</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#containletter" class="sidebar-link">ContainLetter</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#containlower" class="sidebar-link">ContainLower</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#containupper" class="sidebar-link">ContainUpper</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isalpha" class="sidebar-link">IsAlpha</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isallupper" class="sidebar-link">IsAllUpper</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isalllower" class="sidebar-link">IsAllLower</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isbase64" class="sidebar-link">IsBase64</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#ischinesemobile" class="sidebar-link">IsChineseMobile</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#ischineseidnum" class="sidebar-link">IsChineseIdNum</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#ischinesephone" class="sidebar-link">IsChinesePhone</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#iscreditcard" class="sidebar-link">IsCreditCard</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isdns" class="sidebar-link">IsDns</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isemail" class="sidebar-link">IsEmail</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isemptystring" class="sidebar-link">IsEmptyString</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isfloatstr" class="sidebar-link">IsFloatStr</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isnumberstr" class="sidebar-link">IsNumberStr</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isjson" class="sidebar-link">IsJSON</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isregexmatch" class="sidebar-link">IsRegexMatch</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isintstr" class="sidebar-link">IsIntStr</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isip" class="sidebar-link">IsIp</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isipv4" class="sidebar-link">IsIpV4</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isipv6" class="sidebar-link">IsIpV6</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isstrongpassword" class="sidebar-link">IsStrongPassword</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isurl" class="sidebar-link">IsUrl</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#isweakpassword" class="sidebar-link">IsWeakPassword</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/validator/#iszerovalue" class="sidebar-link">IsZeroValue</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="validator"><a href="#validator" class="header-anchor">#</a> Validator</h1> <p>validator 验证器包，包含常用字符串格式验证函数。</p> <div STYLE="page-break-after: always;"></div> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/validator/validator.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/validator/validator.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="用法"><a href="#用法" class="header-anchor">#</a> 用法:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="文档"><a href="#文档" class="header-anchor">#</a> 文档</h2> <h3 id="containchinese"><a href="#containchinese" class="header-anchor">#</a> ContainChinese</h3> <p>验证字符串是否包含中文字符</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ContainChinese</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainChinese</span><span class="token punctuation">(</span><span class="token string">&quot;你好&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainChinese</span><span class="token punctuation">(</span><span class="token string">&quot;你好hello&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainChinese</span><span class="token punctuation">(</span><span class="token string">&quot;hello&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="containletter"><a href="#containletter" class="header-anchor">#</a> ContainLetter</h3> <p>验证字符串是否包含至少一个英文字母</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ContainLetter</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLetter</span><span class="token punctuation">(</span><span class="token string">&quot;1bc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLetter</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLetter</span><span class="token punctuation">(</span><span class="token string">&quot;&amp;@#$%^&amp;*&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="containlower"><a href="#containlower" class="header-anchor">#</a> ContainLower</h3> <p>验证字符串是否包含至少一个英文小写字母</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ContainLower</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLower</span><span class="token punctuation">(</span><span class="token string">&quot;1bc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLower</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainLower</span><span class="token punctuation">(</span><span class="token string">&quot;1BC&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="containupper"><a href="#containupper" class="header-anchor">#</a> ContainUpper</h3> <p>验证字符串是否包含至少一个英文大写字母.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">ContainUpper</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainUpper</span><span class="token punctuation">(</span><span class="token string">&quot;1bc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainUpper</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">ContainUpper</span><span class="token punctuation">(</span><span class="token string">&quot;1BC&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isalpha"><a href="#isalpha" class="header-anchor">#</a> IsAlpha</h3> <p>验证字符串是否只包含英文字母</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsAlpha</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAlpha</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAlpha</span><span class="token punctuation">(</span><span class="token string">&quot;1bc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAlpha</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isallupper"><a href="#isallupper" class="header-anchor">#</a> IsAllUpper</h3> <p>验证字符串是否全是大写英文字母</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsAllUpper</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAllUpper</span><span class="token punctuation">(</span><span class="token string">&quot;ABC&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAllUpper</span><span class="token punctuation">(</span><span class="token string">&quot;aBC&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isalllower"><a href="#isalllower" class="header-anchor">#</a> IsAllLower</h3> <p>验证字符串是否全是小写英文字母</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsAllLower</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAllLower</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsAllLower</span><span class="token punctuation">(</span><span class="token string">&quot;abC&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isbase64"><a href="#isbase64" class="header-anchor">#</a> IsBase64</h3> <p>验证字符串是否是base64编码</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsBase64</span><span class="token punctuation">(</span>base64 <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsBase64</span><span class="token punctuation">(</span><span class="token string">&quot;aGVsbG8=&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsBase64</span><span class="token punctuation">(</span><span class="token string">&quot;123456&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="ischinesemobile"><a href="#ischinesemobile" class="header-anchor">#</a> IsChineseMobile</h3> <p>验证字符串是否是中国手机号码</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsChineseMobile</span><span class="token punctuation">(</span>mobileNum <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChineseMobile</span><span class="token punctuation">(</span><span class="token string">&quot;13263527980&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChineseMobile</span><span class="token punctuation">(</span><span class="token string">&quot;434324324&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="ischineseidnum"><a href="#ischineseidnum" class="header-anchor">#</a> IsChineseIdNum</h3> <p>验证字符串是否是中国身份证号码</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsChineseIdNum</span><span class="token punctuation">(</span>id <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChineseIdNum</span><span class="token punctuation">(</span><span class="token string">&quot;210911192105130715&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChineseIdNum</span><span class="token punctuation">(</span><span class="token string">&quot;123456&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="ischinesephone"><a href="#ischinesephone" class="header-anchor">#</a> IsChinesePhone</h3> <p>验证字符串是否是中国电话座机号码</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsChinesePhone</span><span class="token punctuation">(</span>phone <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChinesePhone</span><span class="token punctuation">(</span><span class="token string">&quot;010-32116675&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsChinesePhone</span><span class="token punctuation">(</span><span class="token string">&quot;123-87562&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="iscreditcard"><a href="#iscreditcard" class="header-anchor">#</a> IsCreditCard</h3> <p>验证字符串是否是信用卡号码</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsCreditCard</span><span class="token punctuation">(</span>creditCart <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsCreditCard</span><span class="token punctuation">(</span><span class="token string">&quot;4111111111111111&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsCreditCard</span><span class="token punctuation">(</span><span class="token string">&quot;123456&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isdns"><a href="#isdns" class="header-anchor">#</a> IsDns</h3> <p>验证字符串是否是有效dns</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsDns</span><span class="token punctuation">(</span>dns <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsDns</span><span class="token punctuation">(</span><span class="token string">&quot;abc.com&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsDns</span><span class="token punctuation">(</span><span class="token string">&quot;a.b.com&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	res3 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsDns</span><span class="token punctuation">(</span><span class="token string">&quot;http://abc.com&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res3<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isemail"><a href="#isemail" class="header-anchor">#</a> IsEmail</h3> <p>验证字符串是否是有效电子邮件地址</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsEmail</span><span class="token punctuation">(</span>email <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsEmail</span><span class="token punctuation">(</span><span class="token string">&quot;abc@xyz.com&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsEmail</span><span class="token punctuation">(</span><span class="token string">&quot;a.b@@com&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isemptystring"><a href="#isemptystring" class="header-anchor">#</a> IsEmptyString</h3> <p>验证字符串是否是空字符串</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsEmptyString</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	res1 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsEmptyString</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res1<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	res2 <span class="token operator">:=</span> validator<span class="token punctuation">.</span><span class="token function">IsEmptyString</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res2<span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isfloatstr"><a href="#isfloatstr" class="header-anchor">#</a> IsFloatStr</h3> <p>验证字符串是否是可以转换为浮点数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsFloatStr</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;12a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;+3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;-3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsFloatStr</span><span class="token punctuation">(</span><span class="token string">&quot;12&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isnumberstr"><a href="#isnumberstr" class="header-anchor">#</a> IsNumberStr</h3> <p>验证字符串是否是可以转换为数字</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsNumberStr</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;12a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;+3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;-3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsNumberStr</span><span class="token punctuation">(</span><span class="token string">&quot;+3e2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isjson"><a href="#isjson" class="header-anchor">#</a> IsJSON</h3> <p>验证字符串是否是有效json</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsJSON</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;{}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;[]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsJSON</span><span class="token punctuation">(</span><span class="token string">&quot;{\&quot;name\&quot;: \&quot;test\&quot;}&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isregexmatch"><a href="#isregexmatch" class="header-anchor">#</a> IsRegexMatch</h3> <p>验证字符串是否可以匹配正则表达式</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsRegexMatch</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> regex <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsRegexMatch</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span> <span class="token string">`^[a-zA-Z]+$`</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsRegexMatch</span><span class="token punctuation">(</span><span class="token string">&quot;1ab&quot;</span><span class="token punctuation">,</span> <span class="token string">`^[a-zA-Z]+$`</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsRegexMatch</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">`^[a-zA-Z]+$`</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isintstr"><a href="#isintstr" class="header-anchor">#</a> IsIntStr</h3> <p>验证字符串是否是可以转换为整数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsIntStr</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIntStr</span><span class="token punctuation">(</span><span class="token string">&quot;+3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIntStr</span><span class="token punctuation">(</span><span class="token string">&quot;-3&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIntStr</span><span class="token punctuation">(</span><span class="token string">&quot;3.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIntStr</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isip"><a href="#isip" class="header-anchor">#</a> IsIp</h3> <p>验证字符串是否是ip地址</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsIp</span><span class="token punctuation">(</span>ipstr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIp</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIp</span><span class="token punctuation">(</span><span class="token string">&quot;::0:0:0:0:0:0:1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIp</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIp</span><span class="token punctuation">(</span><span class="token string">&quot;127&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isipv4"><a href="#isipv4" class="header-anchor">#</a> IsIpV4</h3> <p>验证字符串是否是ipv4地址</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsIpV4</span><span class="token punctuation">(</span>ipstr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV4</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV4</span><span class="token punctuation">(</span><span class="token string">&quot;::0:0:0:0:0:0:1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV4</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV4</span><span class="token punctuation">(</span><span class="token string">&quot;127&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isipv6"><a href="#isipv6" class="header-anchor">#</a> IsIpV6</h3> <p>验证字符串是否是ipv6地址</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsIpV6</span><span class="token punctuation">(</span>ipstr <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV6</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV6</span><span class="token punctuation">(</span><span class="token string">&quot;::0:0:0:0:0:0:1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV6</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsIpV6</span><span class="token punctuation">(</span><span class="token string">&quot;127&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isstrongpassword"><a href="#isstrongpassword" class="header-anchor">#</a> IsStrongPassword</h3> <p>验证字符串是否是强密码：(alpha(lower+upper) + number + special chars(!@#$%^&amp;*()?&gt;&lt;))</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsStrongPassword</span><span class="token punctuation">(</span>password <span class="token builtin">string</span><span class="token punctuation">,</span> length <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsStrongPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsStrongPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abc123&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsStrongPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abcABC&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsStrongPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abcABC123@#$&quot;</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsStrongPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abcABC123@#$&quot;</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isurl"><a href="#isurl" class="header-anchor">#</a> IsUrl</h3> <p>验证字符串是否是url</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsUrl</span><span class="token punctuation">(</span>str <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsUrl</span><span class="token punctuation">(</span><span class="token string">&quot;http://abc.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsUrl</span><span class="token punctuation">(</span><span class="token string">&quot;abc.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsUrl</span><span class="token punctuation">(</span><span class="token string">&quot;a.b.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsUrl</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isweakpassword"><a href="#isweakpassword" class="header-anchor">#</a> IsWeakPassword</h3> <p>验证字符串是否是弱密码：（only letter or only number or letter + number）
+.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsWeakPassword</span><span class="token punctuation">(</span>password <span class="token builtin">string</span><span class="token punctuation">,</span> length <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsWeakPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsWeakPassword</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsWeakPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abc123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsWeakPassword</span><span class="token punctuation">(</span><span class="token string">&quot;abc123@#$&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="iszerovalue"><a href="#iszerovalue" class="header-anchor">#</a> IsZeroValue</h3> <p>判断传入的参数值是否为零值</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">IsZeroValue</span><span class="token punctuation">(</span>value any<span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/duke-git/lancet/v2/validator&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token string">&quot;0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>validator<span class="token punctuation">.</span><span class="token function">IsZeroValue</span><span class="token punctuation">(</span><span class="token string">&quot;nil&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//false</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2022/9/29 下午1:53:14</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/62.871f23fd.js" defer></script>
+  </body>
+</html>

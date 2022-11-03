@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Function | Lancet-docs</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Lancet is a comprehensive, efficient, and reusable util function library of go. Inspired by the java apache common package and lodash.js.">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/40.efc5e780.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/54.e77f799d.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/en/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet-docs" class="logo"> <span class="site-name can-hide">Lancet-docs</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docs" class="dropdown-title"><span class="title">Docs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docs" class="mobile-dropdown-title"><span class="title">Docs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/en/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  domestic mirror
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/en/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Docs" class="dropdown-title"><span class="title">Docs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Docs" class="mobile-dropdown-title"><span class="title">Docs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/en/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  domestic mirror
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/function/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Function</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/en/function/#source" class="sidebar-link">Source:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/en/function/#usage" class="sidebar-link">Usage:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/en/function/#documentation" class="sidebar-link">Documentation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#after" class="sidebar-link">After</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#before" class="sidebar-link">Before</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#curry" class="sidebar-link">Curry</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#compose" class="sidebar-link">Compose</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#debounced" class="sidebar-link">Debounced</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#delay" class="sidebar-link">Delay</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#schedule" class="sidebar-link">Schedule</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/en/function/#watcher" class="sidebar-link">Watcher</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="function"><a href="#function" class="header-anchor">#</a> Function</h1> <p>Package function can control the flow of function execution and support part of functional programming.</p> <div STYLE="page-break-after: always;"></div> <h2 id="source"><a href="#source" class="header-anchor">#</a> Source:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/function/function.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/function/function.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/duke-git/lancet/blob/main/function/watcher.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/function/watcher.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="usage"><a href="#usage" class="header-anchor">#</a> Usage:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="documentation"><a href="#documentation" class="header-anchor">#</a> Documentation</h2> <h3 id="after"><a href="#after" class="header-anchor">#</a> After</h3> <p>Creates a function that invokes given func once it's called n or more times.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">After</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> fn any<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span>args <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>reflect<span class="token punctuation">.</span>Value
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	arr <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">}</span>
+	f <span class="token operator">:=</span> function<span class="token punctuation">.</span><span class="token function">After</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;last print&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> i
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">type</span> cb <span class="token keyword">func</span><span class="token punctuation">(</span>args <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>reflect<span class="token punctuation">.</span>Value
+	<span class="token builtin">print</span> <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">,</span> s <span class="token builtin">string</span><span class="token punctuation">,</span> fn cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;arr[%d] is %s \n&quot;</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+		<span class="token function">fn</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;arr is&quot;</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token function">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+    <span class="token comment">//output:</span>
+    <span class="token comment">// arr is [a b]</span>
+    <span class="token comment">// arr[0] is a</span>
+    <span class="token comment">// arr[1] is b</span>
+    <span class="token comment">// last print</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="before"><a href="#before" class="header-anchor">#</a> Before</h3> <p>creates a function that invokes func once it's called less than n times.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Before</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">,</span> fn any<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span>args <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>reflect<span class="token punctuation">.</span>Value
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/internal&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	arr <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;e&quot;</span><span class="token punctuation">}</span>
+	f <span class="token operator">:=</span> function<span class="token punctuation">.</span><span class="token function">Before</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> i
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">var</span> res <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int64</span>
+	<span class="token keyword">type</span> cb <span class="token keyword">func</span><span class="token punctuation">(</span>args <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>reflect<span class="token punctuation">.</span>Value
+	appendStr <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">,</span> s <span class="token builtin">string</span><span class="token punctuation">,</span> fn cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		v <span class="token operator">:=</span> <span class="token function">fn</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+		res <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		<span class="token function">appendStr</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	expected <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int64</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment">// 0, 1, 2, 2, 2</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="curry"><a href="#curry" class="header-anchor">#</a> Curry</h3> <p>Make a curry function.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Fn <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">...</span>any<span class="token punctuation">)</span> any
+<span class="token keyword">func</span> <span class="token punctuation">(</span>f Fn<span class="token punctuation">)</span> <span class="token function">Curry</span><span class="token punctuation">(</span>i any<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">...</span>any<span class="token punctuation">)</span> any
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    add <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> a <span class="token operator">+</span> b
+	<span class="token punctuation">}</span>
+	<span class="token keyword">var</span> addCurry function<span class="token punctuation">.</span>Fn <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>values <span class="token operator">...</span>any<span class="token punctuation">)</span> any <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token function">add</span><span class="token punctuation">(</span>values<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">,</span> values<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	add1 <span class="token operator">:=</span> addCurry<span class="token punctuation">.</span><span class="token function">Curry</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	result <span class="token operator">:=</span> <span class="token function">add1</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment">//3</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="compose"><a href="#compose" class="header-anchor">#</a> Compose</h3> <p>Compose the function list from right to left, then return the composed function.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Compose</span><span class="token punctuation">(</span>fnList <span class="token operator">...</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">...</span>any<span class="token punctuation">)</span> any<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token operator">...</span>any<span class="token punctuation">)</span> any
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    add1 <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>v <span class="token operator">...</span>any<span class="token punctuation">)</span> any <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+	<span class="token punctuation">}</span>
+    add2 <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>v <span class="token operator">...</span>any<span class="token punctuation">)</span> any <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> v<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">2</span>
+	<span class="token punctuation">}</span>
+
+    add3 <span class="token operator">:=</span> function<span class="token punctuation">.</span><span class="token function">Compose</span><span class="token punctuation">(</span>add1<span class="token punctuation">,</span> add2<span class="token punctuation">)</span>
+	result <span class="token operator">:=</span> <span class="token function">add3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment">//4</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="debounced"><a href="#debounced" class="header-anchor">#</a> Debounced</h3> <p>Creates a debounced function that delays invoking fn until after wait duration have elapsed since the last time the debounced function was invoked.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Debounced</span><span class="token punctuation">(</span>fn <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> duration time<span class="token punctuation">.</span>Duration<span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count <span class="token operator">:=</span> <span class="token number">0</span>
+	add <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		count<span class="token operator">++</span>
+	<span class="token punctuation">}</span>
+
+	debouncedAdd <span class="token operator">:=</span> function<span class="token punctuation">.</span><span class="token function">Debounced</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">50</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Microsecond<span class="token punctuation">)</span>
+	function<span class="token punctuation">.</span><span class="token function">debouncedAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	function<span class="token punctuation">.</span><span class="token function">debouncedAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	function<span class="token punctuation">.</span><span class="token function">debouncedAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	function<span class="token punctuation">.</span><span class="token function">debouncedAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Millisecond<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token comment">//1</span>
+
+	function<span class="token punctuation">.</span><span class="token function">debouncedAdd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Millisecond<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token comment">//2</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="delay"><a href="#delay" class="header-anchor">#</a> Delay</h3> <p>Invoke function after delayed time.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Delay</span><span class="token punctuation">(</span>delay time<span class="token punctuation">.</span>Duration<span class="token punctuation">,</span> fn any<span class="token punctuation">,</span> args <span class="token operator">...</span>any<span class="token punctuation">)</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> <span class="token builtin">print</span> <span class="token operator">=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token comment">//test delay</span>
+	<span class="token punctuation">}</span>
+	function<span class="token punctuation">.</span><span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">,</span> <span class="token builtin">print</span><span class="token punctuation">,</span> <span class="token string">&quot;test delay&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="schedule"><a href="#schedule" class="header-anchor">#</a> Schedule</h3> <p>Invoke function every duration time, until close the returned bool chan.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">Schedule</span><span class="token punctuation">(</span>d time<span class="token punctuation">.</span>Duration<span class="token punctuation">,</span> fn any<span class="token punctuation">,</span> args <span class="token operator">...</span>any<span class="token punctuation">)</span> <span class="token keyword">chan</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> res <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+	appendStr <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		res <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	stop <span class="token operator">:=</span> function<span class="token punctuation">.</span><span class="token function">Schedule</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">,</span> appendStr<span class="token punctuation">,</span> <span class="token string">&quot;*&quot;</span><span class="token punctuation">)</span>
+	time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+	<span class="token function">close</span><span class="token punctuation">(</span>stop<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment">//[* * * * *]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="watcher"><a href="#watcher" class="header-anchor">#</a> Watcher</h3> <p>Watcher is used for record code excution time. can start/stop/reset the watch timer. get the elapsed time of function execution.</p> <p><b>Signature:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Watcher <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	startTime <span class="token builtin">int64</span>
+	stopTime  <span class="token builtin">int64</span>
+	excuting  <span class="token builtin">bool</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w <span class="token operator">*</span>Watcher<span class="token punctuation">)</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//start the watcher</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w <span class="token operator">*</span>Watcher<span class="token punctuation">)</span> <span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//stop the watcher</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w <span class="token operator">*</span>Watcher<span class="token punctuation">)</span> <span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//reset the watcher</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>w <span class="token operator">*</span>Watcher<span class="token punctuation">)</span> <span class="token function">GetElapsedTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> time<span class="token punctuation">.</span>Duration <span class="token comment">//get the elapsed time of function execution</span>
+</code></pre></div><p><b>Example:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/function&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    w <span class="token operator">:=</span> <span class="token operator">&amp;</span>function<span class="token punctuation">.</span>Watcher<span class="token punctuation">{</span><span class="token punctuation">}</span>
+	w<span class="token punctuation">.</span><span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token function">longRunningTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>excuting<span class="token punctuation">)</span> <span class="token comment">//true</span>
+
+	w<span class="token punctuation">.</span><span class="token function">Stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	eapsedTime <span class="token operator">:=</span> w<span class="token punctuation">.</span><span class="token function">GetElapsedTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Milliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>eapsedTime<span class="token punctuation">)</span>
+
+	w<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>excuting<span class="token punctuation">)</span> <span class="token comment">//false</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>startTime<span class="token punctuation">)</span> <span class="token comment">//0</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>stopTime<span class="token punctuation">)</span> <span class="token comment">//0</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">longRunningTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> slice <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int64</span>
+	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10000000</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+		slice <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>slice<span class="token punctuation">,</span> <span class="token function">int64</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">9/29/2022, 1:53:14 PM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/40.efc5e780.js" defer></script>
+  </body>
+</html>

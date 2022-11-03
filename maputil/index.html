@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Maputil | Lancet文档</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="lancet（柳叶刀）是一个全面、高效、可复用的go语言工具函数库。 lancet受到了java apache common包和lodash.js的启发。">
+    
+    <link rel="preload" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css" as="style"><link rel="preload" href="/lancet-docs/assets/js/app.cc4984ed.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/3.e76edb74.js" as="script"><link rel="preload" href="/lancet-docs/assets/js/54.e77f799d.js" as="script"><link rel="prefetch" href="/lancet-docs/assets/js/10.298008db.js"><link rel="prefetch" href="/lancet-docs/assets/js/11.215a6df5.js"><link rel="prefetch" href="/lancet-docs/assets/js/12.fe6c64d0.js"><link rel="prefetch" href="/lancet-docs/assets/js/13.285748fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/14.9947be14.js"><link rel="prefetch" href="/lancet-docs/assets/js/15.8b2b07b7.js"><link rel="prefetch" href="/lancet-docs/assets/js/16.31359266.js"><link rel="prefetch" href="/lancet-docs/assets/js/17.9dd4015a.js"><link rel="prefetch" href="/lancet-docs/assets/js/18.2235d872.js"><link rel="prefetch" href="/lancet-docs/assets/js/19.f373f5c8.js"><link rel="prefetch" href="/lancet-docs/assets/js/20.aba30e54.js"><link rel="prefetch" href="/lancet-docs/assets/js/21.bc3703d3.js"><link rel="prefetch" href="/lancet-docs/assets/js/22.d81c3100.js"><link rel="prefetch" href="/lancet-docs/assets/js/23.224a5f36.js"><link rel="prefetch" href="/lancet-docs/assets/js/24.d758f359.js"><link rel="prefetch" href="/lancet-docs/assets/js/25.148d47af.js"><link rel="prefetch" href="/lancet-docs/assets/js/26.0cd85f99.js"><link rel="prefetch" href="/lancet-docs/assets/js/27.850bc999.js"><link rel="prefetch" href="/lancet-docs/assets/js/28.53f49ea2.js"><link rel="prefetch" href="/lancet-docs/assets/js/29.1433104c.js"><link rel="prefetch" href="/lancet-docs/assets/js/30.0b3eaea9.js"><link rel="prefetch" href="/lancet-docs/assets/js/31.adff5f7c.js"><link rel="prefetch" href="/lancet-docs/assets/js/32.2d30d16e.js"><link rel="prefetch" href="/lancet-docs/assets/js/33.641b60d1.js"><link rel="prefetch" href="/lancet-docs/assets/js/34.cb492b36.js"><link rel="prefetch" href="/lancet-docs/assets/js/35.7f131f1b.js"><link rel="prefetch" href="/lancet-docs/assets/js/36.5720c6bd.js"><link rel="prefetch" href="/lancet-docs/assets/js/37.974ebc11.js"><link rel="prefetch" href="/lancet-docs/assets/js/38.b708617f.js"><link rel="prefetch" href="/lancet-docs/assets/js/39.5983a952.js"><link rel="prefetch" href="/lancet-docs/assets/js/4.f26dace8.js"><link rel="prefetch" href="/lancet-docs/assets/js/40.efc5e780.js"><link rel="prefetch" href="/lancet-docs/assets/js/41.ab4b90f1.js"><link rel="prefetch" href="/lancet-docs/assets/js/42.e6470c35.js"><link rel="prefetch" href="/lancet-docs/assets/js/43.fa37ceae.js"><link rel="prefetch" href="/lancet-docs/assets/js/44.9fea7456.js"><link rel="prefetch" href="/lancet-docs/assets/js/45.05372bb7.js"><link rel="prefetch" href="/lancet-docs/assets/js/46.01b72abd.js"><link rel="prefetch" href="/lancet-docs/assets/js/47.a6f53f05.js"><link rel="prefetch" href="/lancet-docs/assets/js/48.346d0a52.js"><link rel="prefetch" href="/lancet-docs/assets/js/49.f0ad4aff.js"><link rel="prefetch" href="/lancet-docs/assets/js/5.aeedc0cd.js"><link rel="prefetch" href="/lancet-docs/assets/js/50.ee2f0ca9.js"><link rel="prefetch" href="/lancet-docs/assets/js/51.98681cbd.js"><link rel="prefetch" href="/lancet-docs/assets/js/52.9ba41d67.js"><link rel="prefetch" href="/lancet-docs/assets/js/53.2e8e8a8f.js"><link rel="prefetch" href="/lancet-docs/assets/js/55.d040f308.js"><link rel="prefetch" href="/lancet-docs/assets/js/56.5a8cac25.js"><link rel="prefetch" href="/lancet-docs/assets/js/57.ea59a29d.js"><link rel="prefetch" href="/lancet-docs/assets/js/58.d806bf6d.js"><link rel="prefetch" href="/lancet-docs/assets/js/59.da825bbf.js"><link rel="prefetch" href="/lancet-docs/assets/js/6.bc4d3e3b.js"><link rel="prefetch" href="/lancet-docs/assets/js/60.f64d9940.js"><link rel="prefetch" href="/lancet-docs/assets/js/61.92482aaf.js"><link rel="prefetch" href="/lancet-docs/assets/js/62.871f23fd.js"><link rel="prefetch" href="/lancet-docs/assets/js/63.ac58736e.js"><link rel="prefetch" href="/lancet-docs/assets/js/64.1503c00d.js"><link rel="prefetch" href="/lancet-docs/assets/js/7.4337c208.js"><link rel="prefetch" href="/lancet-docs/assets/js/8.5cfbf6ad.js"><link rel="prefetch" href="/lancet-docs/assets/js/9.285fac44.js"><link rel="prefetch" href="/lancet-docs/assets/js/vendors~docsearch.3733af1e.js">
+    <link rel="stylesheet" href="/lancet-docs/assets/css/0.styles.9c00a0f0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lancet-docs/" class="home-link router-link-active"><img src="/lancet-docs/logo.png" alt="Lancet文档" class="logo"> <span class="site-name can-hide">Lancet文档</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lancet-docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档" class="dropdown-title"><span class="title">文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="文档" class="mobile-dropdown-title"><span class="title">文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/algorithm/" class="nav-link">
+  algorithm
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/concurrency/" class="nav-link">
+  concurrency
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/condition/" class="nav-link">
+  condition
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/convertor/" class="nav-link">
+  convertor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/cryptor/" class="nav-link">
+  cryptor
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/datastructure/" class="nav-link">
+  datastructure
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/fileutil/" class="nav-link">
+  fileutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/formatter/" class="nav-link">
+  formatter
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/function/" class="nav-link">
+  function
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  maputil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/mathutil/" class="nav-link">
+  mathutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/netutil/" class="nav-link">
+  netutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/random/" class="nav-link">
+  random
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/retry/" class="nav-link">
+  retry
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/slice/" class="nav-link">
+  slice
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/strutil/" class="nav-link">
+  strutil
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/system/" class="nav-link">
+  system
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/validator/" class="nav-link">
+  validator
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/xerror/" class="nav-link">
+  xerror
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/UvDream/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://uvdream.gitee.io/lancet-docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lancet-docs/maputil/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/lancet-docs/en/maputil/" class="nav-link">
+  English
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Maputil</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lancet-docs/maputil/#源码" class="sidebar-link">源码:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/maputil/#用法" class="sidebar-link">用法:</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/lancet-docs/maputil/#api-文档" class="sidebar-link">API 文档:</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#foreach" class="sidebar-link">ForEach</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#filter" class="sidebar-link">Filter</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#intersect" class="sidebar-link">Intersect</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#keys" class="sidebar-link">Keys</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#merge" class="sidebar-link">Merge</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#minus" class="sidebar-link">Minus</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#values" class="sidebar-link">Values</a></li><li class="sidebar-sub-header"><a href="/lancet-docs/maputil/#isdisjoint" class="sidebar-link">IsDisjoint</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="maputil"><a href="#maputil" class="header-anchor">#</a> Maputil</h1> <p>maputil 包包括一些操作 map 的函数。</p> <div STYLE="page-break-after: always;"></div> <h2 id="源码"><a href="#源码" class="header-anchor">#</a> 源码:</h2> <ul><li><a href="https://github.com/duke-git/lancet/blob/main/maputil/map.go" target="_blank" rel="noopener noreferrer">https://github.com/duke-git/lancet/blob/main/maputil/map.go<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <div STYLE="page-break-after: always;"></div> <h2 id="用法"><a href="#用法" class="header-anchor">#</a> 用法:</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+</code></pre></div><div STYLE="page-break-after: always;"></div> <h2 id="api-文档"><a href="#api-文档" class="header-anchor">#</a> API 文档:</h2> <h3 id="foreach"><a href="#foreach" class="header-anchor">#</a> ForEach</h3> <p>对map中的每对key和value执行iteratee函数</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> ForEach<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">,</span> iteratee <span class="token keyword">func</span><span class="token punctuation">(</span>key K<span class="token punctuation">,</span> value V<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;d&quot;</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">var</span> sum <span class="token builtin">int</span>
+
+	maputil<span class="token punctuation">.</span><span class="token function">ForEach</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token builtin">string</span><span class="token punctuation">,</span> value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		sum <span class="token operator">+=</span> value
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span> <span class="token comment">// 10</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="filter"><a href="#filter" class="header-anchor">#</a> Filter</h3> <p>迭代map中的每对key和value, 返回符合predicate函数的key, value</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Filter<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">,</span> predicate <span class="token keyword">func</span><span class="token punctuation">(</span>key K<span class="token punctuation">,</span> value V<span class="token punctuation">)</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;d&quot;</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;e&quot;</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	isEven <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token builtin">string</span><span class="token punctuation">,</span> value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> value<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>
+	<span class="token punctuation">}</span>
+
+	maputil<span class="token punctuation">.</span><span class="token function">Filter</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token boolean">_</span> <span class="token builtin">string</span><span class="token punctuation">,</span> value <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		sum <span class="token operator">+=</span> value
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	res <span class="token operator">:=</span> maputil<span class="token punctuation">.</span><span class="token function">Filter</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> isEven<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment">// map[string]int{&quot;b&quot;: 2, &quot;d&quot;: 4,}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="intersect"><a href="#intersect" class="header-anchor">#</a> Intersect</h3> <p>多个map的交集操作</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Intersect<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>maps <span class="token operator">...</span><span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m1 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	m2 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;d&quot;</span><span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	m3 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;e&quot;</span><span class="token punctuation">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>maputil<span class="token punctuation">.</span><span class="token function">Intersect</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// map[string]int{&quot;a&quot;: 1, &quot;b&quot;: 2, &quot;c&quot;: 3}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>maputil<span class="token punctuation">.</span><span class="token function">Intersect</span><span class="token punctuation">(</span>m1<span class="token punctuation">,</span> m2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// map[string]int{&quot;a&quot;: 1, &quot;b&quot;: 2}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>maputil<span class="token punctuation">.</span><span class="token function">Intersect</span><span class="token punctuation">(</span>m1<span class="token punctuation">,</span> m2<span class="token punctuation">,</span> m3<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// map[string]int{&quot;a&quot;: 1}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="keys"><a href="#keys" class="header-anchor">#</a> Keys</h3> <p>返回map中所有key的切片</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Keys<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>K
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">4</span><span class="token punctuation">:</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">5</span><span class="token punctuation">:</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	keys <span class="token operator">:=</span> maputil<span class="token punctuation">.</span><span class="token function">Keys</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+	sort<span class="token punctuation">.</span><span class="token function">Ints</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span> <span class="token comment">// []int{1, 2, 3, 4, 5}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="merge"><a href="#merge" class="header-anchor">#</a> Merge</h3> <p>合并多个maps, 相同的key会被后来的key覆盖</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Merge<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>maps <span class="token operator">...</span><span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m1 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	m2 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>maputil<span class="token punctuation">.</span><span class="token function">Merge</span><span class="token punctuation">(</span>m1<span class="token punctuation">,</span> m2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// map[int]string{1:&quot;1&quot;, 2:&quot;b&quot;, 3:&quot;2&quot;,}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="minus"><a href="#minus" class="header-anchor">#</a> Minus</h3> <p>返回一个map，其中的key存在于mapA，不存在于mapB.</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Minus<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>mapA<span class="token punctuation">,</span> mapB <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m1 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;c&quot;</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	m2 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;a&quot;</span><span class="token punctuation">:</span> <span class="token number">11</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;b&quot;</span><span class="token punctuation">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+		<span class="token string">&quot;d&quot;</span><span class="token punctuation">:</span> <span class="token number">33</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>maputil<span class="token punctuation">.</span><span class="token function">Minus</span><span class="token punctuation">(</span>m1<span class="token punctuation">,</span> m2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//map[string]int{&quot;c&quot;: 3}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="values"><a href="#values" class="header-anchor">#</a> Values</h3> <p>返回map中所有value的切片</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> Values<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>m <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>V
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">4</span><span class="token punctuation">:</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">5</span><span class="token punctuation">:</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	values <span class="token operator">:=</span> maputil<span class="token punctuation">.</span><span class="token function">Values</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+	sort<span class="token punctuation">.</span><span class="token function">Strings</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span> <span class="token comment">// []string{&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="isdisjoint"><a href="#isdisjoint" class="header-anchor">#</a> IsDisjoint</h3> <p>验证两个map是否具有不同的key</p> <p><b>函数签名:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> IsDisjoint<span class="token punctuation">[</span>K comparable<span class="token punctuation">,</span> V any<span class="token punctuation">]</span><span class="token punctuation">(</span>mapA<span class="token punctuation">,</span> mapB <span class="token keyword">map</span><span class="token punctuation">[</span>K<span class="token punctuation">]</span>V<span class="token punctuation">)</span> <span class="token builtin">bool</span>
+</code></pre></div><p><b>例子:</b></p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">&quot;fmt&quot;</span>
+    <span class="token string">&quot;github.com/duke-git/lancet/v2/maputil&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	m1 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">4</span><span class="token punctuation">:</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">5</span><span class="token punctuation">:</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	m2 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">4</span><span class="token punctuation">:</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span>
+		<span class="token number">5</span><span class="token punctuation">:</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	m3 <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token number">6</span><span class="token punctuation">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	ok <span class="token operator">:=</span> maputil<span class="token punctuation">.</span><span class="token function">IsDisjoint</span><span class="token punctuation">(</span>m2<span class="token punctuation">,</span> m1<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ok<span class="token punctuation">)</span> <span class="token comment">// false</span>
+
+	ok <span class="token operator">=</span> maputil<span class="token punctuation">.</span><span class="token function">IsDisjoint</span><span class="token punctuation">(</span>m2<span class="token punctuation">,</span> m3<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>ok<span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2022/9/29 下午1:53:14</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/lancet-docs/assets/js/app.cc4984ed.js" defer></script><script src="/lancet-docs/assets/js/3.e76edb74.js" defer></script><script src="/lancet-docs/assets/js/54.e77f799d.js" defer></script>
+  </body>
+</html>
