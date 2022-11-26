@@ -32,11 +32,11 @@ export = defineConfig((ctx) => ({
   },
   themeConfig: {
     logo: "/logo.png",
-    algolia: {
-      apiKey: "a3f46ff80bff13787592c3da8470dd7b",
-      indexName: "lancet",
-      appId: "87KGOED78R",
-    },
+    // algolia: {
+    //   apiKey: "a3f46ff80bff13787592c3da8470dd7b",
+    //   indexName: "lancet",
+    //   appId: "87KGOED78R",
+    // },
     locales: {
       "/": {
         selectText: "选择语言",
