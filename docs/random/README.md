@@ -79,7 +79,7 @@ func main() {
 }
 ```
 
-### RandInt
+### RandString
 
 <p>生成随机给定长度的随机字符串</p>
 
@@ -104,6 +104,111 @@ func main() {
 	fmt.Println(randStr)
 }
 ```
+
+### RandUpper
+
+<p>生成给定长度的随机大写字母字符串</p>
+
+<b>函数签名:</b>
+
+```go
+func RandUpper(length int) string
+```
+
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandString(6)
+	fmt.Println(randStr) //PACWGF
+}
+```
+
+### RandLower
+
+<p>生成给定长度的随机小写字母字符串</p>
+
+<b>函数签名:</b>
+
+```go
+func RandLower(length int) string
+```
+
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandLower(6)
+	fmt.Println(randStr) //siqbew
+}
+```
+
+### RandNumeral
+
+<p>生成给定长度的随机数字字符串</p>
+
+<b>函数签名:</b>
+
+```go
+func RandNumeral(length int) string
+```
+
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandNumeral(6)
+	fmt.Println(randStr) //035172
+}
+```
+
+### RandNumeralOrLetter
+
+<p>生成给定长度的随机字符串（数字+字母)</p>
+
+<b>函数签名:</b>
+
+```go
+func RandNumeralOrLetter(length int) string
+```
+
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandNumeralOrLetter(6)
+	fmt.Println(randStr) //0aW7cQ
+}
+```
+
 
 ### UUIdV4
 

@@ -181,12 +181,38 @@ func main() {
 
 ### Count
 
-<p>Count iterates over elements of slice, returns a count of all matched elements.</p>
+<p>Returns the number of occurrences of the given item in the slice.</p>
 
 <b>Signature:</b>
 
 ```go
-func Count[T any](slice []T, predicate func(index int, t T) bool) int
+func Count[T comparable](slice []T, item T) int
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	nums := []int{1, 2, 3, 3, 4, 5}
+
+	fmt.Println(slice.Count(nums, 1)) //1
+	fmt.Println(slice.Count(nums, 3)) //2
+}
+```
+
+### CountBy
+
+<p>Iterates over elements of slice with predicate function, returns the number of all matched elements.</p>
+
+<b>Signature:</b>
+
+```go
+func CountBy[T any](slice []T, predicate func(index int, item T) bool) int
 ```
 
 <b>Example:</b>
@@ -199,11 +225,11 @@ import (
 
 func main() {
 	nums := []int{1, 2, 3, 4, 5, 6}
-	evenFunc := func(i, num int) bool {
+	evenFunc := func(_, num int) bool {
 		return (num % 2) == 0
 	}
 
-	res := slice.Count(nums, evenFunc)
+	res := slice.CountBy(nums, evenFunc)
 	fmt.Println(res) //3
 }
 ```
@@ -860,6 +886,33 @@ func main() {
 }
 ```
 
+### Merge
+
+<p>Merge all given slices into one slice.</p>
+
+<b>Signature:</b>
+
+```go
+func Merge[T any](slices ...[]T) []T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	s1 := []int{1, 2, 3}
+	s2 := []int{2, 4}
+	res := slice.Merge(s1, s2)
+
+	fmt.Println(res) //[]int{1, 2, 3, 2, 4}
+}
+```
+
 ### Reverse
 
 <p>Reverse the elements order in slice.</p>
@@ -913,6 +966,86 @@ func main() {
 }
 ```
 
+### Replace
+
+<p>Returns a copy of the slice with the first n non-overlapping instances of old replaced by new.</p>
+
+<b>Signature:</b>
+
+```go
+func Replace[T comparable](slice []T, old T, new T, n int) []T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	strs := []string{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", 0)) //{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", 1)) //{"x", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", -1)) //{"x", "b", "x", "c", "d", "x"}
+}
+```
+
+### ReplaceAll
+
+<p>Returns a copy of the slice with the first n non-overlapping instances of old replaced by new.</p>
+
+<b>Signature:</b>
+
+```go
+func ReplaceAll[T comparable](slice []T, old T, new T) []T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	strs := []string{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.ReplaceAll(strs, "a", "x")) //{"x", "b", "x", "c", "d", "x"}
+
+	fmt.Println(slice.Replace(strs, "e", "x")) //{"a", "b", "a", "c", "d", "a"}
+}
+```
+
+### Repeat
+
+<p>Creates a slice with length n whose elements are passed param item.</p>
+
+<b>Signature:</b>
+
+```go
+func Repeat[T any](item T, n int) []T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	fmt.Println(slice.Repeat("a", 3)) //[]string{"a", "a", "a"}
+}
+```
+
+
 ### Shuffle
 
 <p>Creates an slice of shuffled values.</p>
@@ -938,9 +1071,97 @@ func main() {
 }
 ```
 
-### SortByField
 
-<p>Sort struct slice by field. Slice element should be struct, field type should be int, uint, string, or bool. Default sort type is ascending (asc), if descending order, set sortType to desc</p>
+### Sort
+
+<p>Sorts a slice of any ordered type(number or string), use quick sort algrithm. Default sort order is ascending (asc), if want descending order, set param `sortOrder` to `desc`. Ordered type: number(all ints uints floats) or string.
+</p>
+
+<b>Signature:</b>
+
+```go
+func Sort[T lancetconstraints.Ordered](slice []T, sortOrder ...string)
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	numbers := []int{1, 4, 3, 2, 5}
+	
+	slice.Sort(numbers)
+	fmt.Println(numbers) //{1,2,3,4,5}
+
+	slice.Sort(numbers, "desc")
+	fmt.Println(numbers) //{5,4,3,2,1}
+
+	strings := []string{"a", "d", "c", "b", "e"}
+
+	slice.Sort(strings)
+	fmt.Println(strings) //{"a", "b", "c", "d", "e"}
+
+	slice.Sort(strings, "desc")
+	fmt.Println(strings) //{"e", "d", "c", "b", "a"}
+}
+```
+
+
+### SortBy
+
+<p>Sorts the slice in ascending order as determined by the less function. This sort is not guaranteed to be stable.<p>
+
+<b>Signature:</b>
+
+```go
+func SortBy[T any](slice []T, less func(a, b T) bool)
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	numbers := []int{1, 4, 3, 2, 5}
+
+	slice.SortBy(numbers, func(a, b int) bool {
+		return a < b
+	})
+	fmt.Println(numbers) //{1, 2, 3, 4, 5}
+
+	type User struct {
+		Name string
+		Age  uint
+	}
+
+	users := []User{
+		{Name: "a", Age: 21},
+		{Name: "b", Age: 15},
+		{Name: "c", Age: 100}}
+
+	slice.SortBy(users, func(a, b User) bool {
+		return a.Age < b.Age
+	})
+
+	fmt.Printf("sort users by age: %v", users) 
+
+	// output
+	// [{b 15} {a 21} {c 100}]
+}
+```
+
+
+### SortByField<sup>deprecated</sup>
+
+<p>Sort struct slice by field. Slice element should be struct, field type should be int, uint, string, or bool. Default sort type is ascending (asc), if descending order, set sortType to desc.This function is deprecated: use Sort and SortBy for replacement.</p>
 
 <b>Signature:</b>
 
@@ -1191,6 +1412,33 @@ func main() {
 }
 ```
 
+### UnionBy
+
+<p>UnionBy is like Union, what's more it accepts iteratee which is invoked for each element of each slice.</p>
+
+<b>Signature:</b>
+
+```go
+func UnionBy[T any, V comparable](predicate func(item T) V, slices ...[]T) []T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	testFunc := func(i int) int {
+		return i / 2
+	}
+	result := slice.UnionBy(testFunc, []int{0, 1, 2, 3, 4, 5}, []int{0, 2, 10})
+	fmt.Println(result) //[]int{0, 2, 4, 10}
+}
+```
+
 ### UpdateAt
 
 <p>Update the slice element at index. if param index < 0 or index >= len(slice), will return error. </p>
@@ -1238,5 +1486,33 @@ import (
 func main() {
 	res := slice.Without([]int{1, 2, 3, 4, 5}, 1, 2)
 	fmt.Println(res) //[]int{3, 4, 5}
+}
+```
+
+
+### KeyBy
+
+<p>Converts a slice to a map based on a callback function.</p>
+
+<b>Signature:</b>
+
+```go
+func KeyBy[T any, U comparable](slice []T, iteratee func(item T) U) map[U]T
+```
+
+<b>Example:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	res := slice.KeyBy([]string{"a", "ab", "abc"}, func(str string) int {
+		return len(str)
+	})
+
+	fmt.Println(res) //map[int]string{1: "a", 2: "ab", 3: "abc"}
 }
 ```

@@ -22,8 +22,11 @@ import (
 ## 目录
 
 - [NewSet](#NewSet)
+- [NewSetFromSlice](#NewSetFromSlice)
 - [Values](#Values)
 - [Add](#Add)
+- [AddIfNotExist](#AddIfNotExist)
+- [AddIfNotExistBy](#AddIfNotExistBy)
 - [Delete](#Delete)
 - [Contain](#Contain)
 - [ContainAll](#ContainAll)
@@ -34,7 +37,6 @@ import (
 - [IsEmpty](#IsEmpty)
 - [Union](#Union)
 - [Intersection](#Intersection)
-
 - [SymmetricDifference](#SymmetricDifference)
 - [Minus](#Minus)
 
@@ -69,7 +71,29 @@ func main() {
 }
 ```
 
+### <span id="NewSetFromSlice">NewSetFromSlice</span>
+<p>基于切片创建集合</p>
 
+<b>函数签名:</b>
+
+```go
+func NewSetFromSlice[T comparable](items []T) Set[T]
+```
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    set "github.com/duke-git/lancet/v2/datastructure/set"
+)
+
+func main() {
+    st := set.NewSetFromSlice([]int{1, 2, 2, 3})
+    fmt.Println(st.Values()) //1,2,3
+}
+```
 
 
 ### <span id="Values">Values</span>
@@ -95,8 +119,6 @@ func main() {
     fmt.Println(st.Values()) //1,2,3
 }
 ```
-
-
 
 
 ### <span id="Add">Add</span>
@@ -125,6 +147,37 @@ func main() {
 }
 ```
 
+
+### <span id="AddIfNotExist">AddIfNotExist</span>
+<p>如果集合中不存在元素，则添加该元素返回true, 如果集合中存在元素, 不做任何操作，返回false</p>
+
+<b>函数签名:</b>
+
+```go
+func (s Set[T]) AddIfNotExist(item T) bool
+```
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    set "github.com/duke-git/lancet/v2/datastructure/set"
+)
+
+func main() {
+    st := set.NewSet[int]()
+    st.Add(1, 2, 3)
+
+    r1 := st.AddIfNotExist(1)
+	r2 := st.AddIfNotExist(4)
+
+    fmt.Println(r1) // false
+    fmt.Println(r2) // true
+    fmt.Println(st.Values()) // 1,2,3,4
+}
+```
 
 
 ### <span id="Delete">Delete</span>

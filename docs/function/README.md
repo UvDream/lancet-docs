@@ -288,6 +288,42 @@ func main() {
 }
 ```
 
+### Pipeline
+
+<p>执行函数pipeline.</p>
+
+<b>函数签名:</b>
+
+```go
+func Pipeline[T any](funcs ...func(T) T) func(T) T
+```
+<b>例子:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/function"
+)
+
+func main() {
+    addOne := func(x int) int {
+		return x + 1
+	}
+	double := func(x int) int {
+		return 2 * x
+	}
+	square := func(x int) int {
+		return x * x
+	}
+
+	f := Pipeline(addOne, double, square)
+
+	fmt.Println(f(2)) //36
+}
+```
+
 ### Watcher
 
 <p>Watcher 用于记录代码执行时间。可以启动/停止/重置手表定时器。获取函数执行的时间。 </p>
