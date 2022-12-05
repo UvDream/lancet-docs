@@ -28,7 +28,7 @@ export const nav_en = [
       },
       {
         text: "datetime",
-        link: "/datetime/",
+        link: "/en/datetime/",
       },
       {
         text: "datastructure",
