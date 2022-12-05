@@ -27,6 +27,10 @@ export const nav_en = [
         link: "/en/cryptor/",
       },
       {
+        text: "datetime",
+        link: "/datetime/",
+      },
+      {
         text: "datastructure",
         link: "/en/datastructure/",
       },

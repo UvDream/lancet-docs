@@ -27,6 +27,10 @@ export const nav_zh = [
         link: "/cryptor/",
       },
       {
+        text: "datetime",
+        link: "/datetime/",
+      },
+      {
         text: "datastructure",
         link: "/datastructure/",
       },
