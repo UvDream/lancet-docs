@@ -22,8 +22,11 @@ import (
 ## Index
 
 - [NewSet](#NewSet)
+- [NewSetFromSlice](#NewSetFromSlice)
 - [Values](#Values)
 - [Add](#Add)
+- [AddIfNotExist](#AddIfNotExist)
+- [AddIfNotExistBy](#AddIfNotExistBy)
 - [Delete](#Delete)
 - [Contain](#Contain)
 - [ContainAll](#ContainAll)
@@ -34,7 +37,6 @@ import (
 - [IsEmpty](#IsEmpty)
 - [Union](#Union)
 - [Intersection](#Intersection)
-
 - [SymmetricDifference](#SymmetricDifference)
 - [Minus](#Minus)
 
@@ -69,7 +71,29 @@ func main() {
 }
 ```
 
+### <span id="NewSetFromSlice">NewSetFromSlice</span>
+<p>Create a set from slice</p>
 
+<b>Signature:</b>
+
+```go
+func NewSetFromSlice[T comparable](items []T) Set[T]
+```
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    set "github.com/duke-git/lancet/v2/datastructure/set"
+)
+
+func main() {
+    st := set.NewSetFromSlice([]int{1, 2, 2, 3})
+    fmt.Println(st.Values()) //1,2,3
+}
+```
 
 
 ### <span id="Values">Values</span>

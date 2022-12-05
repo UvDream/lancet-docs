@@ -181,12 +181,38 @@ func main() {
 
 ### Count
 
-<p>遍历切片，对每个元素执行函数function. 返回符合函数返回值为true的元素的个数</p>
+<p>返回切片中指定元素的个数</p>
 
 <b>函数签名:</b>
 
 ```go
-func Count[T any](slice []T, predicate func(index int, t T) bool) int
+func Count[T comparable](slice []T, item T) int
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	nums := []int{1, 2, 3, 3, 4, 5}
+
+	fmt.Println(slice.Count(nums, 1)) //1
+	fmt.Println(slice.Count(nums, 3)) //2
+}
+```
+
+### CountBy
+
+<p>遍历切片，对每个元素执行函数predicate. 返回符合函数返回值为true的元素的个数.</p>
+
+<b>函数签名:</b>
+
+```go
+func CountBy[T any](slice []T, predicate func(index int, item T) bool) int
 ```
 
 <b>例子:</b>
@@ -199,11 +225,11 @@ import (
 
 func main() {
 	nums := []int{1, 2, 3, 4, 5, 6}
-	evenFunc := func(i, num int) bool {
+	evenFunc := func(_, num int) bool {
 		return (num % 2) == 0
 	}
 
-	res := slice.Count(nums, evenFunc)
+	res := slice.CountBy(nums, evenFunc)
 	fmt.Println(res) //3
 }
 ```
@@ -860,6 +886,33 @@ func main() {
 }
 ```
 
+### Merge
+
+<p>合并多个切片（不会消除重复元素).</p>
+
+<b>函数签名:</b>
+
+```go
+func Merge[T any](slices ...[]T) []T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	s1 := []int{1, 2, 3}
+	s2 := []int{2, 4}
+	res := slice.Merge(s1, s2)
+
+	fmt.Println(res) //[]int{1, 2, 3, 2, 4}
+}
+```
+
 ### Reverse
 
 <p>反转切片中的元素顺序</p>
@@ -913,6 +966,114 @@ func main() {
 }
 ```
 
+### <span id="Reduce">Reduce</span>
+
+<p>将切片中的元素依次运行iteratee函数，返回运行结果</p>
+
+<b>函数签名:</b>
+
+```go
+func Reduce[T any](slice []T, iteratee func(index int, item1, item2 T) T, initial T) T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	nums := []int{1, 2, 3, 4}
+	reduceFunc := func(i, v1, v2 int) int {
+		return v1 + v2
+	}
+	res := slice.Reduce(nums, reduceFunc, 0)
+	fmt.Println(res) //10
+}
+```
+
+### Replace
+
+<p>返回切片的副本，其中前n个不重叠的old替换为new</p>
+
+<b>函数签名:</b>
+
+```go
+func Replace[T comparable](slice []T, old T, new T, n int) []T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	strs := []string{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", 0)) //{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", 1)) //{"x", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.Replace(strs, "a", "x", -1)) //{"x", "b", "x", "c", "d", "x"}
+}
+```
+
+### ReplaceAll
+
+<p>返回切片的副本，将其中old全部替换为new</p>
+
+<b>函数签名:</b>
+
+```go
+func ReplaceAll[T comparable](slice []T, old T, new T) []T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	strs := []string{"a", "b", "a", "c", "d", "a"}
+
+	fmt.Println(slice.ReplaceAll(strs, "a", "x")) //{"x", "b", "x", "c", "d", "x"}
+
+	fmt.Println(slice.Replace(strs, "e", "x")) //{"a", "b", "a", "c", "d", "a"}
+}
+```
+
+### Repeat
+
+<p>创建一个切片，包含n个传入的item</p>
+
+<b>函数签名:</b>
+
+```go
+func Repeat[T any](item T, n int) []T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	fmt.Println(slice.Repeat("a", 3)) //[]string{"a", "a", "a"}
+}
+```
+
+
 ### Shuffle
 
 <p>随机打乱切片中的元素顺序</p>
@@ -938,9 +1099,94 @@ func main() {
 }
 ```
 
-### SortByField
+### Sort
 
-<p>按字段对结构切片进行排序。slice元素应为struct，字段类型应为int、uint、string或bool。 默认排序类型是升序（asc），如果是降序，设置 sortType 为 desc</p>
+<p>对任何有序类型（数字或字符串）的切片进行排序，使用快速排序算法。 默认排序顺序为升序 (asc)，如果需要降序，请将参数 `sortOrder` 设置为 `desc`。 Ordered类型：数字（所有整数浮点数）或字符串。</p>
+
+<b>函数签名:</b>
+
+```go
+func Sort[T lancetconstraints.Ordered](slice []T, sortOrder ...string)
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	numbers := []int{1, 4, 3, 2, 5}
+	
+	slice.Sort(numbers)
+	fmt.Println(numbers) //{1,2,3,4,5}
+
+	slice.Sort(numbers, "desc")
+	fmt.Println(numbers) //{5,4,3,2,1}
+
+	strings := []string{"a", "d", "c", "b", "e"}
+
+	slice.Sort(strings)
+	fmt.Println(strings) //{"a", "b", "c", "d", "e"}
+
+	slice.Sort(strings, "desc")
+	fmt.Println(strings) //{"e", "d", "c", "b", "a"}
+}
+```
+
+
+### SortBy
+
+<p>按照less函数确定的升序规则对切片进行排序。排序不保证稳定性</p>
+
+<b>函数签名:</b>
+
+```go
+func SortBy[T any](slice []T, less func(a, b T) bool)
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	numbers := []int{1, 4, 3, 2, 5}
+
+	slice.SortBy(numbers, func(a, b int) bool {
+		return a < b
+	})
+	fmt.Println(numbers) //{1, 2, 3, 4, 5}
+
+	type User struct {
+		Name string
+		Age  uint
+	}
+
+	users := []User{
+		{Name: "a", Age: 21},
+		{Name: "b", Age: 15},
+		{Name: "c", Age: 100}}
+
+	slice.SortBy(users, func(a, b User) bool {
+		return a.Age < b.Age
+	})
+
+	fmt.Printf("sort users by age: %v", users) 
+
+	// output
+	// [{b 15} {a 21} {c 100}]
+}
+```
+
+### SortByField<sup>deprecated</sup>
+
+<p>按字段对结构切片进行排序。slice元素应为struct，字段类型应为int、uint、string或bool。 默认排序类型是升序（asc），如果是降序，设置 sortType 为 desc. 该方法已弃用: 请使用Sort或SortBy代替该方法</p>
 
 <b>函数签名:</b>
 
@@ -1191,6 +1437,35 @@ func main() {
 }
 ```
 
+
+### UnionBy
+
+<p>对切片的每个元素调用函数后，合并多个切片</p>
+
+<b>函数签名:</b>
+
+```go
+func UnionBy[T any, V comparable](predicate func(item T) V, slices ...[]T) []T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	testFunc := func(i int) int {
+		return i / 2
+	}
+	result := slice.UnionBy(testFunc, []int{0, 1, 2, 3, 4, 5}, []int{0, 2, 10})
+	fmt.Println(result) //[]int{0, 2, 4, 10}
+}
+```
+
+
 ### UpdateAt
 
 <p>更新索引处的切片元素。 如果index < 0或 index >= len(slice)，将返回错误</p>
@@ -1238,5 +1513,33 @@ import (
 func main() {
 	res := slice.Without([]int{1, 2, 3, 4, 5}, 1, 2)
 	fmt.Println(res) //[]int{3, 4, 5}
+}
+```
+
+
+### KeyBy
+
+<p>将切片每个元素调用函数后转为map</p>
+
+<b>函数签名:</b>
+
+```go
+func KeyBy[T any, U comparable](slice []T, iteratee func(item T) U) map[U]T
+```
+
+<b>例子:</b>
+
+```go
+import (
+	"fmt"
+	"github.com/duke-git/lancet/v2/slice"
+)
+
+func main() {
+	res := slice.KeyBy([]string{"a", "ab", "abc"}, func(str string) int {
+		return len(str)
+	})
+
+	fmt.Println(res) //map[int]string{1: "a", 2: "ab", 3: "abc"}
 }
 ```

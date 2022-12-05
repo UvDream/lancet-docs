@@ -289,6 +289,43 @@ func main() {
 }
 ```
 
+### Pipeline
+
+<p>Pipeline takes a list of functions and returns a function whose param will be passed into
+the functions one by one.</p>
+
+<b>Signature:</b>
+
+```go
+func Pipeline[T any](funcs ...func(T) T) func(T) T
+```
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/function"
+)
+
+func main() {
+    addOne := func(x int) int {
+		return x + 1
+	}
+	double := func(x int) int {
+		return 2 * x
+	}
+	square := func(x int) int {
+		return x * x
+	}
+
+	f := Pipeline(addOne, double, square)
+
+	fmt.Println(f(2)) //36
+}
+```
+
 ### Watcher
 
 <p>Watcher is used for record code excution time. can start/stop/reset the watch timer. get the elapsed time of function execution.</p>

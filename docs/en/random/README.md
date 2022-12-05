@@ -79,7 +79,7 @@ func main() {
 }
 ```
 
-### RandInt
+### RandString
 
 <p>Generate random given length string.</p>
 
@@ -102,6 +102,110 @@ import (
 func main() {
 	randStr := random.RandString(6)
 	fmt.Println(randStr)
+}
+```
+
+### RandUpper
+
+<p>Generate a random upper case string</p>
+
+<b>Signature:</b>
+
+```go
+func RandUpper(length int) string
+```
+
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandString(6)
+	fmt.Println(randStr) //PACWGF
+}
+```
+
+### RandLower
+
+<p>Generate a random lower case string</p>
+
+<b>Signature:</b>
+
+```go
+func RandLower(length int) string
+```
+
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandLower(6)
+	fmt.Println(randStr) //siqbew
+}
+```
+
+### RandNumeral
+
+<p>Generate a random numeral string</p>
+
+<b>Signature:</b>
+
+```go
+func RandNumeral(length int) string
+```
+
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandNumeral(6)
+	fmt.Println(randStr) //035172
+}
+```
+
+### RandNumeralOrLetter
+
+<p>generate a random numeral or letter string</p>
+
+<b>Signature:</b>
+
+```go
+func RandNumeralOrLetter(length int) string
+```
+
+<b>Example:</b>
+
+```go
+package main
+
+import (
+    "fmt"
+    "github.com/duke-git/lancet/v2/random"
+)
+
+func main() {
+	randStr := random.RandNumeralOrLetter(6)
+	fmt.Println(randStr) //0aW7cQ
 }
 ```
 
